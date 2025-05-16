@@ -1,0 +1,86 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    leg1_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joints:
+        - joint_11
+        - joint_12
+        - joint_13
+      command_interfaces:
+        - position
+        - velocity
+      state_interfaces:
+        - position
+        - velocity
+
+    leg2_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joints:
+        - joint_21
+        - joint_22
+        - joint_23
+      command_interfaces:
+        - position
+        - velocity
+      state_interfaces:
+        - position
+        - velocity
+
+    leg3_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joints:
+        - joint_31
+        - joint_32
+        - joint_33
+      command_interfaces:
+        - position
+        - velocity
+      state_interfaces:
+        - position
+        - velocity
+
+    leg4_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joints:
+        - joint_41
+        - joint_42
+        - joint_43
+      command_interfaces:
+        - position
+        - velocity
+      state_interfaces:
+        - position
+        - velocity
+
+    leg5_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joints:
+        - joint_51
+        - joint_52
+        - joint_53
+      command_interfaces:
+        - position
+        - velocity
+      state_interfaces:
+        - position
+        - velocity
+
+    leg6_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joints:
+        - joint_61
+        - joint_62
+        - joint_63
+      command_interfaces:
+        - position
+        - velocity
+      state_interfaces:
+        - position
+        - velocity
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+

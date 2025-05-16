@@ -1,0 +1,27 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: robot_urdf
+    relative_path: urdf/hexapod_2.urdf
+  srdf:
+    relative_path: config/hexapod_robot.srdf
+  package_settings:
+    author_name: lee
+    author_email: yxia072@ucr.edu
+    generated_timestamp: 1747014166
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
