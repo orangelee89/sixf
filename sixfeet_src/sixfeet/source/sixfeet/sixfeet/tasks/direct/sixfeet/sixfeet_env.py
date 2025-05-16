@@ -55,7 +55,10 @@ class SixfeetEnv(DirectRLEnv):
 
     # ---------- RL loop ----------
     def _pre_physics_step(self, actions: torch.Tensor):
-        self.actions = actions.to(self.device).clamp_(-1.0, 1.0)     # (N,18)
+        actions = actions.to(self.device)   # (N,18)
+        abs_max = torch.abs(actions).amax(dim=1, keepdim=True)   # (B,1)
+        scale   = torch.clamp(abs_max, min=1.0)                  # 不足 1 -> 1
+        self.actions = actions / scale  
 
     def _apply_action(self):
         mid  = (self._q_hi + self._q_lo) * 0.5                         # (18,)
@@ -63,6 +66,9 @@ class SixfeetEnv(DirectRLEnv):
 
         q_tgt = mid + half * (self.actions * self.cfg.action_scale)  # broadcasting OK
         self.robot.set_joint_position_target(q_tgt)
+        self.robot.set_joint_position_target(q_tgt) 
+
+
 
     def _get_observations(self):
         obs = torch.cat(
@@ -80,10 +86,12 @@ class SixfeetEnv(DirectRLEnv):
         r_up  = reward_upright(self.robot.data.root_quat_w.to(self.device))
         p_av  = penalty_ang_vel(self.robot.data.root_ang_vel_w.to(self.device))
         p_tau = penalty_torque(self.robot.data.applied_torque.to(self.device))
-
+        # colliding = self.robot.data.body_is_colliding.to(self.device).any(dim=1).float()
         return ( self.cfg.rew_scale_upright * r_up
                + self.cfg.rew_scale_angvel  * (-p_av)
-               + self.cfg.rew_scale_torque  * (-p_tau) )
+               + self.cfg.rew_scale_torque  * (-p_tau) 
+                # + self.cfg.rew_scale_collision * colliding 
+               )
 
     def _get_dones(self):
         time_out = self.episode_length_buf >= self.max_episode_length - 1

@@ -17,7 +17,6 @@ from isaaclab.sim import SimulationCfg,PhysxCfg
 from isaaclab.utils import configclass
 
 
-
 @configclass
 class SixfeetEnvCfg(DirectRLEnvCfg):
     # ─────────────────────────── 基础设置 ───────────────────────────
@@ -53,12 +52,12 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
         spawn=sim_utils.UsdFileCfg(
             usd_path="/home/lee/EE_ws/src/sixfeet_src/sixfeet/source/"
                      "sixfeet/sixfeet/assets/hexapod_2/hexapod_2.usd",
+            articulation_props=sim_utils.ArticulationRootPropertiesCfg(
+                    enabled_self_collisions=True,
         ),
-        actuators={
-            "all": all_joints_pd,
-        },
-    )
-
+    ),
+    actuators={"all": all_joints_pd},
+)
     # ─────────────────────────── 批量环境 ──────────────────────────
     scene: InteractiveSceneCfg = InteractiveSceneCfg(
         num_envs=512,                   # 2 个环境
@@ -67,12 +66,12 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
     )
 
     # ─────────────────────────── 其他超参 ──────────────────────────
-    action_scale: float = 0.5              # [-1,1] → ±0.5 rad
+    action_scale: float = 0.5            # [-1,1] → ±0.5 rad
 
     rew_scale_upright:    float = +5.0
     rew_scale_angvel:     float = -0.1
     rew_scale_torque:     float = -2e-4
-    # rew_scale_collision:  float = -10.0
+    rew_scale_collision:  float = -10.0
 
     # 初始 root 姿态在 ±π 随机
     root_orientation_range: float = math.pi
