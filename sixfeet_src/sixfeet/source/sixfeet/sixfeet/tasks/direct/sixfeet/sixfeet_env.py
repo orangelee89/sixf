@@ -44,7 +44,7 @@ class SixfeetEnv(DirectRLEnv):
 
     # ---------- scene ----------
     def _setup_scene(self):
-        self.robot = Articulation(self.cfg.robot_cfg)
+        self.robot = Articulation(self.cfg.robot)
         self.scene.articulations["robot"] = self.robot
 
         spawn_ground_plane("/World/ground", GroundPlaneCfg())
@@ -83,15 +83,50 @@ class SixfeetEnv(DirectRLEnv):
         return {"policy": obs}
 
     def _get_rewards(self):
-        r_up  = reward_upright(self.robot.data.root_quat_w.to(self.device))
-        p_av  = penalty_ang_vel(self.robot.data.root_ang_vel_w.to(self.device))
-        p_tau = penalty_torque(self.robot.data.applied_torque.to(self.device))
-        # colliding = self.robot.data.body_is_colliding.to(self.device).any(dim=1).float()
-        return ( self.cfg.rew_scale_upright * r_up
-               + self.cfg.rew_scale_angvel  * (-p_av)
-               + self.cfg.rew_scale_torque  * (-p_tau) 
-                # + self.cfg.rew_scale_collision * colliding 
-               )
+        quat_w   = self.robot.data.root_quat_w.to(self.device)
+        ang_vel  = self.robot.data.root_ang_vel_w.to(self.device)
+        tau      = self.robot.data.applied_torque.to(self.device)
+        root_pos = self.robot.data.root_pos_w.to(self.device)
+
+        # -------- upright / align --------
+        r_up = reward_upright(quat_w)
+
+        N = quat_w.shape[0]
+        z_axis = torch.tensor([0.0, 0.0, 1.0], device=self.device).expand(N, 3)
+        body_z = quat_rotate(quat_w, z_axis)           # (N,3)
+        r_align = body_z[..., 2].clamp(0.0, 1.0)
+
+        # 1° 阈值
+        cos_thr = math.cos(math.radians(1.0))
+        success = (root_pos[:, 2] > 0.35) & (body_z[..., 2] >= cos_thr)
+        done_bonus = torch.where(
+            success,
+            torch.full_like(root_pos[:, 2], self.cfg.bonus_upright_done),
+            torch.zeros_like(root_pos[:, 2])
+        )
+
+        # 其余惩罚……
+        p_av  = penalty_ang_vel(ang_vel)
+        p_tau = penalty_torque(tau)
+        ground_punish    = torch.zeros(N, device=self.device)
+        collision_punish = torch.zeros(N, device=self.device)
+
+        reward = (
+            self.cfg.rew_scale_upright  * r_up
+            + self.cfg.rew_scale_align_z * r_align
+            + self.cfg.rew_scale_angvel  * (-p_av)
+            + self.cfg.rew_scale_torque  * (-p_tau)
+            + ground_punish
+            + collision_punish
+            + done_bonus
+        )
+
+        self.extras["log"] = {
+            "align_z": (self.cfg.rew_scale_align_z * r_align).mean(),
+            "success_rate": success.float().mean(),
+            "reward": reward.mean(),    
+        }
+        return reward
 
     def _get_dones(self):
         time_out = self.episode_length_buf >= self.max_episode_length - 1
