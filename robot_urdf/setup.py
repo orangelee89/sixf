@@ -1,5 +1,6 @@
 from setuptools import find_packages, setup
 from glob import glob
+import os
 package_name = 'robot_urdf'
 
 setup(
