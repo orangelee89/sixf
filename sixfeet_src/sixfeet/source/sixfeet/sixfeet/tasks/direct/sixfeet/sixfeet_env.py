@@ -213,7 +213,27 @@ class SixfeetEnv(DirectRLEnv):
             if hasattr(self.scene, "cfg"): # Check if scene.cfg exists (it should for InteractiveScene)
                 self.cfg.terrain.num_envs = self.scene.cfg.num_envs
                 self.cfg.terrain.env_spacing = self.scene.cfg.env_spacing
-            self.terrain = self.cfg.terrain.class_type(self.cfg.terrain)
+            
+            terrain_class_path = getattr(self.cfg.terrain, "class_type", None)
+            if isinstance(terrain_class_path, str):
+                # Dynamically import the class
+                # This part can be tricky with relative imports if class_type is not a fully qualified path.
+                # Assuming class_type is like "module.submodule.ClassName"
+                try:
+                    module_path, class_name = terrain_class_path.rsplit('.', 1)
+                    module = __import__(module_path, fromlist=[class_name])
+                    terrain_class = getattr(module, class_name)
+                except Exception as e:
+                    print(f"[ERROR] Failed to import terrain class {terrain_class_path}: {e}")
+                    from isaaclab.terrains import TerrainImporter
+                    terrain_class = TerrainImporter # Fallback
+            elif terrain_class_path is None: # Default if not specified
+                from isaaclab.terrains import TerrainImporter
+                terrain_class = TerrainImporter
+            else: # If class_type is already a class object (e.g. directly assigned in Hydra)
+                terrain_class = terrain_class_path
+
+            self._terrain = terrain_class(self.cfg.terrain) # type: ignore
         else:
             print("[WARNING] SixfeetEnv: No terrain configuration. Spawning default plane.")
             from isaaclab.sim.spawners.from_files import GroundPlaneCfg, spawn_ground_plane # Local import
