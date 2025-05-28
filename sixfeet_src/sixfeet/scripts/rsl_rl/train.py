@@ -14,7 +14,12 @@ from isaaclab.app import AppLauncher
 
 # local imports
 import cli_args  # isort: skip
-
+# import sys
+# import os
+# print(f"Python 解释器路径: {sys.executable}")
+# print(f"Python 版本: {sys.version}")
+# print(f"sys.path: {sys.path}")
+# print(f"当前工作目录: {os.getcwd()}")
 
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Train an RL agent with RSL-RL.")
@@ -178,7 +183,9 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
     dump_yaml(os.path.join(log_dir, "params", "agent.yaml"), agent_cfg)
     dump_pickle(os.path.join(log_dir, "params", "env.pkl"), env_cfg)
     dump_pickle(os.path.join(log_dir, "params", "agent.pkl"), agent_cfg)
-
+    # import inspect
+    # print(f"DEBUG: The runner.learn method is being called from this file path: {inspect.getfile(runner.learn)}")
+    
     # run training
     runner.learn(num_learning_iterations=agent_cfg.max_iterations, init_at_random_ep_len=True)
 

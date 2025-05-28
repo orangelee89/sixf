@@ -40,8 +40,8 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
             static_friction=0.8,
             dynamic_friction=0.6,
             restitution=0.0,
-            friction_combine_mode="average",
-            restitution_combine_mode="average"
+            friction_combine_mode="multiply",
+            restitution_combine_mode="multiply"
         )
     )
 
@@ -51,8 +51,8 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
         terrain_type="plane",
         collision_group=-1,
         physics_material=sim_utils.RigidBodyMaterialCfg(
-            friction_combine_mode="average",
-            restitution_combine_mode="average",
+            friction_combine_mode="multiply",
+            restitution_combine_mode="multiply",
             static_friction=1.0,
             dynamic_friction=0.8,
             restitution=0.0,
@@ -135,10 +135,10 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
     actuators={
         "all_joints": ImplicitActuatorCfg(
             joint_names_expr=".*", 
-            stiffness=30.0,  # <<<--- 修复：增加刚度，提高稳定性
-            damping=5.0,     # <<<--- 修复：增加阻尼，减少振荡
-            effort_limit_sim=8.0,    # <<<--- 修复：增加扭矩限制
-            velocity_limit_sim=10.0  # <<<--- 修复：增加速度限制
+            stiffness=20.0,  # <<<--- 修复：增加刚度，提高稳定性
+            damping=12.0,     # <<<--- 修复：增加阻尼，减少振荡
+            effort_limit_sim=5.0,    # <<<--- 修复：增加扭矩限制
+            velocity_limit_sim=5.0  # <<<--- 修复：增加速度限制
         )
     }
 )
@@ -155,7 +155,7 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
 
     # -------- 场景配置 --------
     scene: InteractiveSceneCfg = InteractiveSceneCfg(
-        num_envs=2048,
+        num_envs=4096,
         env_spacing=4.0,
         replicate_physics=True,
     )
