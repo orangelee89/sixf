@@ -14,7 +14,7 @@ class PPORunnerCfg(RslRlOnPolicyRunnerCfg):
     # max_iterations = 1000
     max_iterations = 500
     # save_interval = 500
-    save_interval = 50
+    save_interval = 400
     experiment_name = "sixfeet_ppo"
     empirical_normalization = False
     policy = RslRlPpoActorCriticCfg(

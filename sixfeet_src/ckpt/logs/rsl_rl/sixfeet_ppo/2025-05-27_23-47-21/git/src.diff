@@ -1,0 +1,10 @@
+--- git status ---
+On branch test1
+Your branch and 'origin/test1' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean 
+
+
+--- git diff ---

@@ -147,7 +147,7 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
 
     rew_scale_alive: float = +0.1 # 略微增加存活奖励，鼓励持续站立
     rew_scale_target_height: float = +8.0 # !!! 增加目标高度的奖励权重 !!!
-    target_height_m: float = 0.20 # 目标站立高度 (米)
+    target_height_m: float = 0.15 # 目标站立高度 (米)
 
     # --- 行为平滑与效率相关的惩罚 (可设为0或保留较小值) ---
     rew_scale_action_cost: float = -0.0001 # 可以保留一个非常小的动作成本
