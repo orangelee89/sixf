@@ -12,7 +12,7 @@ from isaaclab_rl.rsl_rl import RslRlOnPolicyRunnerCfg, RslRlPpoActorCriticCfg, R
 class PPORunnerCfg(RslRlOnPolicyRunnerCfg):
     num_steps_per_env = 24
     # max_iterations = 1000
-    max_iterations = 500
+    max_iterations = 10000
     # save_interval = 500
     save_interval = 400
     experiment_name = "sixfeet_ppo"

@@ -81,15 +81,7 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
         init_state=ArticulationCfg.InitialStateCfg(
             pos=(0.0, 0.0, 0.15), # 初始高度较低，便于学习站起
             rot=(1.0, 0.0, 0.0, 0.0), # 标准初始姿态 (w,x,y,z)
-            # joint_pos={ # 初始关节角度，可以是一个趴下的姿态
-            #     "joint_11": 0.0, "joint_21": 0.0, "joint_31": 0.0, "joint_41": 0.0, "joint_51": 0.0, "joint_61": 0.0,
-            #     "joint_12": math.radians(45), "joint_22": math.radians(45),
-            #     "joint_32": math.radians(45), "joint_42": math.radians(45),
-            #     "joint_52": math.radians(45), "joint_62": math.radians(45),
-            #     "joint_13": math.radians(-90), "joint_23": math.radians(-90),
-            #     "joint_33": math.radians(-90), "joint_43": math.radians(-90),
-            #     "joint_53": math.radians(-90), "joint_63": math.radians(-90),
-            # },
+            # joint_pos 已被注释掉，将在 env.py 的 _reset_idx 中实现完全随机关节初始姿态
             joint_vel={ # 初始关节速度为0
                 "joint_11": 0.0, "joint_21": 0.0, "joint_31": 0.0,
                 "joint_41": 0.0, "joint_51": 0.0, "joint_61": 0.0,
@@ -129,55 +121,61 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
     )
 
     # -------- 离散指令配置 (Discrete Command Profile) --------
-    # 为了只学习站立，我们将让机器人始终接收“站立”指令
     command_profile: dict = {
-        "reference_linear_speed": 0.0,  # m/s (站立时参考速度为0)
-        "reference_angular_rate": 0.0,  # rad/s (站立时参考角速度为0)
-        "command_mode_duration_s": episode_length_s, # 指令持续整个episode
-        "stand_still_prob": 1.0,       # !!! 始终发出站立指令 !!!
-        "num_command_modes": 7 # (虽然概率为1，但结构保留)
+        "reference_linear_speed": 0.0,
+        "reference_angular_rate": 0.0,
+        "command_mode_duration_s": episode_length_s,
+        "stand_still_prob": 1.0,       # 专注于站立
+        "num_command_modes": 7
     }
 
-    # -------- 奖励缩放因子 (专注站立) --------
+    # -------- 奖励缩放因子 --------
     action_scale: float = 0.5
 
     # --- 主要的正向激励 (站立) ---
-    rew_scale_move_in_commanded_direction: float = 0.0  # !!! 禁用移动奖励 !!!
-    rew_scale_achieve_reference_angular_rate: float = 0.0 # !!! 禁用转向奖励 !!!
+    rew_scale_move_in_commanded_direction: float = 0.0
+    rew_scale_achieve_reference_angular_rate: float = 0.0
+    rew_scale_alive: float = +0.1
+    rew_scale_target_height: float = +8.0
+    target_height_m: float = 0.20
 
-    rew_scale_alive: float = +0.1 # 略微增加存活奖励，鼓励持续站立
-    rew_scale_target_height: float = +8.0 # !!! 增加目标高度的奖励权重 !!!
-    target_height_m: float = 0.15 # 目标站立高度 (米)
+    # --- 新增：大的姿态偏差惩罚 (用于学习翻转) ---
+    # 这个惩罚项会因为机器人Z轴与世界Z轴的夹角增大而增大 (0到pi)
+    # scale 应该是负值
+    rew_scale_orientation_deviation: float = -50.0  # <--- 新增惩罚项，负值，值越大惩罚越重
 
-    # --- 行为平滑与效率相关的惩罚 (可设为0或保留较小值) ---
-    rew_scale_action_cost: float = -0.0001 # 可以保留一个非常小的动作成本
-    rew_scale_action_rate: float = -0.01   # 可以保留一个小的动作变化率惩罚，使动作更平滑
-    rew_scale_joint_torques: float = -1.0e-6 # 极小的力矩惩罚
-    rew_scale_joint_accel: float = -1.0e-7   # 极小的加速度惩罚
+    # --- 行为平滑与效率相关的惩罚 ---
+    rew_scale_action_cost: float = -0.0001
+    rew_scale_action_rate: float = -0.01
+    rew_scale_joint_torques: float = -1.0e-6
+    rew_scale_joint_accel: float = -1.0e-7
 
-    # --- 姿态与运动稳定性相关的惩罚 (对站立很重要) ---
-    rew_scale_lin_vel_z_penalty: float = -3.0   # !!! 略微增加Z轴速度惩罚，避免上下晃动 !!!
-    rew_scale_ang_vel_xy_penalty: float = -0.1 # !!! 略微增加XY轴角速度惩罚，避免摇晃和摔倒 !!!
-    rew_scale_flat_orientation: float = -25.0    # !!! 增加身体水平的惩罚权重 !!!
-    rew_scale_unwanted_movement_penalty: float = -5.0 # !!! 增加在站立指令下移动的惩罚权重 !!!
+    # --- 姿态与运动稳定性相关的惩罚 ---
+    rew_scale_lin_vel_z_penalty: float = -3.0
+    rew_scale_ang_vel_xy_penalty: float = -0.1
+    rew_scale_flat_orientation: float = -25.0 # 这个是惩罚小的倾斜（身体不水平），与新的 Z 轴偏差惩罚目标不同
+    rew_scale_unwanted_movement_penalty: float = -5.0
 
-    # --- 行为约束相关的惩罚 (对站立很重要) ---
-    rew_scale_dof_at_limit: float = -0.5 # 略微增加关节到达极限的惩罚
-    rew_scale_toe_orientation_penalty: float = -4.0 # 增加足端不良姿态的惩罚
-    rew_scale_low_height_penalty: float = -30.0 # !!! 大幅增加低高度惩罚 !!!
-    min_height_penalty_threshold: float = 0.15 # 低于此高度则开始惩罚 (米)
+    # --- 行为约束相关的惩罚 ---
+    rew_scale_dof_at_limit: float = -0.5
+    rew_scale_toe_orientation_penalty: float = -4.0 # 条件化生效
+    rew_scale_low_height_penalty: float = -30.0
+    min_height_penalty_threshold: float = 0.12
 
-    # --- 不期望的接触惩罚 (对站立很重要) ---
-    rew_scale_undesired_contact: float = -5.0   # !!! 增加大腿/小腿触地的惩罚权重 !!!
+    # --- 不期望的接触惩罚 ---
+    rew_scale_undesired_contact: float = -5.0   # 条件化生效
 
     # --- 终止状态相关的惩罚 ---
-    rew_scale_termination: float = -20.0 # 失败终止的惩罚 (如摔倒)
+    rew_scale_termination: float = -20.0
 
-    # -------- 重置随机化 --------
-    root_orientation_yaw_range: float = math.pi # 重置时初始Yaw角随机范围
-    reset_height_offset: float = 0.0 # 从较低的初始高度开始，不需要额外偏移
+    # --- 新增：用于条件化终止的方向角度限制 ---
+    # 这些终止条件仅在机器人Z轴与世界Z轴的夹角在此限制内时生效
+    orientation_termination_angle_limit_deg: float = 90.0 # 度, +/- 此值范围
 
-    # -------- 终止条件 --------
-    termination_body_z_thresh: float = 0.95 # 身体倾斜到一定程度终止 (值越小越容易因为倾斜终止)
-    termination_height_thresh: float = 0.05 # 高度过低终止
-    termination_base_contact: bool = False   # 身体躯干接触地面时终止
+    # ... (Randomisation 和 Termination 条件保持不变, 但其生效逻辑会在 env.py 中被条件化) ...
+    root_orientation_yaw_range: float = math.pi
+    reset_height_offset: float = 0.0
+    termination_body_z_thresh: float = 0.95
+    termination_height_thresh: float = 0.05
+    termination_base_contact: bool = False
+    
