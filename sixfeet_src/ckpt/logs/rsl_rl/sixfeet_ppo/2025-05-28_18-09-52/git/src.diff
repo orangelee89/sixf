@@ -1,0 +1,847 @@
+--- git status ---
+On branch test1
+Your branch and 'origin/test1' have diverged,
+and have 4 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   sixfeet_src/ckpt/.term_pid
+	modified:   sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0
+	modified:   sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+	modified:   sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/exported/
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_3600.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_4000.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_4400.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_4800.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_5200.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_5600.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_6000.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_6400.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_16-35-21/
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_18-09-52/
+	sixfeet_src/ckpt/outputs/2025-05-28/16-35-21/
+	sixfeet_src/ckpt/outputs/2025-05-28/17-15-14/
+	sixfeet_src/ckpt/outputs/2025-05-28/17-17-24/
+	sixfeet_src/ckpt/outputs/2025-05-28/17-27-56/
+	sixfeet_src/ckpt/outputs/2025-05-28/17-28-33/
+	sixfeet_src/ckpt/outputs/2025-05-28/17-32-43/
+	sixfeet_src/ckpt/outputs/2025-05-28/17-34-17/
+	sixfeet_src/ckpt/outputs/2025-05-28/18-09-52/
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/sixfeet_src/ckpt/.term_pid b/sixfeet_src/ckpt/.term_pid
+index 954fb92..577aaca 100644
+--- a/sixfeet_src/ckpt/.term_pid
++++ b/sixfeet_src/ckpt/.term_pid
+@@ -1 +1 @@
+-323281
++358442
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0 b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0
+index 162afd9..fbce5e2 100644
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0 and b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0 differ
+diff --git a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+index 1139aa5..e428077 100644
+--- a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
++++ b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+@@ -12,12 +12,9 @@ from isaaclab.sensors import ContactSensor
+ from isaaclab.utils.math import (
+     quat_rotate,
+     quat_from_angle_axis,
+-    # quat_mul, # 如果下面的RPY转换不理想，可能需要这个
+-    # quat_from_euler_xyz, # Isaac Lab 可能没有直接提供这个，但有类似工具
+     convert_quat,
+     euler_xyz_from_quat
+ )
+-# from isaaclab.terrains import TerrainImporter
+ 
+ from .sixfeet_env_cfg import SixfeetEnvCfg
+ 
+@@ -31,7 +28,7 @@ def compute_sixfeet_rewards_directional(
+     # ... (大部分现有参数不变) ...
+     root_lin_vel_b: torch.Tensor,
+     root_ang_vel_b: torch.Tensor,
+-    projected_gravity_b: torch.Tensor, # 世界Z轴在机器人本体坐标系下的投影 (取反后归一化)
++    projected_gravity_b: torch.Tensor,
+     joint_pos_rel: torch.Tensor,
+     joint_vel: torch.Tensor,
+     applied_torque: torch.Tensor,
+@@ -48,7 +45,7 @@ def compute_sixfeet_rewards_directional(
+     cfg_rew_scale_move_in_commanded_direction: float,
+     cfg_rew_scale_achieve_reference_angular_rate: float,
+     cfg_rew_scale_alive: float,
+-    cfg_rew_scale_target_height: float,
++    cfg_rew_scale_target_height: float, # scale for target height
+     cfg_target_height_m: float,
+     cfg_rew_scale_action_cost: float,
+     cfg_rew_scale_action_rate: float,
+@@ -65,8 +62,12 @@ def compute_sixfeet_rewards_directional(
+     cfg_min_height_penalty_threshold: float,
+     cfg_rew_scale_undesired_contact: float,
+     dt: float,
++    cfg_rew_scale_orientation_deviation: float,
+     # --- 新增参数 ---
+-    cfg_rew_scale_orientation_deviation: float # 新的Z轴偏差惩罚的scale
++    cfg_orientation_termination_angle_limit_rad: float, # 参数 cfg_orientation_termination_angle_limit_rad
++    cfg_joint_limit_penalty_threshold_percent: float,  # 参数 cfg_joint_limit_penalty_threshold_percent
++    num_self_collisions: torch.Tensor,                    # 参数 num_self_collisions (Tensor类型)
++    cfg_rew_scale_self_collision: float 
+ ) -> tuple[torch.Tensor, Dict[str, torch.Tensor]]:
+ 
+     ref_ang_rate = cfg_cmd_profile.get("reference_angular_rate", 0.0)
+@@ -74,6 +75,7 @@ def compute_sixfeet_rewards_directional(
+     # 1. Movement Rewards
+     linear_vel_x_local = root_lin_vel_b[:, 0]
+     linear_vel_y_local = root_lin_vel_b[:, 1]
++    # ... (其他移动奖励计算与上一版本相同) ...
+     reward_fwd_bkwd_move = commands_discrete[:, 0] * linear_vel_x_local
+     reward_left_right_move = commands_discrete[:, 1] * linear_vel_y_local
+     is_linear_cmd_active = (torch.abs(commands_discrete[:, 0]) > 0.5) | (torch.abs(commands_discrete[:, 1]) > 0.5)
+@@ -88,45 +90,54 @@ def compute_sixfeet_rewards_directional(
+     reward_turn = (reward_angular_direction_raw * is_turn_cmd_active.float() * cfg_rew_scale_move_in_commanded_direction) + \
+                   reward_achieve_ref_ang_rate
+ 
+-    # 2. Alive and Height Rewards
++
++    # --- 条件判断：机器人是否在允许的“正面”姿态范围内 ---
++    cos_angle_robot_z_with_world_z_cond = -projected_gravity_b[:, 2]
++    is_within_orientation_limit = cos_angle_robot_z_with_world_z_cond >= torch.cos(torch.tensor(cfg_orientation_termination_angle_limit_rad, device=projected_gravity_b.device))
++
++
++    # 2. Alive and Conditional Height Rewards
+     reward_alive = torch.ones_like(commands_discrete[:,0]) * cfg_rew_scale_alive
+     current_height_z = root_pos_w[:, 2]
+     height_check = torch.clamp(current_height_z / cfg_target_height_m, max=1.1)
+-    reward_target_height = height_check * cfg_rew_scale_target_height
++    _base_reward_target_height = height_check * cfg_rew_scale_target_height
++    reward_target_height = torch.where(
++        is_within_orientation_limit, # 条件
++        _base_reward_target_height,
++        torch.zeros_like(_base_reward_target_height)
++    )
+ 
+     # 3. Action Penalties
+     penalty_action_cost = torch.sum(actions_from_policy**2, dim=-1) * cfg_rew_scale_action_cost
++    # ... (其他 penalty_action_rate, penalty_joint_torques, penalty_joint_accel, penalty_lin_vel_z, penalty_ang_vel_xy, penalty_flat_orientation, penalty_unwanted_movement 与上一版本相同)
+     penalty_action_rate = torch.sum((actions_from_policy - previous_actions_from_policy)**2, dim=-1) * cfg_rew_scale_action_rate
+-
+-    # 4. Efficiency Penalties
+     penalty_joint_torques = torch.sum(applied_torque**2, dim=-1) * cfg_rew_scale_joint_torques
+     penalty_joint_accel = torch.sum(joint_acc**2, dim=-1) * cfg_rew_scale_joint_accel
+-    
+-    # 5. Stability Penalties
+     penalty_lin_vel_z = torch.square(root_lin_vel_b[:, 2]) * cfg_rew_scale_lin_vel_z_penalty
+     penalty_ang_vel_xy = torch.sum(torch.square(root_ang_vel_b[:, :2]), dim=1) * cfg_rew_scale_ang_vel_xy_penalty
+-    penalty_flat_orientation = torch.sum(torch.square(projected_gravity_b[:, :2]), dim=1) * cfg_rew_scale_flat_orientation # 惩罚XY方向的重力投影，即身体不水平
++    penalty_flat_orientation = torch.sum(torch.square(projected_gravity_b[:, :2]), dim=1) * cfg_rew_scale_flat_orientation
+     is_stand_cmd_active = torch.all(commands_discrete == 0, dim=1)
+     unwanted_lin_vel_sq = torch.sum(torch.square(root_lin_vel_b[:, :2]), dim=1)
+     unwanted_ang_vel_sq = torch.square(root_ang_vel_b[:, 2])
+     penalty_unwanted_movement = (unwanted_lin_vel_sq + unwanted_ang_vel_sq) * \
+                                 is_stand_cmd_active.float() * cfg_rew_scale_unwanted_movement_penalty
+ 
+-    # 6. Constraint Penalties
++
++    # 6. Constraint Penalties (使用可配置的阈值)
+     dof_range = q_upper_limits - q_lower_limits
+     dof_range = torch.where(dof_range < 1e-6, torch.ones_like(dof_range), dof_range)
+     q_lower_expanded = q_lower_limits.unsqueeze(0) if q_lower_limits.ndim == 1 else q_lower_limits
+     dof_range_expanded = dof_range.unsqueeze(0) if dof_range.ndim == 1 else dof_range
+     dof_pos_scaled_01 = (current_joint_pos_abs - q_lower_expanded) / dof_range_expanded
+-    near_lower_limit = torch.relu(0.05 - dof_pos_scaled_01)**2
+-    near_upper_limit = torch.relu(dof_pos_scaled_01 - 0.95)**2
++    
++    threshold_percent = cfg_joint_limit_penalty_threshold_percent
++    near_lower_limit = torch.relu(threshold_percent - dof_pos_scaled_01)**2
++    near_upper_limit = torch.relu(dof_pos_scaled_01 - (1.0 - threshold_percent))**2
+     penalty_dof_at_limit = torch.sum(near_lower_limit + near_upper_limit, dim=-1) * cfg_rew_scale_dof_at_limit
+     
+-    # --- 条件化惩罚逻辑 ---
+-    # is_severely_tilted: 机器人 Z 轴是否大致朝下 (与世界Z轴夹角 > 90度)
+-    is_severely_tilted = projected_gravity_b[:, 2] > 0.0
++    # --- 条件化惩罚逻辑 (toe_orientation, undesired_contact) ---
++    is_severely_tilted = projected_gravity_b[:, 2] > 0.0 # 固定90度阈值
+ 
+-    # 条件化足端方向惩罚
+     _base_penalty_toe_orientation = torch.zeros_like(commands_discrete[:,0], device=commands_discrete.device)
+     if cfg_rew_scale_toe_orientation_penalty != 0.0 and cfg_toe_joint_indices is not None:
+         if cfg_toe_joint_indices.numel() > 0:
+@@ -138,11 +149,9 @@ def compute_sixfeet_rewards_directional(
+         _base_penalty_toe_orientation
+     )
+     
+-    # 低高度惩罚 (这个不受 is_severely_tilted 影响，除非你也想改)
+     is_too_low = (current_height_z < cfg_min_height_penalty_threshold).float()
+     penalty_low_height = is_too_low * cfg_rew_scale_low_height_penalty
+ 
+-    # 条件化不期望的接触惩罚
+     _base_penalty_undesired_contact = undesired_contacts_active.float() * cfg_rew_scale_undesired_contact
+     penalty_undesired_contact = torch.where(
+         is_severely_tilted,
+@@ -150,23 +159,20 @@ def compute_sixfeet_rewards_directional(
+         _base_penalty_undesired_contact
+     )
+ 
+-    # --- 新增：Z轴方向偏差惩罚 ---
+-    # projected_gravity_b[:, 2] 的范围是 [-1, 1]
+-    # -1: 机器人Z轴与世界Z轴同向 (直立)
+-    # +1: 机器人Z轴与世界Z轴反向 (倒置)
+-    # acos的输入范围是 [-1, 1]。为防止计算误差导致超出范围，进行clamp。
+-    cos_angle_robot_z_with_world_z = -projected_gravity_b[:, 2] # 这是机器人Z轴与世界Z轴点积
+-    angle_deviation_from_world_z = torch.acos(torch.clamp(cos_angle_robot_z_with_world_z, -1.0 + 1e-7, 1.0 - 1e-7)) # 弧度制, 范围 [0, pi]
+-    # 当直立时，angle_deviation_from_world_z 接近 0
+-    # 当倒置时，angle_deviation_from_world_z 接近 pi
+-    # scale 应该是负的，所以偏差越大，惩罚越大（负的越多）
++    # --- Z轴方向偏差惩罚 ---
++    cos_angle_robot_z_with_world_z_dev = -projected_gravity_b[:, 2]
++    angle_deviation_from_world_z = torch.acos(torch.clamp(cos_angle_robot_z_with_world_z_dev, -1.0 + 1e-7, 1.0 - 1e-7))
+     penalty_orientation_deviation = cfg_rew_scale_orientation_deviation * angle_deviation_from_world_z
+     
++    # --- 新增：自碰撞惩罚 ---
++    # 如果 num_self_collisions > 0，则施加惩罚。
++    # 这个惩罚不乘以 dt，因为它是一个事件性或状态性的惩罚。
++    penalty_self_collision = cfg_rew_scale_self_collision * (num_self_collisions > 0).float()
++
+     # --- 总奖励计算 ---
+-    # penalty_orientation_deviation 不乘以 dt，直接作用
+-    # penalty_flat_orientation 保持在你基准文件中的处理方式（乘以dt）
+     total_reward = (
+-        reward_move_in_commanded_direction + reward_turn + reward_alive + reward_target_height + penalty_orientation_deviation
++        reward_move_in_commanded_direction + reward_turn + reward_alive + reward_target_height 
++        + penalty_orientation_deviation + penalty_self_collision # <--- 在这里加入
+         + (penalty_action_cost + penalty_action_rate + penalty_joint_torques + penalty_joint_accel
+         + penalty_lin_vel_z + penalty_ang_vel_xy + penalty_flat_orientation + penalty_unwanted_movement
+         + penalty_dof_at_limit + penalty_toe_orientation + penalty_low_height
+@@ -177,20 +183,22 @@ def compute_sixfeet_rewards_directional(
+         "move_in_commanded_direction": reward_move_in_commanded_direction,
+         "turn_reward_combined": reward_turn,
+         "alive": reward_alive,
+-        "target_height": reward_target_height,
+-        "orientation_deviation_penalty": penalty_orientation_deviation, # 新增
++        "target_height": reward_target_height, # 现在是条件化的
++        "orientation_deviation_penalty": penalty_orientation_deviation,
++        "self_collision_penalty": penalty_self_collision,
+         "action_cost_penalty": penalty_action_cost * dt,
+         "action_rate_penalty": penalty_action_rate * dt,
+         "joint_torques_penalty": penalty_joint_torques * dt,
+         "joint_accel_penalty": penalty_joint_accel * dt,
+         "lin_vel_z_penalty": penalty_lin_vel_z * dt,
+         "ang_vel_xy_penalty": penalty_ang_vel_xy * dt,
+-        "flat_orientation_penalty": penalty_flat_orientation * dt, # 按你的基准文件处理
++        "flat_orientation_penalty": penalty_flat_orientation * dt,
+         "unwanted_movement_penalty": penalty_unwanted_movement * dt,
+         "dof_at_limit_penalty": penalty_dof_at_limit * dt,
+-        "toe_orientation_penalty": penalty_toe_orientation * dt, 
++        "toe_orientation_penalty": penalty_toe_orientation * dt,
+         "low_height_penalty": penalty_low_height * dt,
+         "undesired_contact_penalty": penalty_undesired_contact * dt,
++        
+     }
+     return total_reward, reward_terms
+ 
+@@ -198,243 +206,230 @@ def compute_sixfeet_rewards_directional(
+ class SixfeetEnv(DirectRLEnv):
+     cfg: SixfeetEnvCfg
+     _contact_sensor: ContactSensor
++    _orientation_termination_angle_limit_rad: float
+ 
+     def __init__(self, cfg: SixfeetEnvCfg, render_mode: str | None = None, **kwargs):
+         super().__init__(cfg, render_mode, **kwargs)
+-
++        self._orientation_termination_angle_limit_rad = math.radians(self.cfg.orientation_termination_angle_limit_deg)
++        # ... (其他 __init__ 内容与上一版本相同) ...
+         self._default_joint_pos = self.robot.data.default_joint_pos.clone()
+         if self._default_joint_pos.ndim > 1 and self._default_joint_pos.shape[0] == self.num_envs:
+             self._default_joint_pos = self._default_joint_pos[0]
+-        
+         joint_limits = self.robot.data.joint_pos_limits[0].to(self.device)
+         self._q_lower_limits = joint_limits[:, 0]
+         self._q_upper_limits = joint_limits[:, 1]
+-        
+         self._policy_actions = torch.zeros(self.num_envs, self.cfg.action_space, device=self.device)
+         self._previous_policy_actions = torch.zeros_like(self._policy_actions)
+         self._processed_actions = torch.zeros_like(self._policy_actions)
+-
+         self._commands = torch.zeros(self.num_envs, 3, device=self.device, dtype=torch.float)
+         self._time_since_last_command_change = torch.zeros(self.num_envs, device=self.device)
+-        
+-        self._resolve_toe_joint_indices() # num_dof 修正已在方法内
+-
++        self._resolve_toe_joint_indices()
+         self._undesired_contact_body_ids: Optional[List[int]] = None
+         if self.cfg.undesired_contact_link_names_expr and self.cfg.rew_scale_undesired_contact != 0.0:
+             indices, names = self._contact_sensor.find_bodies(self.cfg.undesired_contact_link_names_expr)
+-            if indices:
+-                self._undesired_contact_body_ids = indices
+-                print(f"[INFO] SixfeetEnv: Undesired contact body IDs: {self._undesired_contact_body_ids} for names {names}")
+-            else:
+-                print(f"[WARNING] SixfeetEnv: No bodies for undesired contact expr: {self.cfg.undesired_contact_link_names_expr}")
+-
++            if indices: self._undesired_contact_body_ids = indices; print(f"[INFO] SixfeetEnv: Undesired contact body IDs: {indices} for names {names}")
++            else: print(f"[WARNING] SixfeetEnv: No bodies for undesired contact expr: {self.cfg.undesired_contact_link_names_expr}")
+         self._base_body_id: Optional[List[int]] = None
+         if self.cfg.termination_base_contact and self.cfg.base_link_name:
+             indices, names = self._contact_sensor.find_bodies(self.cfg.base_link_name)
+-            if indices:
+-                self._base_body_id = indices
+-                print(f"[INFO] SixfeetEnv: Base body ID for termination: {self._base_body_id} for names {names}")
+-            else:
+-                print(f"[WARNING] SixfeetEnv: No body for base contact termination: {self.cfg.base_link_name}")
+-        
++            if indices: self._base_body_id = indices; print(f"[INFO] SixfeetEnv: Base body ID for termination: {indices} for names {names}")
++            else: print(f"[WARNING] SixfeetEnv: No body for base contact termination: {self.cfg.base_link_name}")
+         self._episode_reward_terms_sum: Dict[str, torch.Tensor] = {}
+ 
+-    def _resolve_toe_joint_indices(self):
++    # ... (_resolve_toe_joint_indices, _setup_scene, _update_commands, _pre_physics_step, _apply_action, _get_observations 与上一版本相同，并已包含 num_dof 修正) ...
++    def _resolve_toe_joint_indices(self): # 已包含 num_dof 修正
+         self._toe_joint_indices: Optional[torch.Tensor] = None
+         expr_or_list = getattr(self.cfg, 'toe_joint_names_expr', None)
+-        if self.cfg.rew_scale_toe_orientation_penalty == 0.0 or not expr_or_list:
+-            return
+-
+-        num_dof_val = self._q_lower_limits.numel() # 使用 _q_lower_limits 获取 DoF 数量
++        if self.cfg.rew_scale_toe_orientation_penalty == 0.0 or not expr_or_list: return
++        num_dof_val = self._q_lower_limits.numel() 
+         joint_names_list_for_logging = []
+-
+         if isinstance(expr_or_list, str):
+             joint_indices_list, joint_names_list_for_logging = self.robot.find_joints(expr_or_list)
+-            if joint_indices_list:
+-                self._toe_joint_indices = torch.tensor(joint_indices_list, device=self.device, dtype=torch.long)
++            if joint_indices_list: self._toe_joint_indices = torch.tensor(joint_indices_list, device=self.device, dtype=torch.long)
+         elif isinstance(expr_or_list, list) and all(isinstance(i, int) for i in expr_or_list):
+             if expr_or_list:
+                 temp_indices = torch.tensor(expr_or_list, device=self.device, dtype=torch.long)
+-                if torch.any(temp_indices < 0) or torch.any(temp_indices >= num_dof_val): # 使用 num_dof_val
+-                    print(f"[ERROR] SixfeetEnv: Invalid toe joint indices in list: {expr_or_list}. Max allowable index: {num_dof_val - 1}")
+-                    self._toe_joint_indices = None
+-                else:
+-                    self._toe_joint_indices = temp_indices
+-        elif expr_or_list is not None:
+-            print(f"[WARNING] SixfeetEnv: 'toe_joint_names_expr' ('{expr_or_list}') in cfg has invalid type: {type(expr_or_list)}. Expected str or list[int].")
+-
++                if torch.any(temp_indices < 0) or torch.any(temp_indices >= num_dof_val):
++                    print(f"[ERROR] SixfeetEnv: Invalid toe joint indices in list: {expr_or_list}. Max allowable index: {num_dof_val - 1}"); self._toe_joint_indices = None
++                else: self._toe_joint_indices = temp_indices
++        elif expr_or_list is not None: print(f"[WARNING] SixfeetEnv: 'toe_joint_names_expr' ('{expr_or_list}') invalid type.")
+         if self._toe_joint_indices is not None:
+-            if self._toe_joint_indices.numel() == 0:
+-                self._toe_joint_indices = None
+-            elif torch.any(self._toe_joint_indices < 0) or torch.any(self._toe_joint_indices >= num_dof_val): # 使用 num_dof_val
+-                print(f"[ERROR] SixfeetEnv: Invalid toe joint indices after processing: {self._toe_joint_indices.tolist()}. Max allowable index: {num_dof_val - 1}")
+-                self._toe_joint_indices = None
+-            else:
+-                log_msg = f"[INFO] SixfeetEnv: Validated toe joint indices for penalty: {self._toe_joint_indices.tolist()}"
+-                if joint_names_list_for_logging:
+-                    log_msg += f", names: {joint_names_list_for_logging}"
++            if self._toe_joint_indices.numel() == 0: self._toe_joint_indices = None
++            elif torch.any(self._toe_joint_indices < 0) or torch.any(self._toe_joint_indices >= num_dof_val):
++                print(f"[ERROR] SixfeetEnv: Invalid toe joint indices after processing: {self._toe_joint_indices.tolist()}. Max: {num_dof_val - 1}"); self._toe_joint_indices = None
++            else: 
++                log_msg = f"[INFO] SixfeetEnv: Validated toe joint indices: {self._toe_joint_indices.tolist()}"
++                if joint_names_list_for_logging: log_msg += f", names: {joint_names_list_for_logging}"
+                 print(log_msg)
+-        
+-        if self._toe_joint_indices is None and expr_or_list is not None:
+-             print(f"[WARNING] SixfeetEnv: No valid toe joint indices resolved from '{expr_or_list}'. Toe orientation penalty might not apply effectively.")
+-        elif self._toe_joint_indices is None and expr_or_list is None and self.cfg.rew_scale_toe_orientation_penalty != 0.0:
+-             print(f"[INFO] SixfeetEnv: 'toe_joint_names_expr' not specified, but toe penalty > 0. Toe orientation penalty will not be applied.")
++        if self._toe_joint_indices is None and expr_or_list is not None: print(f"[WARNING] SixfeetEnv: No valid toe joint indices from '{expr_or_list}'.")
++        elif self._toe_joint_indices is None and expr_or_list is None and self.cfg.rew_scale_toe_orientation_penalty != 0.0: print(f"[INFO] SixfeetEnv: Toe penalty active but no expr.")
+ 
+     def _setup_scene(self): # 与你提供的版本一致
+-        self.robot = Articulation(self.cfg.robot)
+-        self.scene.articulations["robot"] = self.robot
+-        self._contact_sensor = ContactSensor(self.cfg.contact_sensor)
+-        self.scene.sensors["contact_sensor"] = self._contact_sensor
++        self.robot = Articulation(self.cfg.robot); self.scene.articulations["robot"] = self.robot
++        self._contact_sensor = ContactSensor(self.cfg.contact_sensor); self.scene.sensors["contact_sensor"] = self._contact_sensor
+         if hasattr(self.cfg, "terrain") and self.cfg.terrain is not None:
+-            if hasattr(self.scene, "cfg"):
+-                self.cfg.terrain.num_envs = self.scene.cfg.num_envs
+-                self.cfg.terrain.env_spacing = self.scene.cfg.env_spacing
++            if hasattr(self.scene, "cfg"): self.cfg.terrain.num_envs = self.scene.cfg.num_envs; self.cfg.terrain.env_spacing = self.scene.cfg.env_spacing
+             terrain_class_path = getattr(self.cfg.terrain, "class_type", None)
+             if isinstance(terrain_class_path, str):
+-                try:
+-                    module_path, class_name = terrain_class_path.rsplit('.', 1)
+-                    module = __import__(module_path, fromlist=[class_name])
+-                    terrain_class = getattr(module, class_name)
+-                except Exception as e:
+-                    print(f"[ERROR] Failed to import terrain class {terrain_class_path}: {e}")
+-                    from isaaclab.terrains import TerrainImporter
+-                    terrain_class = TerrainImporter
+-            elif terrain_class_path is None:
+-                from isaaclab.terrains import TerrainImporter
+-                terrain_class = TerrainImporter
+-            else:
+-                terrain_class = terrain_class_path
++                try: module_path, class_name = terrain_class_path.rsplit('.', 1); module = __import__(module_path, fromlist=[class_name]); terrain_class = getattr(module, class_name)
++                except Exception as e: print(f"[ERROR] Failed to import terrain class {terrain_class_path}: {e}"); from isaaclab.terrains import TerrainImporter; terrain_class = TerrainImporter
++            elif terrain_class_path is None: from isaaclab.terrains import TerrainImporter; terrain_class = TerrainImporter
++            else: terrain_class = terrain_class_path
+             self._terrain = terrain_class(self.cfg.terrain)
+         else:
+-            print("[WARNING] SixfeetEnv: No terrain configuration. Spawning default plane.")
+-            from isaaclab.sim.spawners.from_files import GroundPlaneCfg, spawn_ground_plane
+-            spawn_ground_plane("/World/ground", GroundPlaneCfg())
+-            class DummyTerrain:
++            print("[WARNING] SixfeetEnv: No terrain cfg. Spawning default plane."); from isaaclab.sim.spawners.from_files import GroundPlaneCfg, spawn_ground_plane; spawn_ground_plane("/World/ground", GroundPlaneCfg())
++            class DummyTerrain: 
+                 def __init__(self, num_envs, device): self.env_origins = torch.zeros((num_envs, 3), device=device)
+             self._terrain = DummyTerrain(self.cfg.scene.num_envs, self.device)
+-        light_cfg = sim_utils.DomeLightCfg(intensity=2000.0, color=(0.75, 0.75, 0.75))
+-        light_cfg.func("/World/Light", light_cfg)
++        light_cfg = sim_utils.DomeLightCfg(intensity=2000.0, color=(0.75,0.75,0.75)); light_cfg.func("/World/Light", light_cfg)
+         self.scene.clone_environments(copy_from_source=False)
+ 
+     def _update_commands(self, env_ids: torch.Tensor): # 与你提供的版本一致
+         self._time_since_last_command_change[env_ids] += self.physics_dt
+-        cmd_duration_str = str(self.cfg.command_profile.get("command_mode_duration_s", "20.0"))
+-        if cmd_duration_str == "episode_length_s":
+-            cmd_duration = self.cfg.episode_length_s
++        cmd_profile = self.cfg.command_profile
++        cmd_duration_s_config = cmd_profile.get("command_mode_duration_s", self.cfg.episode_length_s)
++        if isinstance(cmd_duration_s_config, str) and cmd_duration_s_config == "episode_length_s": cmd_duration = self.cfg.episode_length_s
+         else:
+-            cmd_duration = float(cmd_duration_str)
+-
+-        stand_still_prob = self.cfg.command_profile.get("stand_still_prob", 0.0)
+-        num_cmd_modes = self.cfg.command_profile.get("num_command_modes", 1)
++            try: cmd_duration = float(cmd_duration_s_config)
++            except ValueError: cmd_duration = self.cfg.episode_length_s
++        stand_still_prob = cmd_profile.get("stand_still_prob", 0.0); num_cmd_modes = cmd_profile.get("num_command_modes", 1)
+         change_command_mask = self._time_since_last_command_change[env_ids] >= cmd_duration
+         envs_to_change = env_ids[change_command_mask]
+         if envs_to_change.numel() > 0:
+-            self._time_since_last_command_change[envs_to_change] = 0.0
+-            num_to_change = envs_to_change.shape[0]
++            self._time_since_last_command_change[envs_to_change] = 0.0; num_to_change = envs_to_change.shape[0]
+             new_commands_for_changed_envs = torch.zeros(num_to_change, 3, device=self.device, dtype=torch.float)
+-            if stand_still_prob == 1.0:
+-                command_modes = torch.zeros(num_to_change, device=self.device, dtype=torch.long)
++            if stand_still_prob == 1.0: command_modes = torch.zeros(num_to_change, device=self.device, dtype=torch.long)
+             elif num_cmd_modes > 0:
+                 command_modes = torch.randint(0, num_cmd_modes, (num_to_change,), device=self.device)
+-                if stand_still_prob > 0.0 and stand_still_prob < 1.0:
+-                    stand_mask = torch.rand(num_to_change, device=self.device) < stand_still_prob
+-                    command_modes[stand_mask] = 0
+-            else:
+-                command_modes = torch.zeros(num_to_change, device=self.device, dtype=torch.long)
+-            new_commands_for_changed_envs[command_modes == 1, 0] = 1.0
+-            new_commands_for_changed_envs[command_modes == 2, 0] = -1.0
+-            new_commands_for_changed_envs[command_modes == 3, 1] = -1.0
+-            new_commands_for_changed_envs[command_modes == 4, 1] = 1.0
+-            new_commands_for_changed_envs[command_modes == 5, 2] = -1.0
+-            new_commands_for_changed_envs[command_modes == 6, 2] = 1.0
++                if stand_still_prob > 0.0 and stand_still_prob < 1.0: stand_mask = torch.rand(num_to_change, device=self.device) < stand_still_prob; command_modes[stand_mask] = 0
++            else: command_modes = torch.zeros(num_to_change, device=self.device, dtype=torch.long)
++            new_commands_for_changed_envs[command_modes == 1, 0] = 1.0; new_commands_for_changed_envs[command_modes == 2, 0] = -1.0
++            new_commands_for_changed_envs[command_modes == 3, 1] = -1.0; new_commands_for_changed_envs[command_modes == 4, 1] = 1.0
++            new_commands_for_changed_envs[command_modes == 5, 2] = -1.0; new_commands_for_changed_envs[command_modes == 6, 2] = 1.0
+             self._commands[envs_to_change] = new_commands_for_changed_envs
+ 
+     def _pre_physics_step(self, actions: torch.Tensor): # 与你提供的版本一致
+         self._policy_actions = actions.clone().to(self.device)
+-        if torch.any(torch.isnan(actions)) or torch.any(torch.isinf(actions)):
+-            print(f"[WARNING] Invalid actions detected: {actions}")
+-            actions = torch.zeros_like(actions)
+-        cur_pos = self.robot.data.joint_pos
+-        self._processed_actions = cur_pos + self.cfg.action_scale * self._policy_actions
+-        self._processed_actions = torch.clamp(
+-            self._processed_actions,
+-            self._q_lower_limits.unsqueeze(0),
+-            self._q_upper_limits.unsqueeze(0)
+-        )
+-        all_env_ids = torch.arange(self.num_envs, device=self.device, dtype=torch.long)
+-        self._update_commands(all_env_ids)
++        if torch.any(torch.isnan(actions)) or torch.any(torch.isinf(actions)): print(f"[WARNING] Invalid actions: {actions}"); actions = torch.zeros_like(actions)
++        cur_pos = self.robot.data.joint_pos; self._processed_actions = cur_pos + self.cfg.action_scale * self._policy_actions
++        self._processed_actions = torch.clamp(self._processed_actions, self._q_lower_limits.unsqueeze(0), self._q_upper_limits.unsqueeze(0))
++        all_env_ids = torch.arange(self.num_envs, device=self.device, dtype=torch.long); self._update_commands(all_env_ids)
+ 
+-    def _apply_action(self): # 与你提供的版本一致
+-        self.robot.set_joint_position_target(self._processed_actions)
++    def _apply_action(self): self.robot.set_joint_position_target(self._processed_actions) # 与你提供的版本一致
+ 
+     def _get_observations(self) -> dict: # 与你提供的版本一致
+         self._previous_policy_actions = self._policy_actions.clone()
+         default_pos_expanded = self._default_joint_pos.unsqueeze(0) if self._default_joint_pos.ndim == 1 else self._default_joint_pos
+         joint_pos_rel = self.robot.data.joint_pos - default_pos_expanded
+-        obs_list = [
+-            self.robot.data.projected_gravity_b,
+-            self.robot.data.root_ang_vel_b,
+-            self._commands,
+-            normalize_angle_for_obs(joint_pos_rel),
+-            self.robot.data.joint_vel,
+-        ]
++        obs_list = [self.robot.data.projected_gravity_b, self.robot.data.root_ang_vel_b, self._commands, normalize_angle_for_obs(joint_pos_rel), self.robot.data.joint_vel]
+         observations_tensor = torch.cat(obs_list, dim=-1)
+-        if hasattr(self.cfg, "observation_space") and observations_tensor.shape[1] != self.cfg.observation_space:
+-            print(f"[ERROR] SixfeetEnv: Obs dim mismatch! Expected {self.cfg.observation_space}, got {observations_tensor.shape[1]}")
++        if hasattr(self.cfg, "observation_space") and observations_tensor.shape[1] != self.cfg.observation_space: print(f"[ERROR] Obs dim mismatch! Exp {self.cfg.observation_space}, got {observations_tensor.shape[1]}")
+         return {"policy": observations_tensor}
+ 
+-    def _get_rewards(self) -> torch.Tensor:
+-        root_lin_vel_b = self.robot.data.root_lin_vel_b
+-        root_ang_vel_b = self.robot.data.root_ang_vel_b
++
++    def _get_rewards(self) -> torch.Tensor: # 传递新的CFG参数
++        # ... (获取状态的逻辑与上一版本相同) ...
++        root_lin_vel_b = self.robot.data.root_lin_vel_b; root_ang_vel_b = self.robot.data.root_ang_vel_b
+         projected_gravity_b = self.robot.data.projected_gravity_b
+         default_pos_expanded = self._default_joint_pos.unsqueeze(0) if self._default_joint_pos.ndim == 1 else self._default_joint_pos
+         joint_pos_rel = self.robot.data.joint_pos - default_pos_expanded
+-        current_joint_pos_abs = self.robot.data.joint_pos
+-        joint_vel = self.robot.data.joint_vel
+-        applied_torque = self.robot.data.applied_torque
+-        joint_acc = getattr(self.robot.data, "joint_acc", torch.zeros_like(joint_vel, device=self.device))
++        current_joint_pos_abs = self.robot.data.joint_pos; joint_vel = self.robot.data.joint_vel
++        applied_torque = self.robot.data.applied_torque; joint_acc = getattr(self.robot.data, "joint_acc", torch.zeros_like(joint_vel, device=self.device))
+         root_pos_w = self.robot.data.root_pos_w
+-
+         undesired_contacts_active = torch.zeros(self.num_envs, device=self.device, dtype=torch.bool)
+         if self.cfg.rew_scale_undesired_contact != 0.0 and self._undesired_contact_body_ids and len(self._undesired_contact_body_ids) > 0:
+              if hasattr(self._contact_sensor.data, 'net_forces_w_history') and self._contact_sensor.data.net_forces_w_history is not None:
+-                all_forces_history = self._contact_sensor.data.net_forces_w_history
+-                if all_forces_history.ndim == 4 and all_forces_history.shape[1] > 0 and \
+-                   self._undesired_contact_body_ids and max(self._undesired_contact_body_ids) < all_forces_history.shape[2]: # 安全检查
+-                    current_net_forces_w = all_forces_history[:, -1, :, :]
+-                    forces_on_undesired_bodies = current_net_forces_w[:, self._undesired_contact_body_ids, :]
+-                    force_magnitudes = torch.norm(forces_on_undesired_bodies, dim=-1)
+-                    undesired_contacts_active = torch.any(force_magnitudes > 1.0, dim=1)
++                all_forces = self._contact_sensor.data.net_forces_w_history
++                if all_forces.ndim == 4 and all_forces.shape[1] > 0 and self._undesired_contact_body_ids and max(self._undesired_contact_body_ids) < all_forces.shape[2]:
++                    forces = all_forces[:, -1, self._undesired_contact_body_ids, :]; undesired_contacts_active = torch.any(torch.norm(forces, dim=-1) > 1.0, dim=1)
++        
+         
++        num_self_collisions_per_env = torch.zeros(self.num_envs, device=self.device, dtype=torch.long)
++        contact_data = self._contact_sensor.data
++        
++
++        if hasattr(contact_data, 'body_indices_in_contact_buffer') and \
++           contact_data.body_indices_in_contact_buffer is not None and \
++           hasattr(self.robot.data, 'body_indices') and \
++           self.robot.data.body_indices is not None:
++            
++            contact_pairs_global_indices = contact_data.body_indices_in_contact_buffer # Shape: (num_envs, max_contacts, 2)
++            robot_global_body_indices = self.robot.data.body_indices # Shape: (num_envs, num_robot_bodies)
++
++            if robot_global_body_indices.numel() > 0 and contact_pairs_global_indices.numel() > 0:
++                num_envs_contact, max_contacts_per_env, _ = contact_pairs_global_indices.shape
++                num_envs_robot, num_robot_bodies = robot_global_body_indices.shape
++
++                if num_envs_contact == self.num_envs and num_envs_robot == self.num_envs:
++                    # 将机器人身体索引用来对比
++                    # robot_indices_expanded shape: (num_envs, 1, num_robot_bodies)
++                    robot_indices_expanded = robot_global_body_indices.unsqueeze(1)
++
++                    # 提取接触对中的 body0 和 body1 的全局索引
++                    # body0_global_idx_pairs shape: (num_envs, max_contacts, 1)
++                    body0_global_idx_pairs = contact_pairs_global_indices[..., 0].unsqueeze(-1)
++                    body1_global_idx_pairs = contact_pairs_global_indices[..., 1].unsqueeze(-1)
++
++                    # 检查接触对的 body0 和 body1 是否属于机器人
++                    # is_body0_robot_contact shape: (num_envs, max_contacts)
++                    is_body0_robot_contact = torch.any(body0_global_idx_pairs == robot_indices_expanded, dim=2)
++                    is_body1_robot_contact = torch.any(body1_global_idx_pairs == robot_indices_expanded, dim=2)
++                    
++                    # 如果接触对中的两个物体都属于机器人，则认为是自碰撞
++                    is_self_collision_pair = is_body0_robot_contact & is_body1_robot_contact
++                    
++                    # 过滤掉无效的接触对 (通常索引为-1的是无效或padding)
++                    # 并且确保两个碰撞体不相同 (虽然传感器通常不会报告同一个物体的接触，但加上更保险)
++                    valid_contact_indices = (contact_pairs_global_indices[..., 0] != -1) & \
++                                            (contact_pairs_global_indices[..., 1] != -1) & \
++                                            (contact_pairs_global_indices[..., 0] != contact_pairs_global_indices[..., 1])
++
++                    # 使用 num_contacts_in_buffer 来确定每个环境中实际有效的接触数量
++                    if hasattr(contact_data, 'num_contacts_in_buffer') and contact_data.num_contacts_in_buffer is not None:
++                        # valid_contact_mask_sensor shape: (num_envs, max_contacts_per_env)
++                        valid_contact_mask_sensor = torch.arange(max_contacts_per_env, device=self.device).unsqueeze(0) < contact_data.num_contacts_in_buffer.unsqueeze(1)
++                        is_self_collision_pair_valid = is_self_collision_pair & valid_contact_mask_sensor & valid_contact_indices
++                    else: 
++                        # 如果没有 num_contacts_in_buffer, 则假设所有非-1的都是有效接触 (这不太可能发生，通常ContactSensorData都有num_contacts_in_buffer)
++                        print("[WARNING] ContactSensorData does not have 'num_contacts_in_buffer'. Self-collision check might be less accurate.")
++                        is_self_collision_pair_valid = is_self_collision_pair & valid_contact_indices
++
++                    num_self_collisions_per_env = torch.sum(is_self_collision_pair_valid, dim=1)
++        # else:
++            # print_once("[WARNING] Could not calculate self-collisions due to missing contact_data.body_indices_in_contact_buffer or robot.data.body_indices.")
++
+         total_reward, reward_terms_dict = compute_sixfeet_rewards_directional(
+-            root_lin_vel_b, root_ang_vel_b, projected_gravity_b,
+-            joint_pos_rel, joint_vel, applied_torque, joint_acc,
+-            self._q_lower_limits, self._q_upper_limits, current_joint_pos_abs,
+-            self._policy_actions, self._previous_policy_actions,
+-            root_pos_w, undesired_contacts_active, self._commands,
+-            self.cfg.command_profile,
++            root_lin_vel_b, root_ang_vel_b, projected_gravity_b, joint_pos_rel, joint_vel, applied_torque, joint_acc,
++            self._q_lower_limits, self._q_upper_limits, current_joint_pos_abs, self._policy_actions, self._previous_policy_actions,
++            root_pos_w, undesired_contacts_active, self._commands, self.cfg.command_profile,
+             self.cfg.rew_scale_move_in_commanded_direction, self.cfg.rew_scale_achieve_reference_angular_rate,
+             self.cfg.rew_scale_alive, self.cfg.rew_scale_target_height, self.cfg.target_height_m,
+-            self.cfg.rew_scale_action_cost, self.cfg.rew_scale_action_rate,
+-            self.cfg.rew_scale_joint_torques, self.cfg.rew_scale_joint_accel,
+-            self.cfg.rew_scale_lin_vel_z_penalty, self.cfg.rew_scale_ang_vel_xy_penalty,
+-            self.cfg.rew_scale_flat_orientation, self.cfg.rew_scale_unwanted_movement_penalty,
+-            self.cfg.rew_scale_dof_at_limit, self.cfg.rew_scale_toe_orientation_penalty, self._toe_joint_indices,
+-            self.cfg.rew_scale_low_height_penalty, self.cfg.min_height_penalty_threshold,
+-            self.cfg.rew_scale_undesired_contact, 
+-            self.sim.cfg.dt, # 从 self.sim.cfg.dt 获取
+-            # --- 新增参数传递 ---
+-            cfg_rew_scale_orientation_deviation=self.cfg.rew_scale_orientation_deviation
++            self.cfg.rew_scale_action_cost, self.cfg.rew_scale_action_rate, self.cfg.rew_scale_joint_torques, self.cfg.rew_scale_joint_accel,
++            self.cfg.rew_scale_lin_vel_z_penalty, self.cfg.rew_scale_ang_vel_xy_penalty, self.cfg.rew_scale_flat_orientation,
++            self.cfg.rew_scale_unwanted_movement_penalty, self.cfg.rew_scale_dof_at_limit, self.cfg.rew_scale_toe_orientation_penalty,
++            self._toe_joint_indices, self.cfg.rew_scale_low_height_penalty, self.cfg.min_height_penalty_threshold,
++            self.cfg.rew_scale_undesired_contact, self.sim.cfg.dt,
++            self.cfg.rew_scale_orientation_deviation,
++            # --- 传递新的CFG参数给奖励计算函数 ---
++            self._orientation_termination_angle_limit_rad, # 从 __init__ 中获取
++            self.cfg.joint_limit_penalty_threshold_percent, # 从 cfg 中获取
++            num_self_collisions=num_self_collisions_per_env,
++            cfg_rew_scale_self_collision=self.cfg.rew_scale_self_collision,
+         )
+ 
++
++
++        # print("--- Attributes and methods of self.robot.data ---")
++        # print(dir(self.robot.data))
++        # ... (日志记录和返回与上一版本相同) ...
+         if "log" not in self.extras or self.extras["log"] is None : self.extras["log"] = {}
+-        for key, value in reward_terms_dict.items():
++        for key, value in reward_terms_dict.items(): # reward_terms_dict 现在包含了 "self_collision_penalty"
+             term_mean = value.mean()
+             self.extras["log"][f"reward_term/{key}_step_avg"] = term_mean.item() if torch.is_tensor(term_mean) else term_mean
+             if key not in self._episode_reward_terms_sum:
+                 self._episode_reward_terms_sum[key] = torch.zeros(self.num_envs, device=self.device)
+             self._episode_reward_terms_sum[key] += value.squeeze(-1) if value.ndim > 1 and value.shape[-1] == 1 else value
+-
++        
+         current_terminated, current_time_out = self._get_dones()
+         just_failed_termination = current_terminated & (~current_time_out)
+         final_reward = torch.where(
+@@ -443,48 +438,37 @@ class SixfeetEnv(DirectRLEnv):
+         self.extras["log"]["reward/final_reward_avg"] = final_reward.mean().item() if torch.is_tensor(final_reward) else final_reward.mean()
+         return final_reward
+ 
+-    def _get_dones(self) -> tuple[torch.Tensor, torch.Tensor]:
++    def _get_dones(self) -> tuple[torch.Tensor, torch.Tensor]: # 已包含新的条件化终止逻辑
+         time_out = self.episode_length_buf >= self.max_episode_length - 1
+-        
+         root_pos_w = self.robot.data.root_pos_w
+         projected_gravity_b = self.robot.data.projected_gravity_b
+-
+-        is_severely_tilted = projected_gravity_b[:, 2] > 0.0
++        cos_angle_robot_z_with_world_z = -projected_gravity_b[:, 2]
++        is_within_termination_orientation_limit = cos_angle_robot_z_with_world_z >= math.cos(self._orientation_termination_angle_limit_rad)
+ 
+         height_too_low_orig = root_pos_w[:, 2] < self.cfg.termination_height_thresh
+-        height_too_low = torch.where(
+-            is_severely_tilted, 
+-            torch.zeros_like(height_too_low_orig, dtype=torch.bool), # 确保是布尔类型
+-            height_too_low_orig
+-        )
++        height_too_low = height_too_low_orig & is_within_termination_orientation_limit
+         
+         fallen_over_orig = projected_gravity_b[:, 2] > self.cfg.termination_body_z_thresh
+-        fallen_over = torch.where(
+-            is_severely_tilted,
+-            torch.zeros_like(fallen_over_orig, dtype=torch.bool), # 确保是布尔类型
+-            fallen_over_orig
+-        )
+-
++        fallen_over = fallen_over_orig & is_within_termination_orientation_limit
++        
+         base_contact_termination = torch.zeros_like(time_out, dtype=torch.bool)
+-        if self.cfg.termination_base_contact and self._base_body_id and len(self._base_body_id) > 0:
+-             if hasattr(self._contact_sensor.data, 'net_forces_w_history') and self._contact_sensor.data.net_forces_w_history is not None:
+-                all_forces_history = self._contact_sensor.data.net_forces_w_history
+-                if all_forces_history.ndim == 4 and all_forces_history.shape[1] > 0 and \
+-                   self._base_body_id and max(self._base_body_id) < all_forces_history.shape[2]: # 安全检查
+-                    current_net_forces_w = all_forces_history[:, -1, :, :]
+-                    forces_on_base = current_net_forces_w[:, self._base_body_id, :]
+-                    force_magnitudes_base = torch.norm(forces_on_base, dim=-1)
+-                    base_contact_termination = torch.any(force_magnitudes_base > 1.0, dim=1)
++        if self.cfg.termination_base_contact: # 现在CFG中此值为True
++            base_contact_orig = torch.zeros_like(time_out, dtype=torch.bool)
++            if self._base_body_id and len(self._base_body_id) > 0:
++                if hasattr(self._contact_sensor.data, 'net_forces_w_history') and self._contact_sensor.data.net_forces_w_history is not None:
++                    all_forces = self._contact_sensor.data.net_forces_w_history
++                    if all_forces.ndim == 4 and all_forces.shape[1] > 0 and self._base_body_id and max(self._base_body_id) < all_forces.shape[2]:
++                        forces = all_forces[:, -1, self._base_body_id, :]; base_contact_orig = torch.any(torch.norm(forces, dim=-1) > 1.0, dim=1)
++            base_contact_termination = base_contact_orig & is_within_termination_orientation_limit
+             
+-        terminated = height_too_low | fallen_over | base_contact_termination
++        terminated = height_too_low | fallen_over | base_contact_termination | time_out
+         return terminated, time_out
+     
+-    def _reset_idx(self, env_ids: Sequence[int] | None):
++    def _reset_idx(self, env_ids: Sequence[int] | None): # 与上一版本相同 (包含num_dof和RPY修正, 以及q_range修正)
+         super()._reset_idx(env_ids)
+         eids = torch.arange(self.num_envs, device=self.device, dtype=torch.long) if env_ids is None \
+             else torch.as_tensor(env_ids, device=self.device, dtype=torch.long)
+-        if eids.numel() == 0:
+-            return
++        if eids.numel() == 0: return
+ 
+         root_state_reset = self.robot.data.default_root_state[eids].clone()
+         if hasattr(self._terrain, 'env_origins') and self._terrain.env_origins is not None:
+@@ -493,59 +477,40 @@ class SixfeetEnv(DirectRLEnv):
+         initial_height_base = self.cfg.robot.init_state.pos[2] if self.cfg.robot.init_state.pos is not None and len(self.cfg.robot.init_state.pos) == 3 else 0.3
+         root_state_reset[:, 2] = initial_height_base + self.cfg.reset_height_offset
+ 
+-        # --- Full RPY Randomization ---
+         num_resets = len(eids)
+         random_rolls = (torch.rand(num_resets, device=self.device) - 0.5) * 2.0 * math.pi
+         random_pitches = (torch.rand(num_resets, device=self.device) - 0.5) * 2.0 * math.pi
+         random_yaws = (torch.rand(num_resets, device=self.device) - 0.5) * 2.0 * math.pi
+-
+         quats_xyzw = torch.zeros(num_resets, 4, device=self.device)
+         for i in range(num_resets):
+             roll, pitch, yaw = random_rolls[i], random_pitches[i], random_yaws[i]
+-            cy = torch.cos(yaw * 0.5)
+-            sy = torch.sin(yaw * 0.5)
+-            cp = torch.cos(pitch * 0.5)
+-            sp = torch.sin(pitch * 0.5)
+-            cr = torch.cos(roll * 0.5)
+-            sr = torch.sin(roll * 0.5)
+-            # Standard ZYX Euler to Quaternion conversion (qx, qy, qz, qw)
+-            qw = cr * cp * cy + sr * sp * sy
+-            qx = sr * cp * cy - cr * sp * sy
+-            qy = cr * sp * cy + sr * cp * sy
+-            qz = cr * cp * sy - sr * sp * cy
+-            quats_xyzw[i, 0] = qx
+-            quats_xyzw[i, 1] = qy
+-            quats_xyzw[i, 2] = qz
+-            quats_xyzw[i, 3] = qw 
+-        root_state_reset[:, 3:7] = convert_quat(quats_xyzw, to="wxyz") # Isaac Sim uses wxyz for root state
+-        # --- End RPY Randomization ---
+-        
++            cy, sy = torch.cos(yaw * 0.5), torch.sin(yaw * 0.5)
++            cp, sp = torch.cos(pitch * 0.5), torch.sin(pitch * 0.5)
++            cr, sr = torch.cos(roll * 0.5), torch.sin(roll * 0.5)
++            qw = cr * cp * cy + sr * sp * sy; qx = sr * cp * cy - cr * sp * sy
++            qy = cr * sp * cy + sr * cp * sy; qz = cr * cp * sy - sr * sp * cy
++            quats_xyzw[i, 0], quats_xyzw[i, 1], quats_xyzw[i, 2], quats_xyzw[i, 3] = qx, qy, qz, qw
++        root_state_reset[:, 3:7] = convert_quat(quats_xyzw, to="wxyz")
+         root_state_reset[:, 7:] = 0.0
+         self.robot.write_root_state_to_sim(root_state_reset, eids)
+         
+-        # --- Joint state reset (in joint limits fully random) ---
+-        num_dof = self._q_lower_limits.numel() # CORRECTED
+-        
++        num_dof = self._q_lower_limits.numel()
+         random_proportions = torch.rand(len(eids), num_dof, device=self.device)
+         q_lower_expanded = self._q_lower_limits.unsqueeze(0)
+-        q_upper_expanded = self._q_upper_limits.unsqueeze(0)
+-        q_range = q_upper_expanded - q_lower_expanded
++        q_range = self._q_upper_limits.unsqueeze(0) - q_lower_expanded # Corrected
+         joint_pos_reset = q_lower_expanded + random_proportions * q_range
+-        
+         zero_joint_vel = torch.zeros_like(joint_pos_reset)
+         self.robot.write_joint_state_to_sim(joint_pos_reset, zero_joint_vel, env_ids=eids)
+         self.robot.set_joint_position_target(joint_pos_reset, env_ids=eids)
+ 
+         cmd_profile = self.cfg.command_profile
+-        cmd_duration_str = str(cmd_profile.get("command_mode_duration_s", "20.0"))
+-        if cmd_duration_str == "episode_length_s":
+-            cmd_duration = self.cfg.episode_length_s
++        cmd_duration_s_config = cmd_profile.get("command_mode_duration_s", self.cfg.episode_length_s)
++        if isinstance(cmd_duration_s_config, str) and cmd_duration_s_config == "episode_length_s": cmd_duration = self.cfg.episode_length_s
+         else:
+-            cmd_duration = float(cmd_duration_str)
+-            
++            try: cmd_duration = float(cmd_duration_s_config)
++            except ValueError: cmd_duration = self.cfg.episode_length_s
+         self._time_since_last_command_change[eids] = cmd_duration
+         self._update_commands(eids)
+-
+         if hasattr(self, '_previous_policy_actions'): self._previous_policy_actions[eids] = 0.0
+         if hasattr(self, '_policy_actions'): self._policy_actions[eids] = 0.0
+         for key in list(self._episode_reward_terms_sum.keys()):
+diff --git a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+index d2dfc32..2ca21d1 100644
+--- a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
++++ b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+@@ -131,51 +131,44 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
+ 
+     # -------- 奖励缩放因子 --------
+     action_scale: float = 0.5
+-
+-    # --- 主要的正向激励 (站立) ---
+     rew_scale_move_in_commanded_direction: float = 0.0
+     rew_scale_achieve_reference_angular_rate: float = 0.0
+     rew_scale_alive: float = +0.1
+-    rew_scale_target_height: float = +8.0
+-    target_height_m: float = 0.20
++    rew_scale_target_height: float = +20.0 # 将在 env.py 中条件化
++    target_height_m: float = 0.23        # 你的 "Focus on Standing Up" cfg 中 target_height_m 为 0.20，这里用了你新cfg中的0.23
+ 
+-    # --- 新增：大的姿态偏差惩罚 (用于学习翻转) ---
+-    # 这个惩罚项会因为机器人Z轴与世界Z轴的夹角增大而增大 (0到pi)
+-    # scale 应该是负值
+-    rew_scale_orientation_deviation: float = -50.0  # <--- 新增惩罚项，负值，值越大惩罚越重
++    rew_scale_orientation_deviation: float = -50.0
++     # --- 新增：自碰撞惩罚 ---
++    rew_scale_self_collision: float = -30.0  # 一个较大的负值，当发生自碰撞时施加
+ 
+-    # --- 行为平滑与效率相关的惩罚 ---
+     rew_scale_action_cost: float = -0.0001
+     rew_scale_action_rate: float = -0.01
+     rew_scale_joint_torques: float = -1.0e-6
+     rew_scale_joint_accel: float = -1.0e-7
+-
+-    # --- 姿态与运动稳定性相关的惩罚 ---
+     rew_scale_lin_vel_z_penalty: float = -3.0
+     rew_scale_ang_vel_xy_penalty: float = -0.1
+-    rew_scale_flat_orientation: float = -25.0 # 这个是惩罚小的倾斜（身体不水平），与新的 Z 轴偏差惩罚目标不同
++    rew_scale_flat_orientation: float = -25.0
+     rew_scale_unwanted_movement_penalty: float = -5.0
+-
+-    # --- 行为约束相关的惩罚 ---
+     rew_scale_dof_at_limit: float = -0.5
+-    rew_scale_toe_orientation_penalty: float = -4.0 # 条件化生效
++    rew_scale_toe_orientation_penalty: float = -4.0 # 在 env.py 中条件化生效
+     rew_scale_low_height_penalty: float = -30.0
+-    min_height_penalty_threshold: float = 0.12
++    min_height_penalty_threshold: float = 0.12 # 你的 "Focus on Standing Up" cfg 中是 0.15
+ 
+-    # --- 不期望的接触惩罚 ---
+-    rew_scale_undesired_contact: float = -5.0   # 条件化生效
+-
+-    # --- 终止状态相关的惩罚 ---
++    rew_scale_undesired_contact: float = -5.0   # 在 env.py 中条件化生效
+     rew_scale_termination: float = -20.0
+ 
+-    # --- 新增：用于条件化终止的方向角度限制 ---
+-    # 这些终止条件仅在机器人Z轴与世界Z轴的夹角在此限制内时生效
+-    orientation_termination_angle_limit_deg: float = 90.0 # 度, +/- 此值范围
++    # --- 新增：可配置的关节极限惩罚阈值 (百分比) ---
++    joint_limit_penalty_threshold_percent: float = 0.05  # 例如 0.05 代表边缘5%
+ 
+-    # ... (Randomisation 和 Termination 条件保持不变, 但其生效逻辑会在 env.py 中被条件化) ...
++    # -------- 重置随机化 --------
+     root_orientation_yaw_range: float = math.pi
+     reset_height_offset: float = 0.0
++
++    # -------- 终止条件 --------
+     termination_body_z_thresh: float = 0.95
+     termination_height_thresh: float = 0.05
+-    termination_base_contact: bool = False
++    termination_base_contact: bool = True # 已设为 True
++
++    # --- 用于条件化终止的姿态角度限制 (度) ---
++    orientation_termination_angle_limit_deg: float = 90.0
+     
+\ No newline at end of file

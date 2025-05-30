@@ -16,7 +16,7 @@ from isaaclab.sensors import ContactSensorCfg
 class SixfeetEnvCfg(DirectRLEnvCfg):
     # -------- 基本环境配置 --------
     decimation: int = 2
-    episode_length_s: float = 20.0 # 可以适当缩短，如果只学站立
+    episode_length_s: float = 20 # 可以适当缩短，如果只学站立
     action_space: int = 18
 
     # ---- 观测空间定义 ----
@@ -79,7 +79,7 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
             ),
         ),
         init_state=ArticulationCfg.InitialStateCfg(
-            pos=(0.0, 0.0, 0.15), # 初始高度较低，便于学习站起
+            pos=(0.0, 0.0, 0.0001), # 初始高度较低，便于学习站起
             rot=(1.0, 0.0, 0.0, 0.0), # 标准初始姿态 (w,x,y,z)
             # joint_pos 已被注释掉，将在 env.py 的 _reset_idx 中实现完全随机关节初始姿态
             joint_vel={ # 初始关节速度为0
@@ -128,54 +128,55 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
         "stand_still_prob": 1.0,       # 专注于站立
         "num_command_modes": 7
     }
+     # ---初始姿态随机化模式 ---
+    # 模式 1: 完全随机的翻滚(Roll), 俯仰(Pitch), 偏航(Yaw)角度, 包括180度翻转
+    # 模式 0: 特殊初始姿态 - 机器人Z轴与世界Z轴相反 (完全倒置)，Yaw角随机
+    initial_pose_randomization_mode: int = 0
+    randomize_initial_joint_poses: bool = False
+
 
     # -------- 奖励缩放因子 --------
     action_scale: float = 0.5
-
-    # --- 主要的正向激励 (站立) ---
     rew_scale_move_in_commanded_direction: float = 0.0
     rew_scale_achieve_reference_angular_rate: float = 0.0
     rew_scale_alive: float = +0.1
-    rew_scale_target_height: float = +8.0
-    target_height_m: float = 0.20
+    rew_scale_target_height: float = +20.0 # 将在 env.py 中条件化
+    target_height_m: float = 0.15        # 你的 "Focus on Standing Up" cfg 中 target_height_m 为 0.20，这里用了你新cfg中的0.23
+    target_height_reward_sharpness: float = 100.0 #target_height_reward_sharpness: float = 100.0
 
-    # --- 新增：大的姿态偏差惩罚 (用于学习翻转) ---
-    # 这个惩罚项会因为机器人Z轴与世界Z轴的夹角增大而增大 (0到pi)
-    # scale 应该是负值
-    rew_scale_orientation_deviation: float = -50.0  # <--- 新增惩罚项，负值，值越大惩罚越重
-
-    # --- 行为平滑与效率相关的惩罚 ---
+    rew_scale_orientation_deviation: float = -50.0
+     # --- 新增：自碰撞惩罚 ---
+    rew_scale_self_collision: float = -30.0  # 一个较大的负值，当发生自碰撞时施加
+    rew_scale_successful_flip: float = 40.0 # 当从Z轴朝下翻转到Z轴朝上时给予
     rew_scale_action_cost: float = -0.0001
     rew_scale_action_rate: float = -0.01
     rew_scale_joint_torques: float = -1.0e-6
     rew_scale_joint_accel: float = -1.0e-7
-
-    # --- 姿态与运动稳定性相关的惩罚 ---
     rew_scale_lin_vel_z_penalty: float = -3.0
     rew_scale_ang_vel_xy_penalty: float = -0.1
-    rew_scale_flat_orientation: float = -25.0 # 这个是惩罚小的倾斜（身体不水平），与新的 Z 轴偏差惩罚目标不同
+    rew_scale_flat_orientation: float = -25.0
     rew_scale_unwanted_movement_penalty: float = -5.0
-
-    # --- 行为约束相关的惩罚 ---
     rew_scale_dof_at_limit: float = -0.5
-    rew_scale_toe_orientation_penalty: float = -4.0 # 条件化生效
+    rew_scale_toe_orientation_penalty: float = -4.0 # 在 env.py 中条件化生效
     rew_scale_low_height_penalty: float = -30.0
-    min_height_penalty_threshold: float = 0.12
+    min_height_penalty_threshold: float = 0.12 # 你的 "Focus on Standing Up" cfg 中是 0.15
 
-    # --- 不期望的接触惩罚 ---
-    rew_scale_undesired_contact: float = -5.0   # 条件化生效
-
-    # --- 终止状态相关的惩罚 ---
+    rew_scale_undesired_contact: float = -5.0   # 在 env.py 中条件化生效
     rew_scale_termination: float = -20.0
 
-    # --- 新增：用于条件化终止的方向角度限制 ---
-    # 这些终止条件仅在机器人Z轴与世界Z轴的夹角在此限制内时生效
-    orientation_termination_angle_limit_deg: float = 90.0 # 度, +/- 此值范围
+    # --- 新增：可配置的关节极限惩罚阈值 (百分比) ---
+    joint_limit_penalty_threshold_percent: float = 0.05  # 例如 0.05 代表边缘5%
 
-    # ... (Randomisation 和 Termination 条件保持不变, 但其生效逻辑会在 env.py 中被条件化) ...
+    # -------- 重置随机化 --------
     root_orientation_yaw_range: float = math.pi
     reset_height_offset: float = 0.0
+
+    # -------- 终止条件 --------
     termination_body_z_thresh: float = 0.95
-    termination_height_thresh: float = 0.05
-    termination_base_contact: bool = False
+    termination_height_thresh: float = 0.00
+    termination_base_contact: bool = False # 已设为 True
     
+    # --- 用于条件化终止的姿态角度限制 (度) ---
+    orientation_termination_angle_limit_deg: float = 95.0
+     # 值越小，表示要求机器人越平坦。例如 0.1*0.1 = 0.01 (约5.7度倾斜)，0.3*0.3 = 0.09 (约17度倾斜)
+    flatness_threshold_for_height_termination: float = 0.02 # 可调整

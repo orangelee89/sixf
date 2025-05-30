@@ -1,0 +1,39 @@
+--- git status ---
+On branch test1
+Your branch and 'origin/test1' have diverged,
+and have 4 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   sixfeet_src/ckpt/.term_pid
+	modified:   sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_3600.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_4000.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_4400.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_4800.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_5200.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_5600.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_6000.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/model_6400.pt
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_16-35-21/
+	sixfeet_src/ckpt/outputs/2025-05-28/16-35-21/
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/sixfeet_src/ckpt/.term_pid b/sixfeet_src/ckpt/.term_pid
+index 954fb92..de317e6 100644
+--- a/sixfeet_src/ckpt/.term_pid
++++ b/sixfeet_src/ckpt/.term_pid
+@@ -1 +1 @@
+-323281
++335597
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0 b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0
+index 162afd9..fbce5e2 100644
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0 and b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-28_15-56-08/events.out.tfevents.1748472972.TASL-1.323325.0 differ
