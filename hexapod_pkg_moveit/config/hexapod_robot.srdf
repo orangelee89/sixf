@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="hexapod_robot">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="leg1">
+        <chain base_link="base_link" tip_link="foot_link_13"/>
+    </group>
+    <group name="leg2">
+        <chain base_link="base_link" tip_link="foot_link_23"/>
+    </group>
+    <group name="leg3">
+        <chain base_link="base_link" tip_link="foot_link_33"/>
+    </group>
+    <group name="leg4">
+        <chain base_link="base_link" tip_link="foot_link_43"/>
+    </group>
+    <group name="leg5">
+        <chain base_link="base_link" tip_link="foot_link_53"/>
+    </group>
+    <group name="leg6">
+        <chain base_link="base_link" tip_link="foot_link_63"/>
+    </group>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="floating_base_joint" type="floating" parent_frame="world" child_link="base_link"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="base_link" link2="foot_link_23" reason="Never"/>
+    <disable_collisions link1="base_link" link2="foot_link_43" reason="Never"/>
+    <disable_collisions link1="base_link" link2="foot_link_53" reason="Never"/>
+    <disable_collisions link1="base_link" link2="foot_link_63" reason="Never"/>
+    <disable_collisions link1="base_link" link2="thigh_link_11" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="thigh_link_21" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="thigh_link_31" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="thigh_link_41" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="thigh_link_51" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="thigh_link_61" reason="Adjacent"/>
+    <disable_collisions link1="foot_link_13" link2="shin_link_12" reason="Adjacent"/>
+    <disable_collisions link1="foot_link_13" link2="shin_link_32" reason="Never"/>
+    <disable_collisions link1="foot_link_13" link2="thigh_link_11" reason="Never"/>
+    <disable_collisions link1="foot_link_13" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="foot_link_13" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="foot_link_13" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="foot_link_23" link2="foot_link_53" reason="Never"/>
+    <disable_collisions link1="foot_link_23" link2="shin_link_22" reason="Adjacent"/>
+    <disable_collisions link1="foot_link_23" link2="shin_link_42" reason="Never"/>
+    <disable_collisions link1="foot_link_23" link2="shin_link_52" reason="Never"/>
+    <disable_collisions link1="foot_link_23" link2="shin_link_62" reason="Never"/>
+    <disable_collisions link1="foot_link_23" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="foot_link_23" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="foot_link_23" link2="thigh_link_51" reason="Never"/>
+    <disable_collisions link1="foot_link_23" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="foot_link_33" link2="foot_link_43" reason="Never"/>
+    <disable_collisions link1="foot_link_33" link2="shin_link_12" reason="Never"/>
+    <disable_collisions link1="foot_link_33" link2="shin_link_32" reason="Adjacent"/>
+    <disable_collisions link1="foot_link_33" link2="shin_link_42" reason="Never"/>
+    <disable_collisions link1="foot_link_33" link2="thigh_link_11" reason="Never"/>
+    <disable_collisions link1="foot_link_33" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="foot_link_33" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="foot_link_33" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="foot_link_43" link2="foot_link_63" reason="Never"/>
+    <disable_collisions link1="foot_link_43" link2="shin_link_22" reason="Never"/>
+    <disable_collisions link1="foot_link_43" link2="shin_link_32" reason="Never"/>
+    <disable_collisions link1="foot_link_43" link2="shin_link_42" reason="Adjacent"/>
+    <disable_collisions link1="foot_link_43" link2="shin_link_62" reason="Never"/>
+    <disable_collisions link1="foot_link_43" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="foot_link_43" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="foot_link_43" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="foot_link_43" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="foot_link_53" link2="shin_link_12" reason="Never"/>
+    <disable_collisions link1="foot_link_53" link2="shin_link_22" reason="Never"/>
+    <disable_collisions link1="foot_link_53" link2="shin_link_32" reason="Never"/>
+    <disable_collisions link1="foot_link_53" link2="shin_link_52" reason="Adjacent"/>
+    <disable_collisions link1="foot_link_53" link2="thigh_link_11" reason="Never"/>
+    <disable_collisions link1="foot_link_53" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="foot_link_53" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="foot_link_53" link2="thigh_link_51" reason="Never"/>
+    <disable_collisions link1="foot_link_63" link2="shin_link_12" reason="Never"/>
+    <disable_collisions link1="foot_link_63" link2="shin_link_22" reason="Never"/>
+    <disable_collisions link1="foot_link_63" link2="shin_link_42" reason="Never"/>
+    <disable_collisions link1="foot_link_63" link2="shin_link_62" reason="Adjacent"/>
+    <disable_collisions link1="foot_link_63" link2="thigh_link_11" reason="Never"/>
+    <disable_collisions link1="foot_link_63" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="foot_link_63" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="foot_link_63" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="shin_link_12" link2="shin_link_32" reason="Never"/>
+    <disable_collisions link1="shin_link_12" link2="shin_link_62" reason="Never"/>
+    <disable_collisions link1="shin_link_12" link2="thigh_link_11" reason="Adjacent"/>
+    <disable_collisions link1="shin_link_12" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="shin_link_12" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="shin_link_12" link2="thigh_link_51" reason="Never"/>
+    <disable_collisions link1="shin_link_12" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="shin_link_22" link2="shin_link_42" reason="Never"/>
+    <disable_collisions link1="shin_link_22" link2="shin_link_52" reason="Never"/>
+    <disable_collisions link1="shin_link_22" link2="shin_link_62" reason="Never"/>
+    <disable_collisions link1="shin_link_22" link2="thigh_link_21" reason="Adjacent"/>
+    <disable_collisions link1="shin_link_22" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="shin_link_22" link2="thigh_link_51" reason="Never"/>
+    <disable_collisions link1="shin_link_22" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="shin_link_32" link2="shin_link_42" reason="Never"/>
+    <disable_collisions link1="shin_link_32" link2="thigh_link_11" reason="Never"/>
+    <disable_collisions link1="shin_link_32" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="shin_link_32" link2="thigh_link_31" reason="Adjacent"/>
+    <disable_collisions link1="shin_link_32" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="shin_link_32" link2="thigh_link_51" reason="Never"/>
+    <disable_collisions link1="shin_link_42" link2="shin_link_62" reason="Never"/>
+    <disable_collisions link1="shin_link_42" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="shin_link_42" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="shin_link_42" link2="thigh_link_41" reason="Adjacent"/>
+    <disable_collisions link1="shin_link_42" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="shin_link_52" link2="thigh_link_11" reason="Never"/>
+    <disable_collisions link1="shin_link_52" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="shin_link_52" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="shin_link_52" link2="thigh_link_51" reason="Adjacent"/>
+    <disable_collisions link1="shin_link_62" link2="thigh_link_11" reason="Never"/>
+    <disable_collisions link1="shin_link_62" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="shin_link_62" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="shin_link_62" link2="thigh_link_61" reason="Adjacent"/>
+    <disable_collisions link1="thigh_link_11" link2="thigh_link_21" reason="Never"/>
+    <disable_collisions link1="thigh_link_11" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="thigh_link_11" link2="thigh_link_51" reason="Never"/>
+    <disable_collisions link1="thigh_link_11" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="thigh_link_21" link2="thigh_link_31" reason="Never"/>
+    <disable_collisions link1="thigh_link_21" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="thigh_link_21" link2="thigh_link_51" reason="Never"/>
+    <disable_collisions link1="thigh_link_21" link2="thigh_link_61" reason="Never"/>
+    <disable_collisions link1="thigh_link_31" link2="thigh_link_41" reason="Never"/>
+    <disable_collisions link1="thigh_link_31" link2="thigh_link_51" reason="Never"/>
+    <disable_collisions link1="thigh_link_41" link2="thigh_link_61" reason="Never"/>
+</robot>
