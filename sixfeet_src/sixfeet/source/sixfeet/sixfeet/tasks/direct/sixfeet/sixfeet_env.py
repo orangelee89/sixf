@@ -528,16 +528,16 @@ class SixfeetEnv(DirectRLEnv):
             valid_base_contact_trigger = base_contact_raw_detection & (~ignore_initial_fall_contact)
             base_contact_termination = valid_base_contact_trigger & is_within_termination_orientation_limit
         terminated = height_too_low | fallen_over | base_contact_termination | time_out
-        if torch.is_tensor(terminated) and terminated.any():
-            terminated_env_indices = terminated.nonzero(as_tuple=False).squeeze(-1)
-            if terminated_env_indices.ndim == 0: terminated_env_indices = terminated_env_indices.unsqueeze(0)
-            for env_idx_tensor in terminated_env_indices:
-                env_idx = env_idx_tensor.item(); reasons = []
-                if height_too_low[env_idx]: reasons.append("height_too_low(cond_flat)")
-                if fallen_over[env_idx]: reasons.append("fallen_over(cond_orient)")
-                if base_contact_termination[env_idx]: reasons.append("base_contact(cond_orient_time)")
-                if time_out[env_idx]: reasons.append("time_out")
-                if reasons: episode_step = self.episode_length_buf[env_idx].item() + 1; print(f"[Termination Info] Env {env_idx}: Reset at ep step {episode_step} due to: {', '.join(reasons)}")
+        # if torch.is_tensor(terminated) and terminated.any():
+        #     terminated_env_indices = terminated.nonzero(as_tuple=False).squeeze(-1)
+        #     if terminated_env_indices.ndim == 0: terminated_env_indices = terminated_env_indices.unsqueeze(0)
+        #     for env_idx_tensor in terminated_env_indices:
+        #         env_idx = env_idx_tensor.item(); reasons = []
+        #         if height_too_low[env_idx]: reasons.append("height_too_low(cond_flat)")
+        #         if fallen_over[env_idx]: reasons.append("fallen_over(cond_orient)")
+        #         if base_contact_termination[env_idx]: reasons.append("base_contact(cond_orient_time)")
+        #         if time_out[env_idx]: reasons.append("time_out")
+        #         if reasons: episode_step = self.episode_length_buf[env_idx].item() + 1; print(f"[Termination Info] Env {env_idx}: Reset at ep step {episode_step} due to: {', '.join(reasons)}")
         return terminated, time_out
     
     def _reset_idx(self, env_ids: Sequence[int] | None): # 与上一版本相同

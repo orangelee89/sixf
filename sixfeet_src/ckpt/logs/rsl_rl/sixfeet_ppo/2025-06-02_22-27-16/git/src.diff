@@ -1,0 +1,2138 @@
+--- git status ---
+On branch test1
+Your branch is up to date with 'origin/test1'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/events.out.tfevents.1748822657.TASL-1.70321.0
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/exported/policy.onnx
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/exported/policy.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/git/src.diff
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_25200.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_25600.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26000.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26400.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26800.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_27200.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_27600.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28000.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28400.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28800.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_29200.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_29600.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30000.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30400.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30800.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_31200.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_31600.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32000.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32400.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32800.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_33200.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_33600.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34000.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34400.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34800.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34999.pt
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/agent.pkl
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/agent.yaml
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/env.pkl
+	deleted:    sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/env.yaml
+	modified:   sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+	modified:   sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	sixfeet_src/ckpt/1
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17----------04-13/
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-02_19-08-40/
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-02_21-55-27/
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-02_22-07-47/
+	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-02_22-27-16/
+	sixfeet_src/ckpt/outputs/2025-06-02/
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/events.out.tfevents.1748822657.TASL-1.70321.0 b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/events.out.tfevents.1748822657.TASL-1.70321.0
+deleted file mode 100644
+index 57f4f8e..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/events.out.tfevents.1748822657.TASL-1.70321.0 and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/exported/policy.onnx b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/exported/policy.onnx
+deleted file mode 100644
+index ff9da81..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/exported/policy.onnx and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/exported/policy.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/exported/policy.pt
+deleted file mode 100644
+index 94976a4..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/exported/policy.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/git/src.diff b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/git/src.diff
+deleted file mode 100644
+index fce1a78..0000000
+--- a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/git/src.diff
++++ /dev/null
+@@ -1,1492 +0,0 @@
+---- git status ---
+-HEAD detached at ca46139
+-Changes not staged for commit:
+-  (use "git add/rm <file>..." to update what will be committed)
+-  (use "git restore <file>..." to discard changes in working directory)
+-	modified:   sixfeet_src/ckpt/.term_pid
+-	modified:   sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-29_00-01-51/exported/policy.pt
+-	modified:   sixfeet_src/ckpt/supervisor.sh
+-	modified:   sixfeet_src/ckpt/train_all.sh
+-	deleted:    sixfeet_src/sixfeet/.term_pid
+-	modified:   sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+-	modified:   sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+-
+-Untracked files:
+-  (use "git add <file>..." to include in what will be committed)
+-	hexapod_pkg_moveit/
+-	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-31_15-44-39/
+-	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_13-15-42/
+-	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_16-18-58/
+-	sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/
+-	sixfeet_src/ckpt/outputs/2025-05-30/
+-	sixfeet_src/ckpt/outputs/2025-05-31/
+-	sixfeet_src/ckpt/outputs/2025-06-01/
+-	sixfeet_src/ckpt/supervisor copy.sh
+-	sixfeet_src/ckpt/train_all copy.sh
+-
+-no changes added to commit (use "git add" and/or "git commit -a") 
+-
+-
+---- git diff ---
+-diff --git a/sixfeet_src/ckpt/.term_pid b/sixfeet_src/ckpt/.term_pid
+-index df2d7f5..8864a1a 100644
+---- a/sixfeet_src/ckpt/.term_pid
+-+++ b/sixfeet_src/ckpt/.term_pid
+-@@ -1 +1 @@
+--456400
+-+9033
+-diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-29_00-01-51/exported/policy.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-29_00-01-51/exported/policy.pt
+-index 1e84e1d..23ebb02 100644
+-Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-29_00-01-51/exported/policy.pt and b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-05-29_00-01-51/exported/policy.pt differ
+-diff --git a/sixfeet_src/ckpt/supervisor.sh b/sixfeet_src/ckpt/supervisor.sh
+-index 5c5c382..45cb5ad 100755
+---- a/sixfeet_src/ckpt/supervisor.sh
+-+++ b/sixfeet_src/ckpt/supervisor.sh
+-@@ -1,25 +1,20 @@
+- #!/usr/bin/env bash
+--# ========= train_supervisor.sh (V3.1 - 支持用户输入训练单元数) =========
+-+# ========= train_supervisor.sh (TMUX-friendly 版本) =========
+- set -euo pipefail
+- 
+--########## 可调参数 ##########
+- GPU_UTIL_TH=40
+- GPU_IDLE_SEC_THRESHOLD=10
+- CHECK_INTERVAL=5
+- WARMUP_AFTER_LAUNCH=30
+--MAX_CONSECUTIVE_FAST_FAILURES=3
+--FAST_FAILURE_WINDOW_SEC=300
+--##############################################
+- 
+- WS="/home/lee/EE_ws/src/sixfeet_src/ckpt"
+- TRAIN_SH="$WS/train_all.sh"
+- PY_SCRIPT_NAME="train.py"
+--TERMINAL_TITLE="IsaacLab_Sixfeet_RL_Train"
+--PID_FILE="$WS/.term_pid"
+- PY_SCRIPT_PATTERN="$PY_SCRIPT_NAME"
+- 
+- FRAMEWORK_ARG=""
+--USER_DECLARED_TOTAL_TRAINING_UNITS="0" # 初始化为 "0"，表示使用 train_all.sh 的默认值
+-+USER_DECLARED_TOTAL_TRAINING_UNITS="0"
+-+LOG_TAG="[Supervisor]"
+- 
+- ########## 选择 RL 框架 ##########
+- select_framework() {
+-@@ -32,146 +27,78 @@ select_framework() {
+-     echo "------------------------------------------"
+-     read -r -p "请输入选项 (1 或 2): " choice
+-     case "$choice" in
+--      1) FRAMEWORK_ARG="rl_games"; echo "[$(date)] 已选择 RL-Games。"; break ;;
+--      2) FRAMEWORK_ARG="rsl_rl"; echo "[$(date)] 已选择 RSL-RL。"; break ;;
+--      *) echo "[$(date)] 无效选项 '$choice'。请重新输入。" ;;
+-+      1) FRAMEWORK_ARG="rl_games"; echo "$LOG_TAG 选择 RL-Games"; break ;;
+-+      2) FRAMEWORK_ARG="rsl_rl";   echo "$LOG_TAG 选择 RSL-RL";   break ;;
+-+      *) echo "$LOG_TAG 无效输入 '$choice'" ;;
+-     esac
+-   done
+- }
+- 
+--########## 提示用户输入训练单元数 ##########
+- prompt_for_training_units() {
+--  local units_input
+-   echo "------------------------------------------"
+--  read -r -p "请输入目标总训练单元数 (例如 10000, 直接回车或输入0则使用 train_all.sh 中的默认值): " units_input
+--  if [[ "$units_input" =~ ^[1-9][0-9]*$ ]]; then # 检查是否为正整数
+--    USER_DECLARED_TOTAL_TRAINING_UNITS="$units_input"
+--    echo "[$(date)] 用户设定目标总训练单元数: $USER_DECLARED_TOTAL_TRAINING_UNITS"
+--  elif [[ -z "$units_input" ]] || [[ "$units_input" == "0" ]]; then
+--    USER_DECLARED_TOTAL_TRAINING_UNITS="0" # 明确传递 "0" 表示使用默认值
+--    echo "[$(date)] 用户选择使用 train_all.sh 中的默认目标总训练单元数。"
+-+  read -r -p "请输入目标总训练单元数（如 10000，留空或输入 0 则使用默认）: " units
+-+  if [[ "$units" =~ ^[1-9][0-9]*$ ]]; then
+-+    USER_DECLARED_TOTAL_TRAINING_UNITS="$units"
+-   else
+--    USER_DECLARED_TOTAL_TRAINING_UNITS="0" # 无效输入也视为使用默认值
+--    echo "[$(date)] 无效输入 '$units_input'。将使用 train_all.sh 中的默认目标总训练单元数。"
+-+    USER_DECLARED_TOTAL_TRAINING_UNITS="0"
+-   fi
+--  echo "------------------------------------------"
+-+  echo "$LOG_TAG 设置训练单元数: $USER_DECLARED_TOTAL_TRAINING_UNITS"
+- }
+- 
+--########## 清理函数 ##########
+- cleanup_and_exit() {
+--  echo "[$(date)] Supervisor 退出，清理标志文件和终端..."
+--  kill_previous_session || true
+-+  echo "$LOG_TAG 清理并退出"
+-+  pkill -9 -f "$PY_SCRIPT_PATTERN" 2>/dev/null || true
+-+  pkill -9 -f "$TRAIN_SH" 2>/dev/null || true
+-   rm -f "$WS/train_finished.flag"
+--  echo "[$(date)] 清理完成。"
+-   exit 0
+- }
+- trap cleanup_and_exit SIGINT SIGTERM
+- 
+--########## 打开新终端 ##########
+--open_new_terminal() {
+--  echo "[$(date)] 打开新终端 ($TERMINAL_TITLE) 并使用框架 '$FRAMEWORK_ARG' 和训练单元数 '$USER_DECLARED_TOTAL_TRAINING_UNITS' 启动训练..."
+--  # 将 FRAMEWORK_ARG 和 USER_DECLARED_TOTAL_TRAINING_UNITS 作为参数传递给 TRAIN_SH
+--  gnome-terminal --title="$TERMINAL_TITLE" --geometry=100x24 --working-directory="$WS" \
+--    -- bash -c "$TRAIN_SH \"$FRAMEWORK_ARG\" \"$USER_DECLARED_TOTAL_TRAINING_UNITS\"; echo -e \"\n[$(date)] '$TRAIN_SH' 执行完毕。此终端将保持打开。\n按 Ctrl+D 或输入 exit 关闭此终端。\"; exec bash" &
+--
+--  echo $! >"$PID_FILE"
+--  sleep 3
+--  LAUNCH_TIME=$(date +%s)
+--  idle_seconds_counter=0
+--}
+--
+--########## 杀掉旧会话 ##########
+--kill_previous_session() {
+--  echo "[$(date)] 终止旧训练进程与终端..."
+--  pkill -9 -f "$PY_SCRIPT_PATTERN" 2>/dev/null || echo "[$(date)] 未找到或无法终止 $PY_SCRIPT_PATTERN 进程。"
+--  pkill -9 -f "$TRAIN_SH"          2>/dev/null || echo "[$(date)] 未找到或无法终止 $TRAIN_SH 进程。"
+--  local terminal_closed_gracefully=false
+--  if command -v wmctrl &>/dev/null; then
+--    for win_id in $(wmctrl -l | grep "$TERMINAL_TITLE" | awk '{print $1}'); do
+--      echo "[$(date)] 尝试通过 wmctrl 关闭窗口 ID: $win_id ..."; wmctrl -i -c "$win_id" && terminal_closed_gracefully=true; sleep 0.2;
+--    done
+--  elif command -v xdotool &>/dev/null; then
+--    for win_id in $(xdotool search --onlyvisible --name "$TERMINAL_TITLE"); do
+--      echo "[$(date)] 尝试通过 xdotool 关闭窗口 ID: $win_id ..."; xdotool windowclose "$win_id" && terminal_closed_gracefully=true; sleep 0.2;
+--    done
+--  fi
+--  if $terminal_closed_gracefully; then echo "[$(date)] 已尝试优雅关闭匹配标题的终端窗口。"; sleep 0.8; fi
+--  if [[ -f "$PID_FILE" ]]; then
+--    TERM_PID_FROM_FILE=$(cat "$PID_FILE" || true)
+--    if [[ -n "${TERM_PID_FROM_FILE:-}" ]] && ps -p "$TERM_PID_FROM_FILE" -o comm= | grep -q "gnome-terminal-" ; then
+--      echo "[$(date)] 终端 PID: $TERM_PID_FROM_FILE 存活，发送 SIGTERM → SIGKILL ..."; kill -TERM "$TERM_PID_FROM_FILE" 2>/dev/null || true; sleep 0.8; kill -KILL "$TERM_PID_FROM_FILE" 2>/dev/null || true; echo "[$(date)] 已发送 SIGKILL 至 PID: $TERM_PID_FROM_FILE。";
+--    else echo "[$(date)] PID 文件中的 PID ($TERM_PID_FROM_FILE) 无效或进程已不存在。"; fi
+--    rm -f "$PID_FILE";
+--  else echo "[$(date)] PID 文件 '$PID_FILE' 未找到。"; fi
+--  pkill -9 -f "$TERMINAL_TITLE" 2>/dev/null || echo "[$(date)] 尝试按标题 '$TERMINAL_TITLE' 清理终端进程，可能无匹配或已关闭。"
+--  echo "[$(date)] 旧会话清理完成。"
+--}
+--
+--########## 主逻辑 ##########
+--# 1. 用户选择框架
+- select_framework
+--# 2. 用户输入训练单元数
+--prompt_for_training_units # <<< 新增调用
+--
+--# 3. 清理旧会话
+--kill_previous_session
+--sleep 2
+-+prompt_for_training_units
+- 
+--# 4. 打开新终端开始训练 (现在会传递训练单元数)
+--open_new_terminal
+-+iterations_launched=0
+-+idle_seconds_counter=0
+- 
+--# 5. 主监控循环 (逻辑保持不变)
+- while true; do
+-   if [[ -f "$WS/train_finished.flag" ]]; then
+--    echo "[$(date)] train_finished.flag 检测到，训练完成。Supervisor 退出。"
+-+    echo "$LOG_TAG 训练完成，退出"
+-     cleanup_and_exit
+-   fi
+--  current_time_seconds=$(date +%s)
+--  time_since_launch=$((current_time_seconds - LAUNCH_TIME))
+--  python_process_alive=$(pgrep -f "$PY_SCRIPT_PATTERN" >/dev/null && echo 1 || echo 0)
+--  train_cmd_alive=$(pgrep -f "$TRAIN_SH" >/dev/null && echo 1 || echo 0)
+- 
+--  if (( python_process_alive == 0 && train_cmd_alive == 0 )); then
+--    if (( time_since_launch > WARMUP_AFTER_LAUNCH )); then
+--      echo "[$(date)] 训练进程未找到 (已运行 ${time_since_launch}s)，判定为崩溃，准备重启..."
+--      idle_seconds_counter=$GPU_IDLE_SEC_THRESHOLD
+--    elif (( time_since_launch <= WARMUP_AFTER_LAUNCH )); then
+--       echo "[$(date)] 预热期内训练进程退出，立即重启..."
+--       kill_previous_session; sleep 3;
+--       # select_framework # 如果需要在每次预热期崩溃后都重新选择，则取消注释
+--       # prompt_for_training_units # 如果需要每次预热期崩溃后都重新输入，则取消注释
+--       open_new_terminal;
+--       sleep "$CHECK_INTERVAL"; continue;
+--    fi
+--  else
+--    if (( time_since_launch > WARMUP_AFTER_LAUNCH )); then
+--      gpu_util=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null | head -n1 || echo 0)
+--      if (( gpu_util <= GPU_UTIL_TH )); then
+--        if (( python_process_alive == 1 )); then
+--            idle_seconds_counter=$((idle_seconds_counter + CHECK_INTERVAL))
+--            echo "[$(date)] GPU util ${gpu_util}% ≤ ${GPU_UTIL_TH}% (Python 进程存活, idle ${idle_seconds_counter}/${GPU_IDLE_SEC_THRESHOLD}s)"
+--        else
+--            echo "[$(date)] Python 进程未找到，但 train_all.sh 存活。GPU util ${gpu_util}%。计入空闲。"
+--            idle_seconds_counter=$((idle_seconds_counter + CHECK_INTERVAL))
+--        fi
+--      else
+--        idle_seconds_counter=0
+--        echo "[$(date)] GPU util ${gpu_util}% > ${GPU_UTIL_TH}%. 训练正常。"
+--      fi
+-+  if ! pgrep -f "$PY_SCRIPT_PATTERN" > /dev/null; then
+-+    echo "$LOG_TAG 未检测到 Python 训练进程，启动新训练"
+-+    bash "$TRAIN_SH" "$FRAMEWORK_ARG" "$USER_DECLARED_TOTAL_TRAINING_UNITS" &
+-+    LAUNCH_TIME=$(date +%s)
+-+    sleep 5
+-+    continue
+-+  fi
+-+
+-+  now=$(date +%s)
+-+  time_since_launch=$((now - LAUNCH_TIME))
+-+
+-+  if (( time_since_launch > WARMUP_AFTER_LAUNCH )); then
+-+    gpu_util=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null | head -n1 || echo 0)
+-+    if (( gpu_util <= GPU_UTIL_TH )); then
+-+      idle_seconds_counter=$((idle_seconds_counter + CHECK_INTERVAL))
+-+      echo "$LOG_TAG GPU util ${gpu_util}% 过低，空闲时间 ${idle_seconds_counter}/${GPU_IDLE_SEC_THRESHOLD}s"
+-     else
+-       idle_seconds_counter=0
+--      echo "[$(date)] 预热期 (${time_since_launch}s / ${WARMUP_AFTER_LAUNCH}s), 脚本进程存活。"
+-+      echo "$LOG_TAG GPU util ${gpu_util}% 正常"
+-     fi
+-+  else
+-+    echo "$LOG_TAG 预热期 (${time_since_launch}s)..."
+-   fi
+- 
+-   if (( idle_seconds_counter >= GPU_IDLE_SEC_THRESHOLD )); then
+--    if (( time_since_launch > WARMUP_AFTER_LAUNCH )); then
+--        echo "[$(date)] GPU 持续空闲或进程异常 (已运行 ${time_since_launch}s)，重启训练..."
+--        kill_previous_session; sleep 3;
+--        # select_framework # 同上
+--        # prompt_for_training_units # 同上
+--        open_new_terminal
+--    fi
+-+    echo "$LOG_TAG GPU 持续空闲，重启训练进程"
+-+    pkill -9 -f "$PY_SCRIPT_PATTERN" 2>/dev/null || true
+-+    pkill -9 -f "$TRAIN_SH" 2>/dev/null || true
+-+    sleep 2
+-+    bash "$TRAIN_SH" "$FRAMEWORK_ARG" "$USER_DECLARED_TOTAL_TRAINING_UNITS" &
+-+    LAUNCH_TIME=$(date +%s)
+-+    idle_seconds_counter=0
+-   fi
+-+
+-   sleep "$CHECK_INTERVAL"
+--done
+-\ No newline at end of file
+-+done
+-diff --git a/sixfeet_src/ckpt/train_all.sh b/sixfeet_src/ckpt/train_all.sh
+-index e54fcb2..76838cf 100755
+---- a/sixfeet_src/ckpt/train_all.sh
+-+++ b/sixfeet_src/ckpt/train_all.sh
+-@@ -1,54 +1,55 @@
+- #!/usr/bin/env bash
+--# ========= train_all.sh (V3.2 – 接收并处理 supervisor 传递的训练单元数) =========
+-+# ========= train_all.sh (V4 – 加入 CPU 亲和性与 nice) =========
+-+# 用法示例：
+-+#   ./train_all_with_affinity.sh rsl_rl 500000
+-+#   CPU_CORE_RANGE="8-31" CPU_NICE_VALUE=5 ./train_all_with_affinity.sh rl_games
+-+
+- set -euo pipefail
+- 
+- ########################################
+- # 0) 基本环境准备
+- ########################################
+--if [[ $# -lt 1 ]]; then # 至少需要框架参数
+-+if [[ $# -lt 1 ]]; then
+-   echo "用法: $0 <rsl_rl | rl_games> [total_training_units]"
+--  echo "  [total_training_units] 是可选的。如果提供并为正整数，则用作目标总迭代数。"
+--  echo "  如果为0、空或无效，则使用脚本内定义的默认值。"
+-   exit 1
+- fi
+- SELECTED_FRAMEWORK="$1"
+--# 从第二个参数获取用户提供的训练单元数，如果未提供，默认为 "0"
+- USER_PROVIDED_TRAINING_UNITS_ARG="${2:-0}"
+- 
+-+# ==== 新增：CPU 亲和性 / nice 配置 ====
+-+CPU_CORE_RANGE="${CPU_CORE_RANGE:-8-31}"      # 默认给训练进程用的核心范围
+-+CPU_NICE_VALUE="${CPU_NICE_VALUE:-10}"        # 默认 nice 优先级（越大越低）
+-+export OMP_NUM_THREADS="${OMP_NUM_THREADS:-32}"
+-+export MKL_NUM_THREADS="$OMP_NUM_THREADS"
+-+
+- source ~/miniconda3/etc/profile.d/conda.sh
+--conda activate env_isaaclab # 确保这是你正确的conda环境名
+-+conda activate env_isaaclab
+-+
+- WS1="/home/lee/EE_ws/src/sixfeet_src/ckpt"
+- WS="/home/lee/EE_ws/src/sixfeet_src/sixfeet"
+- cd "$WS1"
+- 
+--# 脚本内定义的默认总训练单元数
+- DEFAULT_INTERNAL_TOTAL_TRAINING_UNITS=10000
+--TOTAL_TRAINING_UNITS=$DEFAULT_INTERNAL_TOTAL_TRAINING_UNITS # 初始化为内部默认值
+--
+--# 检查并使用从 supervisor 传递过来的 TOTAL_TRAINING_UNITS 参数
+--if [[ "$USER_PROVIDED_TRAINING_UNITS_ARG" =~ ^[1-9][0-9]*$ ]]; then # 如果是有效的正整数
+--    TOTAL_TRAINING_UNITS="$USER_PROVIDED_TRAINING_UNITS_ARG"
+--    echo "[$(date)] INFO: 使用 supervisor 传递的目标总训练单元数: $TOTAL_TRAINING_UNITS"
+--elif [[ "$USER_PROVIDED_TRAINING_UNITS_ARG" == "0" ]]; then # "0" 表示用户选择使用脚本内默认值
+--    echo "[$(date)] INFO: Supervisor 请求使用 train_all.sh 中的默认目标总训练单元数: $TOTAL_TRAINING_UNITS (为 $DEFAULT_INTERNAL_TOTAL_TRAINING_UNITS)"
+--else # 其他无效输入
+--    echo "[$(date)] WARNING: 从 supervisor 收到无效的目标总训练单元数参数 ('$USER_PROVIDED_TRAINING_UNITS_ARG')。将使用默认值: $TOTAL_TRAINING_UNITS (为 $DEFAULT_INTERNAL_TOTAL_TRAINING_UNITS)"
+--fi
+-+TOTAL_TRAINING_UNITS=$DEFAULT_INTERNAL_TOTAL_TRAINING_UNITS
+- 
+--TASK_NAME="Template-Sixfeet-Direct-v0" # Isaac Lab task
+-+if [[ "$USER_PROVIDED_TRAINING_UNITS_ARG" =~ ^[1-9][0-9]*$ ]]; then
+-+  TOTAL_TRAINING_UNITS="$USER_PROVIDED_TRAINING_UNITS_ARG"
+-+  echo "[$(date)] INFO: 使用目标总训练单元数: $TOTAL_TRAINING_UNITS"
+-+elif [[ "$USER_PROVIDED_TRAINING_UNITS_ARG" == "0" ]]; then
+-+  echo "[$(date)] INFO: 使用脚本默认目标训练单元数: $TOTAL_TRAINING_UNITS"
+-+else
+-+  echo "[$(date)] WARNING: 参数 '$USER_PROVIDED_TRAINING_UNITS_ARG' 无效，使用默认值: $TOTAL_TRAINING_UNITS"
+-+fi
+- 
+--########################################
+--# 1) 选择框架并构造命令
+--########################################
+-+TASK_NAME="Template-Sixfeet-Direct-v0"
+- PYTHON_CMD_EXEC=()
+--# 本次脚本执行的迭代次数
+--# 对于新训练，它等于上面确定的 TOTAL_TRAINING_UNITS
+--# 对于继续训练，它将是 TOTAL_TRAINING_UNITS 减去已完成的迭代数
+- iterations_for_this_run=$TOTAL_TRAINING_UNITS
+- 
+-+########################################
+-+# 1) 选择框架并构造 Python 命令
+-+########################################
+- 
+- if [[ "$SELECTED_FRAMEWORK" == "rsl_rl" ]]; then
+--  # ---------- RSL-RL ----------
+-   LOG_DIR="$WS1/logs/rsl_rl/sixfeet_ppo"
+-   PY_SCRIPT="$WS/scripts/rsl_rl/train.py"
+-   EXP_NAME="sixfeet_ppo"
+-@@ -59,78 +60,54 @@ if [[ "$SELECTED_FRAMEWORK" == "rsl_rl" ]]; then
+-   if [[ -n "$ckpt_path" ]]; then
+-     run_name=$(basename "$(dirname "$ckpt_path")")
+-     ckpt_file=$(basename "$ckpt_path")
+--    echo "[$(date)] 检测到 RSL-RL checkpoint: $ckpt_path"
+-+    echo "[$(date)] 检测到 checkpoint: $ckpt_path"
+- 
+--    completed_iterations_str=""
+-+    completed_iterations=0
+-     if [[ "$ckpt_file" =~ model_([0-9]+)\.pt ]]; then
+--      completed_iterations_str="${BASH_REMATCH[1]}"
+-+      completed_iterations="${BASH_REMATCH[1]}"
+-     fi
+- 
+--    if [[ -n "$completed_iterations_str" ]] && [[ "$completed_iterations_str" =~ ^[0-9]+$ ]]; then
+--      completed_iterations=$((completed_iterations_str))
+--      echo "[$(date)] 从checkpoint文件名解析得到已完成迭代数: $completed_iterations"
+--      if [[ $TOTAL_TRAINING_UNITS -gt $completed_iterations ]]; then
+--        iterations_for_this_run=$((TOTAL_TRAINING_UNITS - completed_iterations))
+--        echo "[$(date)] 目标总迭代数: $TOTAL_TRAINING_UNITS. 本次继续训练将运行剩余的 $iterations_for_this_run 迭代."
+--      else
+--        iterations_for_this_run=0 # 已达到或超过目标，本次不运行或运行0次迭代
+--        echo "[$(date)] 目标总迭代数 $TOTAL_TRAINING_UNITS 已达到或超过checkpoint中的 $completed_iterations 迭代。本次运行迭代数设为0."
+--      fi
+-+    if [[ "$TOTAL_TRAINING_UNITS" -gt "$completed_iterations" ]]; then
+-+      iterations_for_this_run=$((TOTAL_TRAINING_UNITS - completed_iterations))
+-     else
+--      echo "[$(date)] 警告: 无法从checkpoint文件名 '$ckpt_file' 中解析出有效的已完成迭代数。"
+--      echo "[$(date)] 将默认基于已确定的 iterations_for_this_run ($iterations_for_this_run) 执行（这通常意味着按总目标减去0，即整个目标长度）。"
+--      # iterations_for_this_run 此时等于 TOTAL_TRAINING_UNITS
+-+      iterations_for_this_run=0
+-     fi
+--    
+--    echo "[$(date)] — 继续训练 (RSL-RL)，计划运行 $iterations_for_this_run 迭代。"
+--    PYTHON_CMD_EXEC=(python -u "$PY_SCRIPT"            \
+--        --task "$TASK_NAME"                            \
+--        --resume                                      \
+--        --experiment_name "$EXP_NAME"                 \
+--        --load_run "$run_name"                        \
+--        --checkpoint "$ckpt_file"                     \
+--        --max_iterations "$iterations_for_this_run"   \
+-+
+-+    PYTHON_CMD_EXEC=(python -u "$PY_SCRIPT" \
+-+        --task "$TASK_NAME" \
+-+        --resume \
+-+        --experiment_name "$EXP_NAME" \
+-+        --load_run "$run_name" \
+-+        --checkpoint "$ckpt_file" \
+-+        --max_iterations "$iterations_for_this_run" \
+-         --headless)
+-   else
+--    echo "[$(date)] 未找到 RSL-RL checkpoint — 从头开始训练，计划运行 $iterations_for_this_run 迭代。"
+--    PYTHON_CMD_EXEC=(python -u "$PY_SCRIPT"            \
+--        --task "$TASK_NAME"                            \
+--        --experiment_name "$EXP_NAME"                 \
+-+    echo "[$(date)] 未找到 checkpoint，开始新训练"
+-+    PYTHON_CMD_EXEC=(python -u "$PY_SCRIPT" \
+-+        --task "$TASK_NAME" \
+-+        --experiment_name "$EXP_NAME" \
+-         --max_iterations "$iterations_for_this_run" \
+-         --headless)
+-   fi
+- 
+- elif [[ "$SELECTED_FRAMEWORK" == "rl_games" ]]; then
+--  # ---------- RL-Games ----------
+--  # RL-Games 的迭代控制通常由其配置文件中的 train_steps 或 max_epochs 决定。
+--  # --checkpoint 参数使其从检查点加载，然后它会继续跑到配置中定义的总训练量。
+--  # 如果要传递类似 "本次运行多少步" 的参数，需要你的 rl_games/train.py 支持这个。
+--  # 目前，我们假设它会自行处理。
+-   LOG_ROOT="$WS1/logs/rl_games"
+--  EXP_NAME="sixfeet_ppo" 
+-+  EXP_NAME="sixfeet_ppo"
+-   PY_SCRIPT="$WS/scripts/rl_games/train.py"
+- 
+-   best_ckpt=$(ls -1t "$LOG_ROOT/$EXP_NAME"/*/nn/sixfeet_ppo.pth 2>/dev/null | head -n1 || true)
+--
+--  if [[ -n "$best_ckpt" ]]; then
+--    ckpt="$best_ckpt"
+--    echo "[$(date)] 选用 RL-Games BEST checkpoint: $ckpt"
+--  else
+--    ckpt=$(ls -1t "$LOG_ROOT/$EXP_NAME"/*/nn/last_*.pth 2>/dev/null | head -n1 || true)
+--    [[ -n "$ckpt" ]] \
+--      && echo "[$(date)] 未找到 RL-Games sixfeet_ppo.pth，改用最新 last_: $ckpt"
+-+  if [[ -z "$best_ckpt" ]]; then
+-+    best_ckpt=$(ls -1t "$LOG_ROOT/$EXP_NAME"/*/nn/last_*.pth 2>/dev/null | head -n1 || true)
+-   fi
+- 
+--  if [[ -n "$ckpt" ]]; then
+--    echo "[$(date)] 检测到 RL-Games checkpoint: $ckpt — 继续训练"
+--    PYTHON_CMD_EXEC=(python -u "$PY_SCRIPT"        \
+--        --task "$TASK_NAME"                        \
+--        --headless                                 \
+--        --checkpoint "$ckpt")
+-+  if [[ -n "$best_ckpt" ]]; then
+-+    PYTHON_CMD_EXEC=(python -u "$PY_SCRIPT" \
+-+        --task "$TASK_NAME" \
+-+        --headless \
+-+        --checkpoint "$best_ckpt")
+-   else
+--    echo "[$(date)] 未找到 RL-Games checkpoint — 从头开始训练"
+--    PYTHON_CMD_EXEC=(python -u "$PY_SCRIPT"        \
+--        --task "$TASK_NAME"                        \
+-+    PYTHON_CMD_EXEC=(python -u "$PY_SCRIPT" \
+-+        --task "$TASK_NAME" \
+-         --headless)
+-   fi
+- 
+-@@ -140,10 +117,13 @@ else
+- fi
+- 
+- ########################################
+--# 2) 执行
+-+# 2) 执行：加 taskset + nice 包裹
+- ########################################
+--echo "[$(date)] 即将执行: ${PYTHON_CMD_EXEC[*]}"
+--"${PYTHON_CMD_EXEC[@]}"
+-+
+-+TASKSET_NICE_PREFIX=(taskset -c "$CPU_CORE_RANGE" nice -n "$CPU_NICE_VALUE")
+-+echo "[$(date)] 启动训练，绑定核心范围: $CPU_CORE_RANGE，nice 优先级: $CPU_NICE_VALUE"
+-+echo "[$(date)] 执行命令: ${TASKSET_NICE_PREFIX[*]} ${PYTHON_CMD_EXEC[*]}"
+-+"${TASKSET_NICE_PREFIX[@]}" "${PYTHON_CMD_EXEC[@]}"
+- PYTHON_EXIT_CODE=$?
+- 
+- ########################################
+-@@ -156,4 +136,4 @@ else
+-   echo "[$(date)] Python 训练脚本失败，退出码: $PYTHON_EXIT_CODE"
+- fi
+- 
+--exit $PYTHON_EXIT_CODE
+-\ No newline at end of file
+-+exit $PYTHON_EXIT_CODE
+-diff --git a/sixfeet_src/sixfeet/.term_pid b/sixfeet_src/sixfeet/.term_pid
+-deleted file mode 100644
+-index f0aa677..0000000
+---- a/sixfeet_src/sixfeet/.term_pid
+-+++ /dev/null
+-@@ -1 +0,0 @@
+--162880
+-diff --git a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+-index c08a1df..062d337 100644
+---- a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+-+++ b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+-@@ -4,6 +4,7 @@ import torch
+- import math
+- from collections.abc import Sequence
+- from typing import List, Dict, Optional
+-+import re # 导入正则表达式模块
+- 
+- import isaaclab.sim as sim_utils
+- from isaaclab.assets import Articulation
+-@@ -13,7 +14,8 @@ from isaaclab.utils.math import (
+-     quat_rotate,
+-     quat_from_angle_axis,
+-     convert_quat,
+--    euler_xyz_from_quat
+-+    euler_xyz_from_quat,
+-+    matrix_from_quat # 如果需要，可以导入
+- )
+- 
+- from .sixfeet_env_cfg import SixfeetEnvCfg
+-@@ -23,9 +25,10 @@ from .sixfeet_env_cfg import SixfeetEnvCfg
+- def normalize_angle_for_obs(x: torch.Tensor) -> torch.Tensor:
+-     return torch.atan2(torch.sin(x), torch.cos(x))
+- 
+-+
+- @torch.jit.script
+- def compute_sixfeet_rewards_directional(
+--    # ... (参数列表与上一版本相同，直到 cfg_rew_scale_self_collision) ...
+-+    # --- 基础参数 (与你提供的 "Corrected JIT Type Hints" 版本一致) ---
+-     root_lin_vel_b: torch.Tensor, root_ang_vel_b: torch.Tensor, projected_gravity_b: torch.Tensor,
+-     joint_pos_rel: torch.Tensor, joint_vel: torch.Tensor, applied_torque: torch.Tensor,
+-     joint_acc: torch.Tensor, q_lower_limits: torch.Tensor, q_upper_limits: torch.Tensor,
+-@@ -34,7 +37,7 @@ def compute_sixfeet_rewards_directional(
+-     undesired_contacts_active: torch.Tensor, commands_discrete: torch.Tensor,
+-     cfg_cmd_profile: Dict[str, float], cfg_rew_scale_move_in_commanded_direction: float,
+-     cfg_rew_scale_achieve_reference_angular_rate: float, cfg_rew_scale_alive: float,
+--    cfg_rew_scale_target_height: float, cfg_target_height_m: float, # 这两个值将从CFG中获取新的值
+-+    cfg_rew_scale_target_height: float, cfg_target_height_m: float,
+-     cfg_rew_scale_action_cost: float, cfg_rew_scale_action_rate: float,
+-     cfg_rew_scale_joint_torques: float, cfg_rew_scale_joint_accel: float,
+-     cfg_rew_scale_lin_vel_z_penalty: float, cfg_rew_scale_ang_vel_xy_penalty: float,
+-@@ -42,31 +45,34 @@ def compute_sixfeet_rewards_directional(
+-     cfg_rew_scale_dof_at_limit: float, cfg_rew_scale_toe_orientation_penalty: float,
+-     cfg_toe_joint_indices: Optional[torch.Tensor], cfg_rew_scale_low_height_penalty: float,
+-     cfg_min_height_penalty_threshold: float, cfg_rew_scale_undesired_contact: float,
+--    dt: float, cfg_rew_scale_orientation_deviation: float,
+-+    dt: float,
+-+    # --- 之前添加的参数 ---
+-+    cfg_rew_scale_orientation_deviation: float,
+-     cfg_orientation_termination_angle_limit_rad: float,
+-     cfg_joint_limit_penalty_threshold_percent: float,
+--    num_self_collisions_per_env: torch.Tensor,
+--    cfg_rew_scale_self_collision: float,
+--    was_severely_tilted_last_step: torch.Tensor, # 来自上一轮的成功翻转奖励逻辑
+--    cfg_rew_scale_successful_flip: float,       # 来自上一轮的成功翻转奖励逻辑
+--    # --- 新增参数 ---
+--    cfg_target_height_reward_sharpness: float   # 高度奖励的尖锐度
+-+    num_self_collisions_per_env: torch.Tensor, # 自碰撞计数
+-+    cfg_rew_scale_self_collision: float,       # 自碰撞惩罚scale
+-+    was_severely_tilted_last_step: torch.Tensor,
+-+    cfg_rew_scale_successful_flip: float,
+-+    cfg_target_height_reward_sharpness: float,
+-+    foot_quats_w: Optional[torch.Tensor],      # 脚部世界坐标系四元数 (用于轴对齐)
+-+    foot_contact_mask: Optional[torch.Tensor], # 脚部是否接触 (用于轴对齐)
+-+    # cfg_rew_scale_foot_z_alignment: float,    # 被下面的 custom_foot_axis_alignment 替代
+-+    foot_link_target_align_local_axes: Optional[torch.Tensor],
+-+    foot_link_target_align_world_axes: Optional[torch.Tensor],
+-+    cfg_rew_scale_custom_foot_axis_alignment: float,
+-+    # --- 新增参数用于所有脚触地奖励 ---
+-+    num_feet_in_contact: torch.Tensor, # (num_envs,) 当前实际接触地面的脚的数量
+-+    cfg_rew_scale_all_feet_stable_stand: float, # 所有脚稳定站立的奖励scale
+-+    cfg_rew_scale_airborne_feet_penalty: float # （可选）悬空脚惩罚的scale
+-+
+- ) -> tuple[torch.Tensor, Dict[str, torch.Tensor]]:
+- 
+--    # ... (现有的移动奖励、存活奖励、动作惩罚、效率惩罚、稳定性惩罚等计算逻辑与上一版本一致) ...
+--    # (为了简洁，这里省略这些部分的重复代码)
+--    # 例如:
+--    ref_ang_rate = cfg_cmd_profile.get("reference_angular_rate", 0.0)
+--    # ... (所有其他奖励和惩罚项的计算，直到 target_height 之前) ...
+--    reward_alive = torch.ones_like(commands_discrete[:,0]) * cfg_rew_scale_alive # 确保 reward_alive 等被定义
+--    # (你需要从上一版本的代码中复制所有这些定义，这里只展示修改的部分)
+--    # 确保以下变量已正确计算：
+--    # reward_move_in_commanded_direction, reward_turn, 
+--    # penalty_action_cost, penalty_action_rate, penalty_joint_torques, penalty_joint_accel,
+--    # penalty_lin_vel_z, penalty_ang_vel_xy, penalty_flat_orientation, penalty_unwanted_movement,
+--    # penalty_dof_at_limit, penalty_toe_orientation, penalty_low_height, penalty_undesired_contact,
+--    # penalty_orientation_deviation, penalty_self_collision, reward_successful_flip
+--    # (这些的计算方式与上一版本相同，包括它们的条件化逻辑)
+-+    device = projected_gravity_b.device
+-+
+-+    # --- 1. 基础奖励和惩罚项计算 (基于你提供的文件结构) ---
+-+    ref_ang_rate = cfg_cmd_profile.get("reference_angular_rate", 0.0) # 确保 cfg_cmd_profile 的值都是 float
+-+    # ... (所有其他基础奖励计算，如 movement, alive 等，与你提供的文件一致) ...
+-     linear_vel_x_local = root_lin_vel_b[:, 0]; linear_vel_y_local = root_lin_vel_b[:, 1]
+-     reward_fwd_bkwd_move = commands_discrete[:, 0] * linear_vel_x_local; reward_left_right_move = commands_discrete[:, 1] * linear_vel_y_local
+-     is_linear_cmd_active = (torch.abs(commands_discrete[:, 0]) > 0.5) | (torch.abs(commands_discrete[:, 1]) > 0.5)
+-@@ -77,12 +83,32 @@ def compute_sixfeet_rewards_directional(
+-     turn_rate_error = torch.abs(torch.abs(angular_vel_z_local) - ref_ang_rate)
+-     reward_achieve_ref_ang_rate = torch.exp(-5.0 * turn_rate_error) * is_turn_cmd_active.float() * cfg_rew_scale_achieve_reference_angular_rate
+-     reward_turn = (reward_angular_direction_raw * is_turn_cmd_active.float() * cfg_rew_scale_move_in_commanded_direction) + reward_achieve_ref_ang_rate
+-+    reward_alive = torch.ones_like(commands_discrete[:,0], device=device) * cfg_rew_scale_alive
+-+    current_height_z = root_pos_w[:, 2]
+-+
+-+    # --- 条件判断：机器人是否在允许的“正面”姿态范围内 ---
+-+    cos_angle_robot_z_with_world_z_cond = -projected_gravity_b[:, 2]
+-+    is_within_orientation_limit = cos_angle_robot_z_with_world_z_cond >= torch.cos(torch.tensor(cfg_orientation_termination_angle_limit_rad, device=device, dtype=torch.float32))
+-+
+-+    # --- 2. 条件化目标高度奖励 (cfg_target_height_m = 0.30) ---
+-+    height_error_sq = torch.square(current_height_z - cfg_target_height_m)
+-+    _base_reward_target_height = torch.exp(-cfg_target_height_reward_sharpness * height_error_sq) * cfg_rew_scale_target_height
+-+    reward_target_height = torch.where(is_within_orientation_limit, _base_reward_target_height, torch.zeros_like(_base_reward_target_height))
+-+
+-+    # --- 3. 条件化速度惩罚 ---
+-+    height_threshold_for_vel_penalties = cfg_target_height_m - 0.02 # 直接计算
+-+    _base_penalty_lin_vel_z = torch.square(root_lin_vel_b[:, 2]) * cfg_rew_scale_lin_vel_z_penalty
+-+    _base_penalty_ang_vel_xy = torch.sum(torch.square(root_ang_vel_b[:, :2]), dim=1) * cfg_rew_scale_ang_vel_xy_penalty
+-+    is_above_height_for_vel_penalties = current_height_z >= height_threshold_for_vel_penalties
+-+    vel_penalties_active_condition = is_within_orientation_limit & is_above_height_for_vel_penalties
+-+    penalty_lin_vel_z = torch.where(vel_penalties_active_condition, _base_penalty_lin_vel_z, torch.zeros_like(_base_penalty_lin_vel_z))
+-+    penalty_ang_vel_xy = torch.where(vel_penalties_active_condition, _base_penalty_ang_vel_xy, torch.zeros_like(_base_penalty_ang_vel_xy))
+-+
+-+    # --- 4. 其他惩罚项 (保持你文件中的逻辑，确保所有变量都被定义) ---
+-     penalty_action_cost = torch.sum(actions_from_policy**2, dim=-1) * cfg_rew_scale_action_cost
+-     penalty_action_rate = torch.sum((actions_from_policy - previous_actions_from_policy)**2, dim=-1) * cfg_rew_scale_action_rate
+-     penalty_joint_torques = torch.sum(applied_torque**2, dim=-1) * cfg_rew_scale_joint_torques
+-     penalty_joint_accel = torch.sum(joint_acc**2, dim=-1) * cfg_rew_scale_joint_accel
+--    penalty_lin_vel_z = torch.square(root_lin_vel_b[:, 2]) * cfg_rew_scale_lin_vel_z_penalty
+--    penalty_ang_vel_xy = torch.sum(torch.square(root_ang_vel_b[:, :2]), dim=1) * cfg_rew_scale_ang_vel_xy_penalty
+-     penalty_flat_orientation = torch.sum(torch.square(projected_gravity_b[:, :2]), dim=1) * cfg_rew_scale_flat_orientation
+-     is_stand_cmd_active = torch.all(commands_discrete == 0, dim=1)
+-     unwanted_lin_vel_sq = torch.sum(torch.square(root_lin_vel_b[:, :2]), dim=1)
+-@@ -97,69 +123,125 @@ def compute_sixfeet_rewards_directional(
+-     near_lower_limit = torch.relu(threshold_percent - dof_pos_scaled_01)**2
+-     near_upper_limit = torch.relu(dof_pos_scaled_01 - (1.0 - threshold_percent))**2
+-     penalty_dof_at_limit = torch.sum(near_lower_limit + near_upper_limit, dim=-1) * cfg_rew_scale_dof_at_limit
+--    is_severely_tilted_rewards = projected_gravity_b[:, 2] > 0.0
+--    _base_penalty_toe_orientation = torch.zeros_like(commands_discrete[:,0], device=projected_gravity_b.device)
+-+    is_severely_tilted_for_other_penalties = projected_gravity_b[:, 2] > 0.0
+-+    _base_penalty_toe_orientation = torch.zeros_like(commands_discrete[:,0], device=device)
+-     if cfg_rew_scale_toe_orientation_penalty != 0.0 and cfg_toe_joint_indices is not None:
+-         if cfg_toe_joint_indices.numel() > 0:
+-             toe_joint_positions = current_joint_pos_abs[:, cfg_toe_joint_indices]
+--            _base_penalty_toe_orientation = torch.sum(torch.relu(toe_joint_positions)**2, dim=-1) * cfg_rew_scale_toe_orientation_penalty
+--    penalty_toe_orientation = torch.where(is_severely_tilted_rewards, torch.zeros_like(_base_penalty_toe_orientation), _base_penalty_toe_orientation)
+--    current_height_z = root_pos_w[:, 2] # 已在前面定义
+-+            _base_penalty_toe_orientation = torch.sum(torch.relu(toe_joint_positions + math.radians(10.0))**2, dim=-1) * cfg_rew_scale_toe_orientation_penalty
+-+    penalty_toe_orientation = torch.where(is_severely_tilted_for_other_penalties, torch.zeros_like(_base_penalty_toe_orientation), _base_penalty_toe_orientation)
+-     is_too_low = (current_height_z < cfg_min_height_penalty_threshold).float()
+-     penalty_low_height = is_too_low * cfg_rew_scale_low_height_penalty
+-     _base_penalty_undesired_contact = undesired_contacts_active.float() * cfg_rew_scale_undesired_contact
+--    penalty_undesired_contact = torch.where(is_severely_tilted_rewards, torch.zeros_like(_base_penalty_undesired_contact), _base_penalty_undesired_contact)
+-+    penalty_undesired_contact = torch.where(is_severely_tilted_for_other_penalties, torch.zeros_like(_base_penalty_undesired_contact), _base_penalty_undesired_contact)
+-     cos_angle_robot_z_with_world_z_dev = -projected_gravity_b[:, 2]
+-     angle_deviation_from_world_z = torch.acos(torch.clamp(cos_angle_robot_z_with_world_z_dev, -1.0 + 1e-7, 1.0 - 1e-7))
+-     penalty_orientation_deviation = cfg_rew_scale_orientation_deviation * angle_deviation_from_world_z
+-     penalty_self_collision = cfg_rew_scale_self_collision * (num_self_collisions_per_env > 0).float()
+--    current_is_severely_tilted = projected_gravity_b[:, 2] > 0.0
+--    transitioned_to_upright_hemisphere = was_severely_tilted_last_step & (~current_is_severely_tilted)
+-+    current_is_severely_tilted_for_flip = projected_gravity_b[:, 2] > 0.0
+-+    transitioned_to_upright_hemisphere = was_severely_tilted_last_step & (~current_is_severely_tilted_for_flip)
+-     reward_successful_flip = cfg_rew_scale_successful_flip * transitioned_to_upright_hemisphere.float()
+- 
+-+     # --- 新增：所有脚稳定站立奖励 ---
+-+    reward_all_feet_stable_stand = torch.zeros_like(root_pos_w[:, 0], device=device)
+-+    if cfg_rew_scale_all_feet_stable_stand != 0.0:
+-+        num_total_feet = 6 # 假设六足机器人
+-+        all_feet_contacting = (num_feet_in_contact == num_total_feet)
+-+        # is_stand_cmd_active 和 is_within_orientation_limit 已在上面计算
+-+        stable_stand_condition = is_stand_cmd_active & is_within_orientation_limit & all_feet_contacting
+-+        
+-+        reward_all_feet_stable_stand = torch.where(
+-+            stable_stand_condition,
+-+            torch.full_like(reward_all_feet_stable_stand, cfg_rew_scale_all_feet_stable_stand),
+-+            torch.zeros_like(reward_all_feet_stable_stand)
+-+        )
+- 
+--    # --- 修改：条件化目标高度奖励 ---
+--    cos_angle_robot_z_with_world_z_cond = -projected_gravity_b[:, 2]
+--    device = projected_gravity_b.device
+--    # is_within_orientation_limit_for_rewards: True 表示机器人Z轴与世界Z轴夹角在 +/- limit_rad 之内
+--    is_within_orientation_limit_for_rewards = cos_angle_robot_z_with_world_z_cond >= torch.cos(torch.tensor(cfg_orientation_termination_angle_limit_rad, device=device))
+-+    # --- （可选）惩罚悬空的脚 ---
+-+    penalty_airborne_feet = torch.zeros_like(root_pos_w[:, 0], device=device)
+-+    if cfg_rew_scale_airborne_feet_penalty != 0.0:
+-+        num_total_feet = 6 
+-+        airborne_feet_count = num_total_feet - num_feet_in_contact
+-+        airborne_feet_count_float = torch.relu(airborne_feet_count.float())
+-+        # 仅在站立指令且姿态良好时惩罚悬空脚可能更合理
+-+        penalty_airborne_feet = torch.where(
+-+            is_stand_cmd_active & is_within_orientation_limit,
+-+            cfg_rew_scale_airborne_feet_penalty * airborne_feet_count_float,
+-+            torch.zeros_like(airborne_feet_count_float)
+-+        )
+- 
+--    # current_height_z = root_pos_w[:, 2] # 已在前面定义
+--    height_error_sq = torch.square(current_height_z - cfg_target_height_m)
+--    # cfg_target_height_reward_sharpness 是正值，指数项应该是负的
+--    _base_reward_target_height = torch.exp(-cfg_target_height_reward_sharpness * height_error_sq) * cfg_rew_scale_target_height
+--    
+--    reward_target_height = torch.where(
+--        is_within_orientation_limit_for_rewards,
+--        _base_reward_target_height,
+--        torch.zeros_like(_base_reward_target_height) # 如果姿态不对，高度奖励为0
+--    )
+--    
+--    # --- 总奖励计算 (与上一版本结构相同，只是 reward_target_height 的计算方式变了) ---
+-+
+-+
+-+    # --- 新增：自定义足部特定轴向对齐奖励 ---
+-+    reward_custom_foot_axis_alignment = torch.zeros_like(root_pos_w[:, 0], device=device)
+-+    if foot_quats_w is not None and foot_contact_mask is not None and \
+-+       foot_link_target_align_local_axes is not None and foot_link_target_align_world_axes is not None and \
+-+       cfg_rew_scale_custom_foot_axis_alignment != 0.0:
+-+        
+-+        num_feet_to_check = foot_quats_w.shape[1]
+-+        all_feet_alignment_quality = torch.zeros_like(foot_contact_mask, dtype=torch.float32) # (num_envs, num_feet)
+-+
+-+        for i in range(num_feet_to_check):
+-+            # foot_quats_w[:, i, :] shape: (num_envs, 4)
+-+            # foot_link_target_align_axes[i, :] shape: (3,)
+-+            # foot_link_target_align_world_axes[i, :] shape: (3,)
+-+            
+-+            # 扩展局部轴和目标世界轴以匹配批次大小
+-+            local_axis_to_align = foot_link_target_align_local_axes[i, :].expand(foot_quats_w.shape[0], 3)
+-+            target_world_axis = foot_link_target_align_world_axes[i, :].expand(foot_quats_w.shape[0], 3)
+-+            
+-+            # 将脚的局部待对齐轴旋转到世界坐标系
+-+            # quat_rotate(quat_wxyz, vector_xyz)
+-+            foot_local_axis_in_world = quat_rotate(foot_quats_w[:, i, :], local_axis_to_align) # (num_envs, 3)
+-+            
+-+            # 计算旋转后的局部轴与目标世界轴的点积 (cosine similarity)
+-+            # (N,3) * (N,3) -> sum over last dim -> (N,)
+-+            cos_sim = torch.sum(foot_local_axis_in_world * target_world_axis, dim=1) # (num_envs,)
+-+            
+-+            # 将 cos_sim (-1 to 1) 映射到奖励质量 (0 to 1), 1 表示完美对齐
+-+            alignment_quality = (cos_sim + 1.0) / 2.0
+-+            all_feet_alignment_quality[:, i] = alignment_quality
+-+            
+-+        active_foot_alignment_reward = all_feet_alignment_quality * foot_contact_mask.float()
+-+        num_contacting_feet = torch.sum(foot_contact_mask.float(), dim=1)
+-+        sum_alignment_reward_per_env = torch.sum(active_foot_alignment_reward, dim=1)
+-+        
+-+        reward_custom_foot_axis_alignment_values = sum_alignment_reward_per_env / torch.clamp(num_contacting_feet, min=1.0)
+-+        reward_custom_foot_axis_alignment = torch.where(
+-+            num_contacting_feet > 0,
+-+            reward_custom_foot_axis_alignment_values * cfg_rew_scale_custom_foot_axis_alignment,
+-+            torch.zeros_like(sum_alignment_reward_per_env)
+-+        )
+-+        
+-+    # --- 总奖励计算 ---
+-     total_reward = (
+-         reward_move_in_commanded_direction + reward_turn + reward_alive + reward_target_height 
+-         + penalty_orientation_deviation + penalty_self_collision + reward_successful_flip
+-+        + reward_custom_foot_axis_alignment 
+-+        + reward_all_feet_stable_stand # 新增
+-+        + penalty_airborne_feet      # 新增
+-         + (penalty_action_cost + penalty_action_rate + penalty_joint_torques + penalty_joint_accel
+--        + penalty_lin_vel_z + penalty_ang_vel_xy + penalty_flat_orientation + penalty_unwanted_movement
+-+        + penalty_lin_vel_z + penalty_ang_vel_xy + penalty_flat_orientation + penalty_unwanted_movement # penalty_flat_orientation 在此 (dt组)
+-         + penalty_dof_at_limit + penalty_toe_orientation + penalty_low_height
+-         + penalty_undesired_contact) * dt
+-     )
+-     
+--    # reward_terms 字典保持不变，因为 reward_target_height 变量名没变
+-     reward_terms: Dict[str, torch.Tensor] = {
+-         "move_in_commanded_direction": reward_move_in_commanded_direction,
+-         "turn_reward_combined": reward_turn,
+-         "alive": reward_alive,
+--        "target_height": reward_target_height, # 这个值现在是新的计算方式
+-+        "target_height": reward_target_height,
+-         "orientation_deviation_penalty": penalty_orientation_deviation,
+-         "self_collision_penalty": penalty_self_collision,
+-         "successful_flip_reward": reward_successful_flip,
+-+        "custom_foot_axis_alignment": reward_custom_foot_axis_alignment,
+-+        "all_feet_stable_stand_reward": reward_all_feet_stable_stand, # 新增
+-+        "airborne_feet_penalty": penalty_airborne_feet,             # 新增
+-         "action_cost_penalty": penalty_action_cost * dt,
+-         "action_rate_penalty": penalty_action_rate * dt,
+-         "joint_torques_penalty": penalty_joint_torques * dt,
+-         "joint_accel_penalty": penalty_joint_accel * dt,
+--        "lin_vel_z_penalty": penalty_lin_vel_z * dt,
+--        "ang_vel_xy_penalty": penalty_ang_vel_xy * dt,
+-+        "lin_vel_z_penalty": penalty_lin_vel_z, 
+-+        "ang_vel_xy_penalty": penalty_ang_vel_xy,
+-         "flat_orientation_penalty": penalty_flat_orientation * dt,
+-         "unwanted_movement_penalty": penalty_unwanted_movement * dt,
+-         "dof_at_limit_penalty": penalty_dof_at_limit * dt,
+-@@ -171,18 +253,109 @@ def compute_sixfeet_rewards_directional(
+- 
+- 
+- class SixfeetEnv(DirectRLEnv):
+--    # ... (所有 __init__ 中的属性定义与上一版本一致，包括 _was_severely_tilted_last_step) ...
+-     cfg: SixfeetEnvCfg
+-     _contact_sensor: ContactSensor
+-     _orientation_termination_angle_limit_rad: float
+-     _was_severely_tilted_last_step: torch.Tensor
+-+    
+-+    # 用于自定义足部姿态对齐
+-+    _foot_link_articulation_indices: List[int] 
+-+    _foot_link_sensor_indices: List[int]     
+-+    _foot_link_names_found_for_align: List[str]
+-+    _foot_link_target_align_axes_tensor: Optional[torch.Tensor] = None # (num_feet, 3)
+-+    _foot_link_target_align_world_axes_tensor: Optional[torch.Tensor] = None # (num_feet, 3)
+-+    _all_foot_tip_sensor_indices: List[int]
+-+
+-+    def __init__(self, cfg: SixfeetEnvCfg, render_mode: str | None = None, **kwargs):
+-+        # 1. 初始化不依赖父类初始化的属性
+-+        if hasattr(cfg, "orientation_termination_angle_limit_deg"):
+-+            self._orientation_termination_angle_limit_rad = math.radians(cfg.orientation_termination_angle_limit_deg)
+-+        else:
+-+            self._orientation_termination_angle_limit_rad = math.radians(90.0)
+-+        
+-+        self._foot_link_articulation_indices = []
+-+        self._foot_link_sensor_indices = []
+-+        self._foot_link_names_found_for_align = []
+-+        target_align_axes_list = []
+-+        target_world_axes_list = []
+-+
+-+        # 2. 调用父类的 __init__
+-+        super().__init__(cfg, render_mode, **kwargs) # self.device 在此之后可用
+-+
+-+        # --- 在 super().__init__ 之后，self.device 可用 ---
+-+        world_z_axis = torch.tensor([0.0, 0.0, 1.0], device=self.device, dtype=torch.float32)
+-+        local_x_axis = torch.tensor([1.0, 0.0, 0.0], device=self.device, dtype=torch.float32)
+-+        local_neg_x_axis = torch.tensor([-1.0, 0.0, 0.0], device=self.device, dtype=torch.float32)
+-+        local_y_axis = torch.tensor([0.0, 1.0, 0.0], device=self.device, dtype=torch.float32)
+-+        local_neg_y_axis = torch.tensor([0.0, -1.0, 0.0], device=self.device, dtype=torch.float32)
+-+        local_z_axis = torch.tensor([0.0, 0.0, 1.0], device=self.device, dtype=torch.float32) # 默认对齐轴
+- 
+--    def __init__(self, cfg: SixfeetEnvCfg, render_mode: str | None = None, **kwargs): # 与上一版本一致
+--        super().__init__(cfg, render_mode, **kwargs)
+--        if hasattr(self.cfg, "orientation_termination_angle_limit_deg"):
+--            self._orientation_termination_angle_limit_rad = math.radians(self.cfg.orientation_termination_angle_limit_deg)
+--        else: self._orientation_termination_angle_limit_rad = math.radians(90.0)
+-         self._was_severely_tilted_last_step = torch.ones(self.num_envs, device=self.device, dtype=torch.bool)
+-+
+-+        if hasattr(self.cfg, "foot_link_name_pattern_for_custom_align") and self.cfg.foot_link_name_pattern_for_custom_align:
+-+            foot_pattern_str = self.cfg.foot_link_name_pattern_for_custom_align
+-+            try: foot_pattern_re = re.compile(foot_pattern_str)
+-+            except re.error: print(f"[ERROR] Invalid regex: {foot_pattern_str}"); foot_pattern_re = None
+-+
+-+            if foot_pattern_re and hasattr(self.robot, "body_names") and self.robot.body_names is not None:
+-+                temp_foot_infos: List[Tuple[int, str]] = []
+-+                for i, body_name in enumerate(self.robot.body_names):
+-+                    if foot_pattern_re.fullmatch(body_name):
+-+                        temp_foot_infos.append((i, body_name))
+-+                temp_foot_infos.sort(key=lambda x: x[1]) 
+-+
+-+                for artic_idx, body_name in temp_foot_infos:
+-+                    self._foot_link_articulation_indices.append(artic_idx)
+-+                    self._foot_link_names_found_for_align.append(body_name)
+-+                    
+-+                    # 根据你的描述确定局部轴
+-+                    # foot_link_13 (-Y), foot_link_23 (X), foot_link_33 (Y)
+-+                    # foot_link_43 (-Y), foot_link_53 (-X), foot_link_63 (Y)
+-+                    if body_name.endswith("33") or body_name.endswith("63"): # 脚3, 6
+-+                        target_align_axes_list.append(local_y_axis)
+-+                    elif body_name.endswith("53"): # 脚5
+-+                        target_align_axes_list.append(local_neg_x_axis)
+-+                    elif body_name.endswith("23"): # 脚2
+-+                        target_align_axes_list.append(local_x_axis)
+-+                    elif body_name.endswith("43") or body_name.endswith("13"): # 脚1, 4
+-+                        target_align_axes_list.append(local_neg_y_axis)
+-+                    else:
+-+                        print(f"[WARNING] Foot link {body_name} matched pattern but has no specific axis rule. Defaulting to local Z.")
+-+                        target_align_axes_list.append(local_z_axis)
+-+                    target_world_axes_list.append(world_z_axis) # 所有都与世界Z轴对齐
+-+                
+-+                if self._foot_link_names_found_for_align:
+-+                    sensor_indices_found, _ = self._contact_sensor.find_bodies(self._foot_link_names_found_for_align)
+-+                    if sensor_indices_found and len(sensor_indices_found) == len(self._foot_link_names_found_for_align):
+-+                        self._foot_link_sensor_indices = sensor_indices_found
+-+                        if target_align_axes_list: # 确保列表非空
+-+                            self._foot_link_target_align_local_axes_tensor = torch.stack(target_align_axes_list)
+-+                            self._foot_link_target_align_world_axes_tensor = torch.stack(target_world_axes_list)
+-+                            print(f"[INFO] Articulation indices for custom align: {self._foot_link_articulation_indices}")
+-+                            print(f"[INFO] Sensor body indices for custom align/contact: {self._foot_link_sensor_indices} for names {self._foot_link_names_found_for_align}")
+-+                        else: # 如果 target_align_axes_list 为空 (例如所有脚都没有特定规则且默认了)
+-+                             print(f"[WARNING] Target axes list is empty for custom foot alignment.")
+-+                             self._foot_link_articulation_indices = []; self._foot_link_sensor_indices = []; self._foot_link_names_found_for_align = []
+-+
+-+                    else: # 清理
+-+                        self._foot_link_articulation_indices = []; self._foot_link_sensor_indices = []; self._foot_link_names_found_for_align = []
+-+                        print(f"[WARNING] Could not map all foot link names to sensor indices consistently.")
+-+                else: print(f"[WARNING] No robot body names matched foot pattern for custom alignment: {foot_pattern_str}")
+-+            # ... (其他elif和else分支)
+-+        else: print(f"[INFO] 'foot_link_name_pattern_for_custom_align' not in Cfg. Custom foot align/all_feet_contact rewards disabled.")
+-+
+-+
+-+        if not self._foot_link_articulation_indices or \
+-+           len(self._foot_link_articulation_indices) != len(target_align_axes_list) or \
+-+           not self._foot_link_sensor_indices or \
+-+           len(self._foot_link_sensor_indices) != len(self._foot_link_articulation_indices) or \
+-+           self._foot_link_target_align_local_axes_tensor is None: # 额外检查tensor是否创建
+-+            if hasattr(self.cfg, "rew_scale_custom_foot_axis_alignment") and getattr(self.cfg, "rew_scale_custom_foot_axis_alignment", 0.0) != 0.0:
+-+                print(f"[WARNING] Custom foot axis alignment reward may be disabled due to setup issues in __init__.")
+-+            self._foot_link_articulation_indices = []; self._foot_link_sensor_indices = []; self._foot_link_names_found_for_align = []
+-+            self._foot_link_target_align_local_axes_tensor = None; self._foot_link_target_align_world_axes_tensor = None
+-+        
+-+        # ... (其他 __init__ 内容与上一版本相同) ...
+-         self._default_joint_pos = self.robot.data.default_joint_pos.clone()
+-         if self._default_joint_pos.ndim > 1 and self._default_joint_pos.shape[0] == self.num_envs: self._default_joint_pos = self._default_joint_pos[0]
+-         joint_limits = self.robot.data.joint_pos_limits[0].to(self.device)
+-@@ -300,53 +473,61 @@ class SixfeetEnv(DirectRLEnv):
+- 
+- 
+-     def _get_rewards(self) -> torch.Tensor:
+--        # --- 获取状态 (与上一版本相同) ---
+--        root_lin_vel_b = self.robot.data.root_lin_vel_b; root_ang_vel_b = self.robot.data.root_ang_vel_b
+--        projected_gravity_b = self.robot.data.projected_gravity_b
+-+        # ... (获取基础状态、不期望接触、自碰撞计数、当前是否严重倾斜的逻辑保持不变) ...
+-+        # ... (获取 foot_quats_w_for_reward 和 foot_contact_mask_for_custom_align (用于轴对齐) 的逻辑保持不变) ...
+-+        # ... (获取 num_feet_in_contact (用于所有脚稳定站立/悬空脚惩罚) 的逻辑保持不变) ...
+-+        # (这些变量应该在你当前的 _get_rewards 方法中已经正确计算了)
+-+        root_lin_vel_b = self.robot.data.root_lin_vel_b; root_ang_vel_b = self.robot.data.root_ang_vel_b; projected_gravity_b = self.robot.data.projected_gravity_b
+-         default_pos_expanded = self._default_joint_pos.unsqueeze(0) if self._default_joint_pos.ndim == 1 else self._default_joint_pos
+-         joint_pos_rel = self.robot.data.joint_pos - default_pos_expanded
+-         current_joint_pos_abs = self.robot.data.joint_pos; joint_vel = self.robot.data.joint_vel
+-         applied_torque = self.robot.data.applied_torque; joint_acc = getattr(self.robot.data, "joint_acc", torch.zeros_like(joint_vel, device=self.device))
+-         root_pos_w = self.robot.data.root_pos_w
+--
+--        # --- 不期望的接触 (与上一版本相同) ---
+--        undesired_contacts_active = torch.zeros(self.num_envs, device=self.device, dtype=torch.bool)
+-+        undesired_contacts_active = torch.zeros(self.num_envs, device=self.device, dtype=torch.bool) # 确保此变量已定义
+-         if hasattr(self.cfg, "rew_scale_undesired_contact") and self.cfg.rew_scale_undesired_contact != 0.0 and \
+-            self._undesired_contact_body_ids and len(self._undesired_contact_body_ids) > 0:
+-              if hasattr(self._contact_sensor.data, 'net_forces_w_history') and self._contact_sensor.data.net_forces_w_history is not None:
+--                all_forces = self._contact_sensor.data.net_forces_w_history
+--                if all_forces.ndim == 4 and all_forces.shape[1] > 0 and self._undesired_contact_body_ids and max(self._undesired_contact_body_ids) < all_forces.shape[2]:
+--                    forces = all_forces[:, -1, self._undesired_contact_body_ids, :]; undesired_contacts_active = torch.any(torch.norm(forces, dim=-1) > 1.0, dim=1)
+--
+--        # --- 计算自碰撞次数 (与上一版本相同) ---
+--        num_self_collisions_per_env = torch.zeros(self.num_envs, device=self.device, dtype=torch.long)
+-+                all_forces_contact_sensor = self._contact_sensor.data.net_forces_w_history
+-+                if all_forces_contact_sensor.ndim == 4 and all_forces_contact_sensor.shape[1] > 0 and self._undesired_contact_body_ids and max(self._undesired_contact_body_ids) < all_forces_contact_sensor.shape[2]:
+-+                    forces_undesired = all_forces_contact_sensor[:, -1, self._undesired_contact_body_ids, :]; undesired_contacts_active = torch.any(torch.norm(forces_undesired, dim=-1) > 1.0, dim=1)
+-+        num_self_collisions_per_env = torch.zeros(self.num_envs, device=self.device, dtype=torch.long) # 确保此变量已定义
+-         contact_data = self._contact_sensor.data
+-         if hasattr(contact_data, 'body_indices_in_contact_buffer') and contact_data.body_indices_in_contact_buffer is not None and \
+-            hasattr(self.robot.data, 'body_indices') and self.robot.data.body_indices is not None:
+--            contact_pairs_global_indices = contact_data.body_indices_in_contact_buffer
+--            robot_global_body_indices = self.robot.data.body_indices
+-+            contact_pairs_global_indices = contact_data.body_indices_in_contact_buffer; robot_global_body_indices = self.robot.data.body_indices
+-             if robot_global_body_indices.numel() > 0 and contact_pairs_global_indices.numel() > 0:
+--                num_envs_contact, max_contacts_per_env, _ = contact_pairs_global_indices.shape
+--                num_envs_robot, num_robot_bodies = robot_global_body_indices.shape
+-+                num_envs_contact, max_contacts_per_env, _ = contact_pairs_global_indices.shape; num_envs_robot, num_robot_bodies = robot_global_body_indices.shape
+-                 if num_envs_contact == self.num_envs and num_envs_robot == self.num_envs:
+--                    robot_indices_expanded = robot_global_body_indices.unsqueeze(1)
+--                    body0_global_idx_pairs = contact_pairs_global_indices[..., 0].unsqueeze(-1)
+--                    body1_global_idx_pairs = contact_pairs_global_indices[..., 1].unsqueeze(-1)
+--                    is_body0_robot_contact = torch.any(body0_global_idx_pairs == robot_indices_expanded, dim=2)
+--                    is_body1_robot_contact = torch.any(body1_global_idx_pairs == robot_indices_expanded, dim=2)
+-+                    robot_indices_expanded = robot_global_body_indices.unsqueeze(1); body0_global_idx_pairs = contact_pairs_global_indices[..., 0].unsqueeze(-1); body1_global_idx_pairs = contact_pairs_global_indices[..., 1].unsqueeze(-1)
+-+                    is_body0_robot_contact = torch.any(body0_global_idx_pairs == robot_indices_expanded, dim=2); is_body1_robot_contact = torch.any(body1_global_idx_pairs == robot_indices_expanded, dim=2)
+-                     is_self_collision_pair = is_body0_robot_contact & is_body1_robot_contact
+--                    valid_contact_indices = (contact_pairs_global_indices[..., 0] != -1) & \
+--                                            (contact_pairs_global_indices[..., 1] != -1) & \
+--                                            (contact_pairs_global_indices[..., 0] != contact_pairs_global_indices[..., 1])
+-+                    valid_contact_indices = (contact_pairs_global_indices[..., 0] != -1) & (contact_pairs_global_indices[..., 1] != -1) & (contact_pairs_global_indices[..., 0] != contact_pairs_global_indices[..., 1])
+-                     if hasattr(contact_data, 'num_contacts_in_buffer') and contact_data.num_contacts_in_buffer is not None:
+-                         valid_contact_mask_sensor = torch.arange(max_contacts_per_env, device=self.device).unsqueeze(0) < contact_data.num_contacts_in_buffer.unsqueeze(1)
+-                         is_self_collision_pair_valid = is_self_collision_pair & valid_contact_mask_sensor & valid_contact_indices
+--                    else: 
+--                        is_self_collision_pair_valid = is_self_collision_pair & valid_contact_indices
+-+                    else: is_self_collision_pair_valid = is_self_collision_pair & valid_contact_indices
+-                     num_self_collisions_per_env = torch.sum(is_self_collision_pair_valid, dim=1)
+--        
+--        # --- 获取用于“成功翻转”奖励的状态 ---
+-         current_is_severely_tilted_for_flip_reward = (projected_gravity_b[:, 2] > 0.0)
+-+        foot_quats_w_for_reward: Optional[torch.Tensor] = None
+-+        foot_contact_mask_for_custom_align: Optional[torch.Tensor] = None
+-+        num_feet_in_contact = torch.zeros(self.num_envs, device=self.device, dtype=torch.long)
+-+        if self._foot_link_articulation_indices and self._foot_link_sensor_indices and \
+-+           len(self._foot_link_articulation_indices) > 0 and \
+-+           len(self._foot_link_articulation_indices) == len(self._foot_link_sensor_indices):
+-+            if hasattr(self.robot.data, "body_quat_w") and self.robot.data.body_quat_w is not None:
+-+                articulation_indices_tensor = torch.tensor(self._foot_link_articulation_indices, device=self.device, dtype=torch.long)
+-+                if articulation_indices_tensor.numel() > 0 and articulation_indices_tensor.max() < self.robot.data.body_quat_w.shape[1]:
+-+                     foot_quats_w_for_reward = self.robot.data.body_quat_w[:, articulation_indices_tensor]
+-+            if hasattr(self._contact_sensor.data, 'net_forces_w_history') and \
+-+               self._contact_sensor.data.net_forces_w_history is not None:
+-+                all_forces_contact = self._contact_sensor.data.net_forces_w_history
+-+                sensor_indices_tensor = torch.tensor(self._foot_link_sensor_indices, device=self.device, dtype=torch.long)
+-+                if sensor_indices_tensor.numel() > 0 and all_forces_contact.ndim == 4 and all_forces_contact.shape[1] > 0 and \
+-+                   sensor_indices_tensor.max() < all_forces_contact.shape[2]:
+-+                    forces_on_these_feet = all_forces_contact[:, -1, sensor_indices_tensor, :]
+-+                    foot_contact_magnitudes = torch.norm(forces_on_these_feet, dim=-1)
+-+                    foot_contact_mask_for_custom_align = foot_contact_magnitudes > 1.0
+-+                    num_feet_in_contact = torch.sum(foot_contact_mask_for_custom_align.long(), dim=1)
+- 
+- 
+-         total_reward, reward_terms_dict = compute_sixfeet_rewards_directional(
+-@@ -354,30 +535,36 @@ class SixfeetEnv(DirectRLEnv):
+-             self._q_lower_limits, self._q_upper_limits, current_joint_pos_abs, self._policy_actions, self._previous_policy_actions,
+-             root_pos_w, undesired_contacts_active, self._commands, self.cfg.command_profile,
+-             self.cfg.rew_scale_move_in_commanded_direction, self.cfg.rew_scale_achieve_reference_angular_rate,
+--            self.cfg.rew_scale_alive, 
+--            self.cfg.rew_scale_target_height, self.cfg.target_height_m, # 使用CFG中的新值
+-+            self.cfg.rew_scale_alive, self.cfg.rew_scale_target_height, self.cfg.target_height_m,
+-             self.cfg.rew_scale_action_cost, self.cfg.rew_scale_action_rate, self.cfg.rew_scale_joint_torques, self.cfg.rew_scale_joint_accel,
+-             self.cfg.rew_scale_lin_vel_z_penalty, self.cfg.rew_scale_ang_vel_xy_penalty, self.cfg.rew_scale_flat_orientation,
+-             self.cfg.rew_scale_unwanted_movement_penalty, self.cfg.rew_scale_dof_at_limit, self.cfg.rew_scale_toe_orientation_penalty,
+-             self._toe_joint_indices, self.cfg.rew_scale_low_height_penalty, self.cfg.min_height_penalty_threshold,
+--            self.cfg.rew_scale_undesired_contact, 
+-+            self.cfg.rew_scale_undesired_contact,
+-             self.sim.cfg.dt,
+-             getattr(self.cfg, "rew_scale_orientation_deviation", 0.0),
+-             self._orientation_termination_angle_limit_rad,
+-             getattr(self.cfg, "joint_limit_penalty_threshold_percent", 0.05),
+-             num_self_collisions_per_env,
+-             getattr(self.cfg, "rew_scale_self_collision", 0.0),
+--            # --- 传递翻转奖励相关参数 ---
+-             self._was_severely_tilted_last_step,
+--            getattr(self.cfg, "rew_scale_successful_flip", 0.0), # 从CFG获取
+--            # --- 传递高度奖励尖锐度参数 ---
+--            getattr(self.cfg, "target_height_reward_sharpness", 50.0) # 从CFG获取，提供默认值
+-+            getattr(self.cfg, "rew_scale_successful_flip", 0.0),
+-+            getattr(self.cfg, "target_height_reward_sharpness", 50.0),
+-+            # vv --- 确保以下参数的顺序与函数定义中的一致 --- vv
+-+            foot_quats_w_for_reward,                         # Tensor? foot_quats_w
+-+            foot_contact_mask_for_custom_align,              # Tensor? foot_contact_mask (用于特定轴对齐)
+-+            self._foot_link_target_align_axes_tensor,        # Tensor? foot_link_target_align_axes
+-+            self._foot_link_target_align_world_axes_tensor,  # Tensor? foot_link_target_align_world_axes
+-+            getattr(self.cfg, "rew_scale_custom_foot_axis_alignment", 0.0), # float cfg_rew_scale_custom_foot_axis_alignment
+-+            num_feet_in_contact,                             # Tensor num_feet_in_contact
+-+            getattr(self.cfg, "rew_scale_all_feet_stable_stand", 0.0), # float cfg_rew_scale_all_feet_stable_stand
+-+            getattr(self.cfg, "rew_scale_airborne_feet_penalty", 0.0)  # float cfg_rew_scale_airborne_feet_penalty
+-+            # ^^ --- 参数顺序调整结束 --- ^^
+-         )
+--        
+--        # 更新上一帧的严重倾斜状态，用于下一帧的翻转奖励计算
+-+
+-         self._was_severely_tilted_last_step = current_is_severely_tilted_for_flip_reward.clone()
+- 
+--        # ... (日志记录和返回与上一版本相同) ...
+-+        # ... (日志记录和返回逻辑) ...
+-         if "log" not in self.extras or self.extras["log"] is None : self.extras["log"] = {}
+-         for key, value in reward_terms_dict.items():
+-             term_mean = value.mean(); self.extras["log"][f"reward_term/{key}_step_avg"] = term_mean.item() if torch.is_tensor(term_mean) else term_mean
+-@@ -389,162 +576,80 @@ class SixfeetEnv(DirectRLEnv):
+-         self.extras["log"]["reward/final_reward_avg"] = final_reward.mean().item() if torch.is_tensor(final_reward) else final_reward.mean()
+-         return final_reward
+- 
+--
+--    def _get_dones(self) -> tuple[torch.Tensor, torch.Tensor]:
+--        time_out = self.episode_length_buf >= self.max_episode_length - 1
+--        root_pos_w = self.robot.data.root_pos_w
+--        projected_gravity_b = self.robot.data.projected_gravity_b
+--        
+--        orientation_limit_rad = getattr(self, "_orientation_termination_angle_limit_rad", math.radians(90.0))
+--        cos_angle_robot_z_with_world_z = -projected_gravity_b[:, 2]
+-+    def _get_dones(self) -> tuple[torch.Tensor, torch.Tensor]: # 与上一版本相同
+-+        # ... (代码与上一版本完全一致，包含了条件化终止逻辑) ...
+-+        time_out = self.episode_length_buf >= self.max_episode_length - 1; root_pos_w = self.robot.data.root_pos_w; projected_gravity_b = self.robot.data.projected_gravity_b
+-+        orientation_limit_rad = getattr(self, "_orientation_termination_angle_limit_rad", math.radians(90.0)); cos_angle_robot_z_with_world_z = -projected_gravity_b[:, 2]
+-         is_within_termination_orientation_limit = cos_angle_robot_z_with_world_z >= math.cos(orientation_limit_rad)
+--
+--        # 高度过低终止：仅在姿态限制范围内 且 身体相对平坦时 生效
+-         height_too_low_orig = root_pos_w[:, 2] < self.cfg.termination_height_thresh
+-         sum_sq_proj_grav_xy = torch.sum(torch.square(projected_gravity_b[:, :2]), dim=1)
+-         flatness_thresh = getattr(self.cfg, "flatness_threshold_for_height_termination", 0.2)
+-         is_relatively_flat = sum_sq_proj_grav_xy < flatness_thresh
+-         height_too_low = height_too_low_orig & is_within_termination_orientation_limit & is_relatively_flat
+--        
+-         fallen_over_orig = projected_gravity_b[:, 2] > self.cfg.termination_body_z_thresh
+-         fallen_over = fallen_over_orig & is_within_termination_orientation_limit
+--        
+-         base_contact_termination = torch.zeros_like(time_out, dtype=torch.bool)
+-         if hasattr(self.cfg, "termination_base_contact") and self.cfg.termination_base_contact:
+-             base_contact_raw_detection = torch.zeros_like(time_out, dtype=torch.bool)
+-             if self._base_body_id and len(self._base_body_id) > 0:
+--                if hasattr(self._contact_sensor.data, 'net_forces_w_history') and \
+--                   self._contact_sensor.data.net_forces_w_history is not None:
+-+                if hasattr(self._contact_sensor.data, 'net_forces_w_history') and self._contact_sensor.data.net_forces_w_history is not None:
+-                     all_forces = self._contact_sensor.data.net_forces_w_history
+--                    if all_forces.ndim == 4 and all_forces.shape[1] > 0 and \
+--                       self._base_body_id and max(self._base_body_id) < all_forces.shape[2]:
+--                        forces = all_forces[:, -1, self._base_body_id, :]
+--                        base_contact_raw_detection = torch.any(torch.norm(forces, dim=-1) > 1.0, dim=1)
+--            
+-+                    if all_forces.ndim == 4 and all_forces.shape[1] > 0 and self._base_body_id and max(self._base_body_id) < all_forces.shape[2]:
+-+                        forces = all_forces[:, -1, self._base_body_id, :]; base_contact_raw_detection = torch.any(torch.norm(forces, dim=-1) > 1.0, dim=1)
+-             current_time_in_episode = (self.episode_length_buf + 1).float() * self.physics_dt
+--            grace_period_seconds = 1.0
+--            ignore_initial_fall_contact = current_time_in_episode <= grace_period_seconds
+-+            grace_period_seconds = 1.0; ignore_initial_fall_contact = current_time_in_episode <= grace_period_seconds
+-             valid_base_contact_trigger = base_contact_raw_detection & (~ignore_initial_fall_contact)
+-             base_contact_termination = valid_base_contact_trigger & is_within_termination_orientation_limit
+--            
+-         terminated = height_too_low | fallen_over | base_contact_termination | time_out
+--
+-         # if torch.is_tensor(terminated) and terminated.any():
+-         #     terminated_env_indices = terminated.nonzero(as_tuple=False).squeeze(-1)
+-         #     if terminated_env_indices.ndim == 0: terminated_env_indices = terminated_env_indices.unsqueeze(0)
+-         #     for env_idx_tensor in terminated_env_indices:
+-         #         env_idx = env_idx_tensor.item(); reasons = []
+--        #         if height_too_low[env_idx]: reasons.append("height_too_low(cond)")
+--        #         if fallen_over[env_idx]: reasons.append("fallen_over(cond)")
+--        #         if base_contact_termination[env_idx]: reasons.append("base_contact(cond)")
+-+        #         if height_too_low[env_idx]: reasons.append("height_too_low(cond_flat)")
+-+        #         if fallen_over[env_idx]: reasons.append("fallen_over(cond_orient)")
+-+        #         if base_contact_termination[env_idx]: reasons.append("base_contact(cond_orient_time)")
+-         #         if time_out[env_idx]: reasons.append("time_out")
+--        #         if reasons:
+--        #             episode_step = self.episode_length_buf[env_idx].item() + 1
+--        #             print(f"[Termination Info] Env {env_idx}: Reset at ep step {episode_step} due to: {', '.join(reasons)}")
+--            
+-+        #         if reasons: episode_step = self.episode_length_buf[env_idx].item() + 1; print(f"[Termination Info] Env {env_idx}: Reset at ep step {episode_step} due to: {', '.join(reasons)}")
+-         return terminated, time_out
+-     
+--    def _reset_idx(self, env_ids: Sequence[int] | None):
+-+    def _reset_idx(self, env_ids: Sequence[int] | None): # 与上一版本相同
+-         super()._reset_idx(env_ids)
+-         eids = torch.arange(self.num_envs, device=self.device, dtype=torch.long) if env_ids is None \
+-             else torch.as_tensor(env_ids, device=self.device, dtype=torch.long)
+-         if eids.numel() == 0: return
+--
+-         root_state_reset = self.robot.data.default_root_state[eids].clone()
+--        if hasattr(self._terrain, 'env_origins') and self._terrain.env_origins is not None:
+--             root_state_reset[:, :3] += self._terrain.env_origins[eids]
+--        
+-+        if hasattr(self._terrain, 'env_origins') and self._terrain.env_origins is not None: root_state_reset[:, :3] += self._terrain.env_origins[eids]
+-         initial_height_base = self.cfg.robot.init_state.pos[2] if self.cfg.robot.init_state.pos is not None and len(self.cfg.robot.init_state.pos) == 3 else 0.3
+--        # 使用CFG中的 reset_height_offset
+-         reset_height_offset = getattr(self.cfg, "reset_height_offset", 0.0)
+-         root_state_reset[:, 2] = initial_height_base + reset_height_offset
+--
+--        num_resets = len(eids)
+--        quats_xyzw = torch.zeros(num_resets, 4, device=self.device)
+--
+--        if self.cfg.initial_pose_randomization_mode == 1:
+--            # 模式 1: 完全随机的 RPY
+--            # print_once("[INFO] Resetting with full random RPY orientation.") # 可选的调试信息
+--            random_rolls = (torch.rand(num_resets, device=self.device) - 0.5) * 2.0 * math.pi
+--            random_pitches = (torch.rand(num_resets, device=self.device) - 0.5) * 2.0 * math.pi
+--            random_yaws = (torch.rand(num_resets, device=self.device) - 0.5) * 2.0 * math.pi # 使用完整的pi范围，覆盖cfg中的yaw_range
+--            
+--            for i in range(num_resets):
+--                roll, pitch, yaw = random_rolls[i], random_pitches[i], random_yaws[i]
+--                cy, sy = torch.cos(yaw * 0.5), torch.sin(yaw * 0.5)
+--                cp, sp = torch.cos(pitch * 0.5), torch.sin(pitch * 0.5)
+--                cr, sr = torch.cos(roll * 0.5), torch.sin(roll * 0.5)
+--                # ZYX Euler to Quaternion (qx, qy, qz, qw)
+--                qw = cr * cp * cy + sr * sp * sy
+--                qx = sr * cp * cy - cr * sp * sy
+--                qy = cr * sp * cy + sr * cp * sy
+--                qz = cr * cp * sy - sr * sp * cy
+--                quats_xyzw[i, 0], quats_xyzw[i, 1], quats_xyzw[i, 2], quats_xyzw[i, 3] = qx, qy, qz, qw
+--        
+--        elif self.cfg.initial_pose_randomization_mode == 0:
+--            # 模式 0: 机器人Z轴与世界Z轴相反 (完全倒置)，Yaw角随机
+--            # print_once("[INFO] Resetting to upside-down orientation (Z-axis opposite to world Z, random Yaw).") # 可选
+--            # 实现倒置：例如，绕X轴翻转180度，然后应用随机Yaw
+--            # roll = math.pi, pitch = 0
+--            rolls = torch.full((num_resets,), math.pi, device=self.device)
+--            pitches = torch.zeros(num_resets, device=self.device)
+--            random_yaws = (torch.rand(num_resets, device=self.device) - 0.5) * 2.0 * math.pi # Yaw 仍然随机
+--
+--            for i in range(num_resets):
+--                roll, pitch, yaw = rolls[i], pitches[i], random_yaws[i]
+--                cy, sy = torch.cos(yaw * 0.5), torch.sin(yaw * 0.5)
+--                cp, sp = torch.cos(pitch * 0.5), torch.sin(pitch * 0.5)
+--                cr, sr = torch.cos(roll * 0.5), torch.sin(roll * 0.5)
+--                qw = cr * cp * cy + sr * sp * sy
+--                qx = sr * cp * cy - cr * sp * sy
+--                qy = cr * sp * cy + sr * cp * sy
+--                qz = cr * cp * sy - sr * sp * cy
+--                quats_xyzw[i, 0], quats_xyzw[i, 1], quats_xyzw[i, 2], quats_xyzw[i, 3] = qx, qy, qz, qw
+--        else:
+--            # 默认情况或未知模式，可以退回仅随机Yaw（或你希望的其他默认行为）
+--            print_once(f"[WARNING] Unknown initial_pose_randomization_mode: {self.cfg.initial_pose_randomization_mode}. Defaulting to random yaw only.")
+--            random_yaws = (torch.rand(num_resets, device=self.device) - 0.5) * 2.0 * self.cfg.root_orientation_yaw_range
+--            # 使用 quat_from_angle_axis，它返回 xyzw 格式
+--            world_z_axis = torch.tensor([0.0, 0.0, 1.0], device=self.device, dtype=random_yaws.dtype)
+--            for i in range(num_resets):
+--                 # quat_from_angle_axis(angle, axis) -> returns (x,y,z,w)
+--                quat_xyzw_single = quat_from_angle_axis(random_yaws[i], world_z_axis)
+--                quats_xyzw[i] = quat_xyzw_single
+--
+--
+--        root_state_reset[:, 3:7] = convert_quat(quats_xyzw, to="wxyz") # Isaac Sim 使用 wxyz
+--        root_state_reset[:, 7:] = 0.0 # lin_vel, ang_vel
+--        self.robot.write_root_state_to_sim(root_state_reset, eids)
+--        
+--        # --- 关节状态重置 (保持之前的随机关节逻辑) ---
+-+        num_resets = len(eids); quats_xyzw = torch.zeros(num_resets, 4, device=self.device)
+-+        randomization_mode = getattr(self.cfg, "initial_pose_randomization_mode", 1)
+-+        if randomization_mode == 1:
+-+            random_rolls=(torch.rand(num_resets,device=self.device)-0.5)*2.0*math.pi; random_pitches=(torch.rand(num_resets,device=self.device)-0.5)*2.0*math.pi; random_yaws=(torch.rand(num_resets,device=self.device)-0.5)*2.0*math.pi
+-+            for i in range(num_resets): r,p,y=random_rolls[i],random_pitches[i],random_yaws[i]; cy,sy=torch.cos(y*0.5),torch.sin(y*0.5); cp,sp=torch.cos(p*0.5),torch.sin(p*0.5); cr,sr=torch.cos(r*0.5),torch.sin(r*0.5); quats_xyzw[i,3]=cr*cp*cy+sr*sp*sy; quats_xyzw[i,0]=sr*cp*cy-cr*sp*sy; quats_xyzw[i,1]=cr*sp*cy+sr*cp*sy; quats_xyzw[i,2]=cr*cp*sy-sr*sp*cy
+-+        elif randomization_mode == 0:
+-+            rolls=torch.full((num_resets,),math.pi,device=self.device); pitches=torch.zeros(num_resets,device=self.device); random_yaws=(torch.rand(num_resets,device=self.device)-0.5)*2.0*math.pi
+-+            for i in range(num_resets): r,p,y=rolls[i],pitches[i],random_yaws[i]; cy,sy=torch.cos(y*0.5),torch.sin(y*0.5); cp,sp=torch.cos(p*0.5),torch.sin(p*0.5); cr,sr=torch.cos(r*0.5),torch.sin(r*0.5); quats_xyzw[i,3]=cr*cp*cy+sr*sp*sy; quats_xyzw[i,0]=sr*cp*cy-cr*sp*sy; quats_xyzw[i,1]=cr*sp*cy+sr*cp*sy; quats_xyzw[i,2]=cr*cp*sy-sr*sp*cy
+-+        elif randomization_mode == 2: print_once("[INFO] Resetting with USD default root orientation.")
+-+        else: print_once(f"[WARNING] Unknown initial_pose_randomization_mode: {randomization_mode}. Using default.")
+-+        if randomization_mode==1 or randomization_mode==0: root_state_reset[:,3:7]=convert_quat(quats_xyzw,to="wxyz")
+-+        root_state_reset[:, 7:] = 0.0; self.robot.write_root_state_to_sim(root_state_reset, eids)
+-         num_dof = self._q_lower_limits.numel()
+--        random_proportions = torch.rand(len(eids), num_dof, device=self.device)
+--        q_lower_expanded = self._q_lower_limits.unsqueeze(0)
+--        q_range = self._q_upper_limits.unsqueeze(0) - q_lower_expanded
+--        joint_pos_reset = q_lower_expanded + random_proportions * q_range
+-+        if getattr(self.cfg, "randomize_initial_joint_poses", True):
+-+            random_proportions = torch.rand(len(eids), num_dof, device=self.device); q_lower_expanded = self._q_lower_limits.unsqueeze(0); q_range = self._q_upper_limits.unsqueeze(0) - q_lower_expanded; joint_pos_reset = q_lower_expanded + random_proportions * q_range
+-+        else: joint_pos_reset = self._default_joint_pos.unsqueeze(0).expand(len(eids), -1)
+-         zero_joint_vel = torch.zeros_like(joint_pos_reset)
+--        self.robot.write_joint_state_to_sim(joint_pos_reset, zero_joint_vel, env_ids=eids)
+--        self.robot.set_joint_position_target(joint_pos_reset, env_ids=eids)
+--
+--        # --- 重置其他状态 ---
+--        if hasattr(self, "_was_severely_tilted_last_step"):
+--            # 根据新的随机姿态，正确设置 _was_severely_tilted_last_step
+--            # 需要计算重置后各环境的 projected_gravity_b
+--            # 这通常在第一次 get_observations/get_rewards 之后才准确获得
+--            # 为简单起见，或为了避免在重置到一个好姿态时立即获得翻转奖励，可以统一设为True
+--            self._was_severely_tilted_last_step[eids] = True
+--        
+-+        self.robot.write_joint_state_to_sim(joint_pos_reset, zero_joint_vel, env_ids=eids); self.robot.set_joint_position_target(joint_pos_reset, env_ids=eids)
+-+        if hasattr(self, "_was_severely_tilted_last_step"): self._was_severely_tilted_last_step[eids] = True 
+-         cmd_profile = self.cfg.command_profile
+-         cmd_duration_s_config = cmd_profile.get("command_mode_duration_s", self.cfg.episode_length_s if hasattr(self.cfg, "episode_length_s") else 20.0)
+-         if isinstance(cmd_duration_s_config, str) and cmd_duration_s_config == "episode_length_s": cmd_duration = self.cfg.episode_length_s
+-         else:
+-             try: cmd_duration = float(cmd_duration_s_config)
+-             except (ValueError, TypeError): cmd_duration = self.cfg.episode_length_s if hasattr(self.cfg, "episode_length_s") else 20.0
+--        self._time_since_last_command_change[eids] = cmd_duration # 强制下次更新指令
+--        self._update_commands(eids)
+--
+-+        self._time_since_last_command_change[eids] = cmd_duration; self._update_commands(eids)
+-         if hasattr(self, '_previous_policy_actions'): self._previous_policy_actions[eids] = 0.0
+-         if hasattr(self, '_policy_actions'): self._policy_actions[eids] = 0.0
+-         for key in list(self._episode_reward_terms_sum.keys()):
+--            if self._episode_reward_terms_sum[key].shape[0] == self.num_envs :
+--                self._episode_reward_terms_sum[key][eids] = 0.0
+-+            if self._episode_reward_terms_sum[key].shape[0] == self.num_envs : self._episode_reward_terms_sum[key][eids] = 0.0
+-\ No newline at end of file
+-diff --git a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+-index 0f2b421..3ad5f5d 100644
+---- a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+-+++ b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+-@@ -1,6 +1,7 @@
+--# sixfeet_env_cfg.py (Focus on Standing Up)
+-+# sixfeet_env_cfg.py
+- from __future__ import annotations
+- import math
+-+from typing import List, Optional # 确保导入 List, Optional
+- 
+- import isaaclab.sim as sim_utils
+- from isaaclab.utils import configclass
+-@@ -16,15 +17,9 @@ from isaaclab.sensors import ContactSensorCfg
+- class SixfeetEnvCfg(DirectRLEnvCfg):
+-     # -------- 基本环境配置 --------
+-     decimation: int = 2
+--    episode_length_s: float = 20 # 可以适当缩短，如果只学站立
+-+    episode_length_s: float = 20.0 # 你文件中的值
+-     action_space: int = 18
+--
+--    # ---- 观测空间定义 ----
+--    # projected_gravity_b (3) + root_ang_vel_b (3) + discrete_commands (3)
+--    # + joint_pos_rel (18) + joint_vel (18)
+--    # Total = 3 + 3 + 3 + 18 + 18 = 45 dimensions
+-     observation_space: int = 45
+--
+-     state_space: int = 0
+- 
+-     # -------- 仿真配置 --------
+-@@ -37,25 +32,17 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
+-             solver_type=1,
+-             ),
+-         physics_material=sim_utils.RigidBodyMaterialCfg(
+--            static_friction=0.8,
+--            dynamic_friction=0.6,
+--            restitution=0.0,
+--            friction_combine_mode="multiply",
+--            restitution_combine_mode="multiply"
+-+            static_friction=0.8, dynamic_friction=0.6, restitution=0.0,
+-+            friction_combine_mode="multiply", restitution_combine_mode="multiply"
+-         )
+-     )
+- 
+-     # -------- 地形配置 --------
+-     terrain: TerrainImporterCfg = TerrainImporterCfg(
+--        prim_path="/World/ground",
+--        terrain_type="plane",
+--        collision_group=-1,
+-+        prim_path="/World/ground", terrain_type="plane", collision_group=-1,
+-         physics_material=sim_utils.RigidBodyMaterialCfg(
+--            friction_combine_mode="multiply",
+--            restitution_combine_mode="multiply",
+--            static_friction=1.0,
+--            dynamic_friction=0.8,
+--            restitution=0.0,
+-+            friction_combine_mode="multiply", restitution_combine_mode="multiply",
+-+            static_friction=1.0, dynamic_friction=0.8, restitution=0.0,
+-         ),
+-     )
+- 
+-@@ -63,76 +50,85 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
+-     robot: ArticulationCfg = ArticulationCfg(
+-         prim_path="/World/envs/env_.*/Robot",
+-         spawn=sim_utils.UsdFileCfg(
+--            usd_path="/home/lee/EE_ws/src/sixfeet_src/sixfeet/source/sixfeet/sixfeet/assets/hexapod/hexapod.usd", # 请确保路径正确!
+-+            usd_path="/home/lee/EE_ws/src/sixfeet_src/sixfeet/source/sixfeet/sixfeet/assets/hexapod/hexapod.usd",
+-             activate_contact_sensors=True,
+-             rigid_props=sim_utils.RigidBodyPropertiesCfg(
+--                disable_gravity=False,
+--                max_depenetration_velocity=10.0,
+--                enable_gyroscopic_forces=False, # 通常设为False，除非特殊需求
+-+                disable_gravity=False, max_depenetration_velocity=10.0, enable_gyroscopic_forces=False,
+-             ),
+-             articulation_props=sim_utils.ArticulationRootPropertiesCfg(
+--                enabled_self_collisions=True,
+--                solver_position_iteration_count=12, # 可以适当增加迭代次数提高稳定性
+--                solver_velocity_iteration_count=1,  # 可以适当增加迭代次数提高稳定性
+--                sleep_threshold=0.005,
+--                stabilization_threshold=0.001,
+-+                enabled_self_collisions=True, solver_position_iteration_count=12,
+-+                solver_velocity_iteration_count=1, sleep_threshold=0.005, stabilization_threshold=0.001,
+-             ),
+-         ),
+-         init_state=ArticulationCfg.InitialStateCfg(
+--            pos=(0.0, 0.0, 0.0001), # 初始高度较低，便于学习站起
+--            rot=(1.0, 0.0, 0.0, 0.0), # 标准初始姿态 (w,x,y,z)
+--            # joint_pos 已被注释掉，将在 env.py 的 _reset_idx 中实现完全随机关节初始姿态
+--            joint_vel={ # 初始关节速度为0
+--                "joint_11": 0.0, "joint_21": 0.0, "joint_31": 0.0,
+--                "joint_41": 0.0, "joint_51": 0.0, "joint_61": 0.0,
+--                "joint_12": 0.0, "joint_22": 0.0, "joint_32": 0.0,
+--                "joint_42": 0.0, "joint_52": 0.0, "joint_62": 0.0,
+--                "joint_13": 0.0, "joint_23": 0.0, "joint_33": 0.0,
+--                "joint_43": 0.0, "joint_53": 0.0, "joint_63": 0.0,
+-+            pos=(0.0, 0.0, 0.0001), # 你文件中的值
+-+            rot=(1.0, 0.0, 0.0, 0.0),
+-+            joint_vel={
+-+                "joint_11": 0.0, "joint_21": 0.0, "joint_31": 0.0, "joint_41": 0.0, "joint_51": 0.0, "joint_61": 0.0,
+-+                "joint_12": 0.0, "joint_22": 0.0, "joint_32": 0.0, "joint_42": 0.0, "joint_52": 0.0, "joint_62": 0.0,
+-+                "joint_13": 0.0, "joint_23": 0.0, "joint_33": 0.0, "joint_43": 0.0, "joint_53": 0.0, "joint_63": 0.0,
+-             }
+-         ),
+-         actuators={
+-             "all_joints": ImplicitActuatorCfg(
+--                joint_names_expr=".*",
+--                stiffness=20.0, # 驱动器P项
+--                damping=12.0,   # 驱动器D项
+--                effort_limit_sim=5.0, # 关节力矩限制
+--                velocity_limit_sim=5.0 # 关节速度限制
+-+                joint_names_expr=".*", stiffness=20.0, damping=12.0,
+-+                effort_limit_sim=5.0, velocity_limit_sim=5.0
+-             )
+-         }
+-     )
+- 
+-     # -------- 传感器配置 --------
+-     contact_sensor: ContactSensorCfg = ContactSensorCfg(
+--        prim_path="/World/envs/env_.*/Robot/.*", history_length=3,update_period=0.005,
+-+        prim_path="/World/envs/env_.*/Robot/.*", history_length=3,update_period=0.005, # 你文件中的值, 确保history_length=1如果只用当前帧接触
+-         track_air_time=True
+-     )
+- 
+-     # --- 关节和连杆名称表达式 ---
+--    toe_joint_names_expr: str | list[int] | None = "joint_.[3]" # 用于足端方向惩罚
+--    undesired_contact_link_names_expr: str = "(thigh_link_[1-6]1|shin_link_[1-6]2)" # 非足端接触惩罚
+--    base_link_name: str = "base_link" # 用于检测基座触地
+-+    toe_joint_names_expr: str | list[int] | None = "joint_.[3]"
+-+    undesired_contact_link_names_expr: str = "(thigh_link_[1-6]1|shin_link_[1-6]2)"
+-+    base_link_name: str = "base_link"
+-+    # 新增：用于Z轴对齐奖励的脚部连杆名称匹配模式 (正则表达式)
+-+    foot_link_name_pattern_for_z_align: str = r"foot_link_[1-6]3" # 根据你的图片 foot_link_13, foot_link_23 等
+-+
+- 
+-     # -------- 场景配置 --------
+-     scene: InteractiveSceneCfg = InteractiveSceneCfg(
+--        num_envs=4096,
+--        env_spacing=4.0,
+--        replicate_physics=True,
+-+        num_envs=4096, env_spacing=4.0, replicate_physics=True,
+-     )
+- 
+--    # -------- 离散指令配置 (Discrete Command Profile) --------
+--    command_profile: dict = {
+-+    # -------- 离散指令配置 --------
+-+    command_profile: dict[str, float]= {
+-         "reference_linear_speed": 0.0,
+-         "reference_angular_rate": 0.0,
+--        "command_mode_duration_s": episode_length_s,
+--        "stand_still_prob": 1.0,       # 专注于站立
+--        "num_command_modes": 7
+-+        "command_mode_duration_s": episode_length_s, # 使用你文件中的字符串
+-+        "stand_still_prob": 1.0,
+-+        "num_command_modes": 7.0
+-+    }   
+-+
+-+     # --- 新增：定义目标站立姿态的关节角度 (弧度) ---
+-+    # 这些键名需要与你的机器人模型中的实际关节名称（DOF名称）完全对应！
+-+    # 你需要根据 self.robot.dof_names 的输出来调整这些键名。
+-+    target_standing_joint_angles_dict: dict[str, float] = {
+-+        # 示例 (你需要用你USD中的实际关节名替换这些占位符键名):
+-+        # "front_left_coxa_joint": 0.0, "front_left_femur_joint": math.radians(45), "front_left_tibia_joint": math.radians(-90),
+-+        # "middle_left_coxa_joint": 0.0, "middle_left_femur_joint": math.radians(45), "middle_left_tibia_joint": math.radians(-90),
+-+        # "rear_left_coxa_joint": 0.0, "rear_left_femur_joint": math.radians(45), "rear_left_tibia_joint": math.radians(-90),
+-+        # "front_right_coxa_joint": 0.0, "front_right_femur_joint": math.radians(45), "front_right_tibia_joint": math.radians(-90),
+-+        # "middle_right_coxa_joint": 0.0, "middle_right_femur_joint": math.radians(45), "middle_right_tibia_joint": math.radians(-90),
+-+        # "rear_right_coxa_joint": 0.0, "rear_right_femur_joint": math.radians(45), "rear_right_tibia_joint": math.radians(-90),
+-+        # 或者，如果你的关节命名是 joint_11, joint_12 ...
+-+        #  "joint_11": 0.0, "joint_21": 0.0, "joint_31": 0.0,
+-+        #  "joint_41": 0.0, "joint_51": 0.0, "joint_61": 0.0,
+-+         "joint_12": math.radians(45), "joint_22": math.radians(45), "joint_32": math.radians(45),
+-+         "joint_42": math.radians(45), "joint_52": math.radians(45), "joint_62": math.radians(45),
+-+         "joint_13": math.radians(-90), "joint_23": math.radians(-90), "joint_33": math.radians(-90),
+-+         "joint_43": math.radians(-90), "joint_53": math.radians(-90), "joint_63": math.radians(-90),
+-     }
+--     # ---初始姿态随机化模式 ---
+--    # 模式 1: 完全随机的翻滚(Roll), 俯仰(Pitch), 偏航(Yaw)角度, 包括180度翻转
+--    # 模式 0: 特殊初始姿态 - 机器人Z轴与世界Z轴相反 (完全倒置)，Yaw角随机
+--    initial_pose_randomization_mode: int = 0
+--    randomize_initial_joint_poses: bool = False
+-+
+-+
+-+    # ---初始姿态随机化模式 ---
+-+    initial_pose_randomization_mode: int = 1 #  0 固定反转, 1 随机
+-+    randomize_initial_joint_poses: bool = True # 你文件中的值
+- 
+- 
+-     # -------- 奖励缩放因子 --------
+-@@ -140,32 +136,43 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
+-     rew_scale_move_in_commanded_direction: float = 0.0
+-     rew_scale_achieve_reference_angular_rate: float = 0.0
+-     rew_scale_alive: float = +0.1
+--    rew_scale_target_height: float = +20.0 # 将在 env.py 中条件化
+--    target_height_m: float = 0.15        # 你的 "Focus on Standing Up" cfg 中 target_height_m 为 0.20，这里用了你新cfg中的0.23
+--    target_height_reward_sharpness: float = 100.0 #target_height_reward_sharpness: float = 100.0
+-+
+-+    # --- 目标高度奖励 ---
+-+    rew_scale_target_height: float = +30.0       # 你文件中的值
+-+    target_height_m: float = 0.30                # <<< 修改：新的目标高度 (0.30m)
+-+    target_height_reward_sharpness: float = 100.0 # 你文件中的值
+- 
+-     rew_scale_orientation_deviation: float = -50.0
+--     # --- 新增：自碰撞惩罚 ---
+--    rew_scale_self_collision: float = -30.0  # 一个较大的负值，当发生自碰撞时施加
+--    rew_scale_successful_flip: float = 40.0 # 当从Z轴朝下翻转到Z轴朝上时给予
+-+    rew_scale_self_collision: float = -50.0
+-+    rew_scale_successful_flip: float = 40.0
+-+
+-+    # --- 新增：足部Z轴对齐奖励 ---
+-+    rew_scale_foot_z_alignment: float = 10.0 # <<< 新增：可调整的正值
+-+    rew_scale_all_feet_stable_stand: float = 25.0  # <<< 新增：当站立且所有脚触地时的奖励
+-+    rew_scale_airborne_feet_penalty: float = -10.0 # 负值，脚悬空越多惩罚越重。
+-+
+-+    # --- 新增：姿态模仿奖励 ---
+-+    rew_scale_standing_pose_imitation: float = 15.0 # <<< 新增：可调整的正值
+-+    standing_pose_imitation_sharpness: float = 2.0   # <<< 新增：控制高斯奖励的尖锐度
+-+
+-+
+-     rew_scale_action_cost: float = -0.0001
+-     rew_scale_action_rate: float = -0.01
+-     rew_scale_joint_torques: float = -1.0e-6
+-     rew_scale_joint_accel: float = -1.0e-7
+--    rew_scale_lin_vel_z_penalty: float = -3.0
+--    rew_scale_ang_vel_xy_penalty: float = -0.1
+-+    rew_scale_lin_vel_z_penalty: float = -3.0    # 将在 env.py 中条件化
+-+    rew_scale_ang_vel_xy_penalty: float = -0.1   # 将在 env.py 中条件化
+-     rew_scale_flat_orientation: float = -25.0
+--    rew_scale_unwanted_movement_penalty: float = -5.0
+-+    rew_scale_unwanted_movement_penalty: float = -10.0
+-     rew_scale_dof_at_limit: float = -0.5
+--    rew_scale_toe_orientation_penalty: float = -4.0 # 在 env.py 中条件化生效
+--    rew_scale_low_height_penalty: float = -30.0
+--    min_height_penalty_threshold: float = 0.12 # 你的 "Focus on Standing Up" cfg 中是 0.15
+-+    rew_scale_toe_orientation_penalty: float = -4.0 # 你文件中的值
+-+    rew_scale_low_height_penalty: float = -40.0
+-+    min_height_penalty_threshold: float = target_height_m 
+- 
+--    rew_scale_undesired_contact: float = -5.0   # 在 env.py 中条件化生效
+-+    rew_scale_undesired_contact: float = -15.0
+-     rew_scale_termination: float = -20.0
+- 
+--    # --- 新增：可配置的关节极限惩罚阈值 (百分比) ---
+--    joint_limit_penalty_threshold_percent: float = 0.05  # 例如 0.05 代表边缘5%
+-+    joint_limit_penalty_threshold_percent: float = 0.05
+- 
+-     # -------- 重置随机化 --------
+-     root_orientation_yaw_range: float = math.pi
+-@@ -173,10 +180,8 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
+- 
+-     # -------- 终止条件 --------
+-     termination_body_z_thresh: float = 0.95
+--    termination_height_thresh: float = 0.00
+--    termination_base_contact: bool = False # 已设为 True
+-+    termination_height_thresh: float = 0.0 # 你文件中的值
+-+    termination_base_contact: bool = False # <<< 你文件中是False, 但之前讨论改为True并条件化，这里以你文件为准，但逻辑会按True处理
+-     
+--    # --- 用于条件化终止的姿态角度限制 (度) ---
+--    orientation_termination_angle_limit_deg: float = 95.0
+--     # 值越小，表示要求机器人越平坦。例如 0.1*0.1 = 0.01 (约5.7度倾斜)，0.3*0.3 = 0.09 (约17度倾斜)
+--    flatness_threshold_for_height_termination: float = 0.02 # 可调整
+-\ No newline at end of file
+-+    orientation_termination_angle_limit_deg: float = 95.0 # 你文件中的值
+-+    flatness_threshold_for_height_termination: float = 0.02 # 你文件中的值
+-\ No newline at end of file
+\ No newline at end of file
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_25200.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_25200.pt
+deleted file mode 100644
+index dd041de..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_25200.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_25600.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_25600.pt
+deleted file mode 100644
+index fd614a4..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_25600.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26000.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26000.pt
+deleted file mode 100644
+index 5d0b414..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26000.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26400.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26400.pt
+deleted file mode 100644
+index 49a5eea..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26400.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26800.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26800.pt
+deleted file mode 100644
+index 55a57ed..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_26800.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_27200.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_27200.pt
+deleted file mode 100644
+index d4f1413..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_27200.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_27600.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_27600.pt
+deleted file mode 100644
+index 3cdd3ee..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_27600.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28000.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28000.pt
+deleted file mode 100644
+index 995f156..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28000.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28400.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28400.pt
+deleted file mode 100644
+index 9d17e7c..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28400.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28800.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28800.pt
+deleted file mode 100644
+index b926829..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_28800.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_29200.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_29200.pt
+deleted file mode 100644
+index 2c628bb..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_29200.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_29600.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_29600.pt
+deleted file mode 100644
+index 134b672..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_29600.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30000.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30000.pt
+deleted file mode 100644
+index b254977..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30000.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30400.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30400.pt
+deleted file mode 100644
+index 83f8865..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30400.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30800.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30800.pt
+deleted file mode 100644
+index a4ef70c..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_30800.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_31200.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_31200.pt
+deleted file mode 100644
+index 670979c..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_31200.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_31600.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_31600.pt
+deleted file mode 100644
+index a4b4911..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_31600.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32000.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32000.pt
+deleted file mode 100644
+index 7782036..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32000.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32400.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32400.pt
+deleted file mode 100644
+index ef50b5d..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32400.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32800.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32800.pt
+deleted file mode 100644
+index 46ccd0c..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_32800.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_33200.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_33200.pt
+deleted file mode 100644
+index 5f09c91..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_33200.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_33600.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_33600.pt
+deleted file mode 100644
+index 657104f..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_33600.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34000.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34000.pt
+deleted file mode 100644
+index 990d840..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34000.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34400.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34400.pt
+deleted file mode 100644
+index b8475c2..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34400.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34800.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34800.pt
+deleted file mode 100644
+index ff13f0a..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34800.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34999.pt b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34999.pt
+deleted file mode 100644
+index 41293ca..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/model_34999.pt and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/agent.pkl b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/agent.pkl
+deleted file mode 100644
+index e64f5b1..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/agent.pkl and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/agent.yaml b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/agent.yaml
+deleted file mode 100644
+index 2a76caa..0000000
+--- a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/agent.yaml
++++ /dev/null
+@@ -1,45 +0,0 @@
+-seed: 42
+-device: cuda:0
+-num_steps_per_env: 24
+-max_iterations: 10001
+-empirical_normalization: false
+-policy:
+-  class_name: ActorCritic
+-  init_noise_std: 1.0
+-  noise_std_type: scalar
+-  actor_hidden_dims:
+-  - 128
+-  - 128
+-  - 128
+-  critic_hidden_dims:
+-  - 128
+-  - 128
+-  - 128
+-  activation: elu
+-algorithm:
+-  class_name: PPO
+-  num_learning_epochs: 5
+-  num_mini_batches: 4
+-  learning_rate: 0.001
+-  schedule: adaptive
+-  gamma: 0.99
+-  lam: 0.95
+-  entropy_coef: 0.005
+-  desired_kl: 0.01
+-  max_grad_norm: 1.0
+-  value_loss_coef: 1.0
+-  use_clipped_value_loss: true
+-  clip_param: 0.2
+-  normalize_advantage_per_mini_batch: false
+-  symmetry_cfg: null
+-  rnd_cfg: null
+-clip_actions: null
+-save_interval: 400
+-experiment_name: sixfeet_ppo
+-run_name: ''
+-logger: tensorboard
+-neptune_project: isaaclab
+-wandb_project: isaaclab
+-resume: true
+-load_run: 2025-06-01_16-18-58
+-load_checkpoint: model_24999.pt
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/env.pkl b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/env.pkl
+deleted file mode 100644
+index 5040b2a..0000000
+Binary files a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/env.pkl and /dev/null differ
+diff --git a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/env.yaml b/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/env.yaml
+deleted file mode 100644
+index 56bafdd..0000000
+--- a/sixfeet_src/ckpt/logs/rsl_rl/sixfeet_ppo/2025-06-01_17-04-13/params/env.yaml
++++ /dev/null
+@@ -1,356 +0,0 @@
+-viewer:
+-  eye: !!python/tuple
+-  - 7.5
+-  - 7.5
+-  - 7.5
+-  lookat: !!python/tuple
+-  - 0.0
+-  - 0.0
+-  - 0.0
+-  cam_prim_path: /OmniverseKit_Persp
+-  resolution: !!python/tuple
+-  - 1280
+-  - 720
+-  origin_type: world
+-  env_index: 0
+-  asset_name: null
+-  body_name: null
+-sim:
+-  physics_prim_path: /physicsScene
+-  device: cuda:0
+-  dt: 0.008333333333333333
+-  render_interval: 2
+-  gravity: !!python/tuple
+-  - 0.0
+-  - 0.0
+-  - -9.81
+-  enable_scene_query_support: false
+-  use_fabric: true
+-  physx:
+-    solver_type: 1
+-    min_position_iteration_count: 1
+-    max_position_iteration_count: 255
+-    min_velocity_iteration_count: 0
+-    max_velocity_iteration_count: 255
+-    enable_ccd: true
+-    enable_stabilization: true
+-    enable_enhanced_determinism: false
+-    bounce_threshold_velocity: 0.5
+-    friction_offset_threshold: 0.04
+-    friction_correlation_distance: 0.025
+-    gpu_max_rigid_contact_count: 8388608
+-    gpu_max_rigid_patch_count: 163840
+-    gpu_found_lost_pairs_capacity: 2097152
+-    gpu_found_lost_aggregate_pairs_capacity: 33554432
+-    gpu_total_aggregate_pairs_capacity: 2097152
+-    gpu_collision_stack_size: 67108864
+-    gpu_heap_capacity: 67108864
+-    gpu_temp_buffer_capacity: 16777216
+-    gpu_max_num_partitions: 8
+-    gpu_max_soft_body_contacts: 1048576
+-    gpu_max_particle_contacts: 1048576
+-  physics_material:
+-    func: isaaclab.sim.spawners.materials.physics_materials:spawn_rigid_body_material
+-    static_friction: 0.8
+-    dynamic_friction: 0.6
+-    restitution: 0.0
+-    improve_patch_friction: true
+-    friction_combine_mode: multiply
+-    restitution_combine_mode: multiply
+-    compliant_contact_stiffness: 0.0
+-    compliant_contact_damping: 0.0
+-  render:
+-    enable_translucency: null
+-    enable_reflections: null
+-    enable_global_illumination: null
+-    antialiasing_mode: null
+-    enable_dlssg: null
+-    enable_dl_denoiser: null
+-    dlss_mode: null
+-    enable_direct_lighting: null
+-    samples_per_pixel: null
+-    enable_shadows: null
+-    enable_ambient_occlusion: null
+-    carb_settings: null
+-    rendering_mode: null
+-ui_window_class_type: isaaclab.envs.ui.base_env_window:BaseEnvWindow
+-seed: 42
+-decimation: 2
+-is_finite_horizon: false
+-episode_length_s: 20.0
+-scene:
+-  num_envs: 4096
+-  env_spacing: 4.0
+-  lazy_sensor_update: true
+-  replicate_physics: true
+-  filter_collisions: true
+-events: null
+-observation_space: 45
+-num_observations: null
+-state_space: 0
+-num_states: null
+-observation_noise_model: null
+-action_space: 18
+-num_actions: null
+-action_noise_model: null
+-rerender_on_reset: false
+-wait_for_textures: true
+-xr: null
+-terrain:
+-  class_type: isaaclab.terrains.terrain_importer:TerrainImporter
+-  collision_group: -1
+-  prim_path: /World/ground
+-  num_envs: 4096
+-  terrain_type: plane
+-  terrain_generator: null
+-  usd_path: null
+-  env_spacing: 4.0
+-  visual_material:
+-    func: isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface
+-    diffuse_color: !!python/tuple
+-    - 0.0
+-    - 0.0
+-    - 0.0
+-    emissive_color: !!python/tuple
+-    - 0.0
+-    - 0.0
+-    - 0.0
+-    roughness: 0.5
+-    metallic: 0.0
+-    opacity: 1.0
+-  physics_material:
+-    func: isaaclab.sim.spawners.materials.physics_materials:spawn_rigid_body_material
+-    static_friction: 1.0
+-    dynamic_friction: 0.8
+-    restitution: 0.0
+-    improve_patch_friction: true
+-    friction_combine_mode: multiply
+-    restitution_combine_mode: multiply
+-    compliant_contact_stiffness: 0.0
+-    compliant_contact_damping: 0.0
+-  max_init_terrain_level: null
+-  debug_vis: false
+-robot:
+-  class_type: isaaclab.assets.articulation.articulation:Articulation
+-  prim_path: /World/envs/env_.*/Robot
+-  spawn:
+-    func: isaaclab.sim.spawners.from_files.from_files:spawn_from_usd
+-    visible: true
+-    semantic_tags: null
+-    copy_from_source: true
+-    mass_props: null
+-    deformable_props: null
+-    rigid_props:
+-      rigid_body_enabled: null
+-      kinematic_enabled: null
+-      disable_gravity: false
+-      linear_damping: null
+-      angular_damping: null
+-      max_linear_velocity: null
+-      max_angular_velocity: null
+-      max_depenetration_velocity: 10.0
+-      max_contact_impulse: null
+-      enable_gyroscopic_forces: false
+-      retain_accelerations: null
+-      solver_position_iteration_count: null
+-      solver_velocity_iteration_count: null
+-      sleep_threshold: null
+-      stabilization_threshold: null
+-    collision_props: null
+-    activate_contact_sensors: true
+-    scale: null
+-    articulation_props:
+-      articulation_enabled: null
+-      enabled_self_collisions: true
+-      solver_position_iteration_count: 12
+-      solver_velocity_iteration_count: 1
+-      sleep_threshold: 0.005
+-      stabilization_threshold: 0.001
+-      fix_root_link: null
+-    fixed_tendons_props: null
+-    joint_drive_props: null
+-    visual_material_path: material
+-    visual_material: null
+-    usd_path: /home/lee/EE_ws/src/sixfeet_src/sixfeet/source/sixfeet/sixfeet/assets/hexapod/hexapod.usd
+-    variants: null
+-  init_state:
+-    pos: !!python/tuple
+-    - 0.0
+-    - 0.0
+-    - 0.0001
+-    rot: !!python/tuple
+-    - 1.0
+-    - 0.0
+-    - 0.0
+-    - 0.0
+-    lin_vel: !!python/tuple
+-    - 0.0
+-    - 0.0
+-    - 0.0
+-    ang_vel: !!python/tuple
+-    - 0.0
+-    - 0.0
+-    - 0.0
+-    joint_pos:
+-      .*: 0.0
+-    joint_vel:
+-      joint_11: 0.0
+-      joint_21: 0.0
+-      joint_31: 0.0
+-      joint_41: 0.0
+-      joint_51: 0.0
+-      joint_61: 0.0
+-      joint_12: 0.0
+-      joint_22: 0.0
+-      joint_32: 0.0
+-      joint_42: 0.0
+-      joint_52: 0.0
+-      joint_62: 0.0
+-      joint_13: 0.0
+-      joint_23: 0.0
+-      joint_33: 0.0
+-      joint_43: 0.0
+-      joint_53: 0.0
+-      joint_63: 0.0
+-  collision_group: 0
+-  debug_vis: false
+-  soft_joint_pos_limit_factor: 1.0
+-  actuators:
+-    all_joints:
+-      class_type: isaaclab.actuators.actuator_pd:ImplicitActuator
+-      joint_names_expr: .*
+-      effort_limit: null
+-      velocity_limit: null
+-      effort_limit_sim: 5.0
+-      velocity_limit_sim: 5.0
+-      stiffness: 20.0
+-      damping: 12.0
+-      armature: null
+-      friction: null
+-contact_sensor:
+-  class_type: isaaclab.sensors.contact_sensor.contact_sensor:ContactSensor
+-  prim_path: /World/envs/env_.*/Robot/.*
+-  update_period: 0.005
+-  history_length: 3
+-  debug_vis: false
+-  track_pose: false
+-  track_air_time: true
+-  force_threshold: 1.0
+-  filter_prim_paths_expr: []
+-  visualizer_cfg:
+-    prim_path: /Visuals/ContactSensor
+-    markers:
+-      contact:
+-        func: isaaclab.sim.spawners.shapes.shapes:spawn_sphere
+-        visible: true
+-        semantic_tags: null
+-        copy_from_source: true
+-        mass_props: null
+-        rigid_props: null
+-        collision_props: null
+-        activate_contact_sensors: false
+-        visual_material_path: material
+-        visual_material:
+-          func: isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface
+-          diffuse_color: !!python/tuple
+-          - 1.0
+-          - 0.0
+-          - 0.0
+-          emissive_color: !!python/tuple
+-          - 0.0
+-          - 0.0
+-          - 0.0
+-          roughness: 0.5
+-          metallic: 0.0
+-          opacity: 1.0
+-        physics_material_path: material
+-        physics_material: null
+-        radius: 0.02
+-      no_contact:
+-        func: isaaclab.sim.spawners.shapes.shapes:spawn_sphere
+-        visible: false
+-        semantic_tags: null
+-        copy_from_source: true
+-        mass_props: null
+-        rigid_props: null
+-        collision_props: null
+-        activate_contact_sensors: false
+-        visual_material_path: material
+-        visual_material:
+-          func: isaaclab.sim.spawners.materials.visual_materials:spawn_preview_surface
+-          diffuse_color: !!python/tuple
+-          - 0.0
+-          - 1.0
+-          - 0.0
+-          emissive_color: !!python/tuple
+-          - 0.0
+-          - 0.0
+-          - 0.0
+-          roughness: 0.5
+-          metallic: 0.0
+-          opacity: 1.0
+-        physics_material_path: material
+-        physics_material: null
+-        radius: 0.02
+-toe_joint_names_expr: joint_.[3]
+-undesired_contact_link_names_expr: (thigh_link_[1-6]1|shin_link_[1-6]2)
+-base_link_name: base_link
+-foot_link_name_pattern_for_z_align: foot_link_[1-6]3
+-command_profile:
+-  reference_linear_speed: 0.0
+-  reference_angular_rate: 0.0
+-  command_mode_duration_s: 20.0
+-  stand_still_prob: 1.0
+-  num_command_modes: 7.0
+-target_standing_joint_angles_dict:
+-  joint_12: 0.7853981633974483
+-  joint_22: 0.7853981633974483
+-  joint_32: 0.7853981633974483
+-  joint_42: 0.7853981633974483
+-  joint_52: 0.7853981633974483
+-  joint_62: 0.7853981633974483
+-  joint_13: -1.5707963267948966
+-  joint_23: -1.5707963267948966
+-  joint_33: -1.5707963267948966
+-  joint_43: -1.5707963267948966
+-  joint_53: -1.5707963267948966
+-  joint_63: -1.5707963267948966
+-initial_pose_randomization_mode: 1
+-randomize_initial_joint_poses: true
+-action_scale: 0.5
+-rew_scale_move_in_commanded_direction: 0.0
+-rew_scale_achieve_reference_angular_rate: 0.0
+-rew_scale_alive: 0.1
+-rew_scale_target_height: 30.0
+-target_height_m: 0.3
+-target_height_reward_sharpness: 100.0
+-rew_scale_orientation_deviation: -50.0
+-rew_scale_self_collision: -50.0
+-rew_scale_successful_flip: 40.0
+-rew_scale_foot_z_alignment: 10.0
+-rew_scale_all_feet_stable_stand: 25.0
+-rew_scale_airborne_feet_penalty: -10.0
+-rew_scale_standing_pose_imitation: 15.0
+-standing_pose_imitation_sharpness: 2.0
+-rew_scale_action_cost: -0.0001
+-rew_scale_action_rate: -0.01
+-rew_scale_joint_torques: -1.0e-06
+-rew_scale_joint_accel: -1.0e-07
+-rew_scale_lin_vel_z_penalty: -3.0
+-rew_scale_ang_vel_xy_penalty: -0.1
+-rew_scale_flat_orientation: -25.0
+-rew_scale_unwanted_movement_penalty: -10.0
+-rew_scale_dof_at_limit: -0.5
+-rew_scale_toe_orientation_penalty: -4.0
+-rew_scale_low_height_penalty: -40.0
+-min_height_penalty_threshold: 0.3
+-rew_scale_undesired_contact: -15.0
+-rew_scale_termination: -20.0
+-joint_limit_penalty_threshold_percent: 0.05
+-root_orientation_yaw_range: 3.141592653589793
+-reset_height_offset: 0.0
+-termination_body_z_thresh: 0.95
+-termination_height_thresh: 0.0
+-termination_base_contact: false
+-orientation_termination_angle_limit_deg: 95.0
+-flatness_threshold_for_height_termination: 0.02
+diff --git a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+index c2460de..0c7492b 100644
+--- a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
++++ b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env.py
+@@ -528,16 +528,16 @@ class SixfeetEnv(DirectRLEnv):
+             valid_base_contact_trigger = base_contact_raw_detection & (~ignore_initial_fall_contact)
+             base_contact_termination = valid_base_contact_trigger & is_within_termination_orientation_limit
+         terminated = height_too_low | fallen_over | base_contact_termination | time_out
+-        if torch.is_tensor(terminated) and terminated.any():
+-            terminated_env_indices = terminated.nonzero(as_tuple=False).squeeze(-1)
+-            if terminated_env_indices.ndim == 0: terminated_env_indices = terminated_env_indices.unsqueeze(0)
+-            for env_idx_tensor in terminated_env_indices:
+-                env_idx = env_idx_tensor.item(); reasons = []
+-                if height_too_low[env_idx]: reasons.append("height_too_low(cond_flat)")
+-                if fallen_over[env_idx]: reasons.append("fallen_over(cond_orient)")
+-                if base_contact_termination[env_idx]: reasons.append("base_contact(cond_orient_time)")
+-                if time_out[env_idx]: reasons.append("time_out")
+-                if reasons: episode_step = self.episode_length_buf[env_idx].item() + 1; print(f"[Termination Info] Env {env_idx}: Reset at ep step {episode_step} due to: {', '.join(reasons)}")
++        # if torch.is_tensor(terminated) and terminated.any():
++        #     terminated_env_indices = terminated.nonzero(as_tuple=False).squeeze(-1)
++        #     if terminated_env_indices.ndim == 0: terminated_env_indices = terminated_env_indices.unsqueeze(0)
++        #     for env_idx_tensor in terminated_env_indices:
++        #         env_idx = env_idx_tensor.item(); reasons = []
++        #         if height_too_low[env_idx]: reasons.append("height_too_low(cond_flat)")
++        #         if fallen_over[env_idx]: reasons.append("fallen_over(cond_orient)")
++        #         if base_contact_termination[env_idx]: reasons.append("base_contact(cond_orient_time)")
++        #         if time_out[env_idx]: reasons.append("time_out")
++        #         if reasons: episode_step = self.episode_length_buf[env_idx].item() + 1; print(f"[Termination Info] Env {env_idx}: Reset at ep step {episode_step} due to: {', '.join(reasons)}")
+         return terminated, time_out
+     
+     def _reset_idx(self, env_ids: Sequence[int] | None): # 与上一版本相同
+diff --git a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+index c6824ed..d460a80 100644
+--- a/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
++++ b/sixfeet_src/sixfeet/source/sixfeet/sixfeet/tasks/direct/sixfeet/sixfeet_env_cfg.py
+@@ -97,7 +97,7 @@ class SixfeetEnvCfg(DirectRLEnvCfg):
+         "num_command_modes": 7.0          # <<< 已修正为浮点数
+     }
+     # ---初始姿态随机化模式 ---
+-    initial_pose_randomization_mode: int = 1 # 来自你的文件
++    initial_pose_randomization_mode: int = 0 # 来自你的文件
+     randomize_initial_joint_poses: bool = True # 来自你的文件
+ 
+     # --- 目标站立姿态的关节角度 (弧度) ---
